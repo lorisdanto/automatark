@@ -3,8 +3,10 @@ Benchmark problems for different models of automata, transducers, and related lo
 
 ##Input Format
 
-(This description is from the libvata library)
- so far supports only the Timbuk format of tree automata. The format is specified by the following grammar with the start symbol <file>:
+This description is taken from the [libvata](http://www.fit.vutbr.cz/research/groups/verifit/tools/libvata/)
+webpage.
+All automata are expressed using the Timbuk format for tree automata. 
+The format is specified by the following grammar with the start symbol <file>.
 
 ```
 <file>            : 'Ops' <label_list> <automaton>
@@ -39,6 +41,10 @@ c(q1, q1) -> q1
 c(q1, q1) -> q2
 c(q2, q2) -> q2
 ```
+
+By default automata are meant to be bottom-up.
+For string automata all symbols but one will have arity 1, and one symbol will have arity 
+0 (the beginning-of-string).
 
 ## Sources
 AutomataArk contains benchmark from the following sources.
