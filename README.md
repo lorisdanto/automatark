@@ -1,4 +1,4 @@
-# AutomatArk
+# AutomatArk (Automata Benchmark)
 Benchmark problems for different models of automata, transducers, and related logics
 
 ##Input Format
