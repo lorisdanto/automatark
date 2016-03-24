@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.wisc.cs</groupId>
+  <artifactId>LTLparser</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+  <dependency>
+    <groupId>net.sourceforge.maven-jlex</groupId>
+    <artifactId>maven-jlex-plugin</artifactId>
+    <version>1.0</version>
+    </dependency>
+  <dependency>
+    <groupId>edu.princeton.cup</groupId>
+    <artifactId>java-cup</artifactId>
+    <version>10k</version>
+    </dependency>
+  </dependencies>
+</project>
