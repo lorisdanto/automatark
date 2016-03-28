@@ -1,0 +1,4534 @@
+Type: (
+LineNum: 1
+CharNum: 1
+
+Type: (
+LineNum: 1
+CharNum: 2
+
+Type: (
+LineNum: 1
+CharNum: 3
+
+Type: ID
+LineNum: 1
+CharNum: 4
+Value: a
+
+Type: )
+LineNum: 1
+CharNum: 5
+
+Type: && and
+LineNum: 1
+CharNum: 7
+
+Type: (
+LineNum: 1
+CharNum: 10
+
+Type: [] always
+LineNum: 1
+CharNum: 12
+
+Type: (
+LineNum: 1
+CharNum: 13
+
+Type: ID
+LineNum: 1
+CharNum: 14
+Value: a
+
+Type: -> implies
+LineNum: 1
+CharNum: 16
+
+Type: (
+LineNum: 1
+CharNum: 19
+
+Type: (
+LineNum: 1
+CharNum: 20
+
+Type: X next
+LineNum: 1
+CharNum: 21
+
+Type: (
+LineNum: 1
+CharNum: 22
+
+Type: ! negation
+LineNum: 1
+CharNum: 23
+
+Type: ID
+LineNum: 1
+CharNum: 24
+Value: a
+
+Type: )
+LineNum: 1
+CharNum: 25
+
+Type: )
+LineNum: 1
+CharNum: 26
+
+Type: && and
+LineNum: 1
+CharNum: 28
+
+Type: (
+LineNum: 1
+CharNum: 31
+
+Type: X next
+LineNum: 1
+CharNum: 32
+
+Type: (
+LineNum: 1
+CharNum: 33
+
+Type: X next
+LineNum: 1
+CharNum: 34
+
+Type: (
+LineNum: 1
+CharNum: 35
+
+Type: ID
+LineNum: 1
+CharNum: 36
+Value: a
+
+Type: )
+LineNum: 1
+CharNum: 37
+
+Type: )
+LineNum: 1
+CharNum: 38
+
+Type: )
+LineNum: 1
+CharNum: 39
+
+Type: )
+LineNum: 1
+CharNum: 40
+
+Type: )
+LineNum: 1
+CharNum: 41
+
+Type: )
+LineNum: 1
+CharNum: 42
+
+Type: )
+LineNum: 1
+CharNum: 43
+
+Type: && and
+LineNum: 1
+CharNum: 45
+
+Type: (
+LineNum: 1
+CharNum: 48
+
+Type: (
+LineNum: 1
+CharNum: 49
+
+Type: ! negation
+LineNum: 1
+CharNum: 50
+
+Type: ID
+LineNum: 1
+CharNum: 51
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 52
+
+Type: && and
+LineNum: 1
+CharNum: 54
+
+Type: (
+LineNum: 1
+CharNum: 57
+
+Type: X next
+LineNum: 1
+CharNum: 58
+
+Type: (
+LineNum: 1
+CharNum: 59
+
+Type: ! negation
+LineNum: 1
+CharNum: 60
+
+Type: ID
+LineNum: 1
+CharNum: 61
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 62
+
+Type: )
+LineNum: 1
+CharNum: 63
+
+Type: )
+LineNum: 1
+CharNum: 64
+
+Type: && and
+LineNum: 1
+CharNum: 66
+
+Type: (
+LineNum: 1
+CharNum: 69
+
+Type: [] always
+LineNum: 1
+CharNum: 70
+
+Type: (
+LineNum: 1
+CharNum: 72
+
+Type: (
+LineNum: 1
+CharNum: 73
+
+Type: ID
+LineNum: 1
+CharNum: 74
+Value: a
+
+Type: && and
+LineNum: 1
+CharNum: 76
+
+Type: (
+LineNum: 1
+CharNum: 79
+
+Type: ! negation
+LineNum: 1
+CharNum: 80
+
+Type: ID
+LineNum: 1
+CharNum: 81
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 82
+
+Type: )
+LineNum: 1
+CharNum: 83
+
+Type: -> implies
+LineNum: 1
+CharNum: 85
+
+Type: (
+LineNum: 1
+CharNum: 88
+
+Type: (
+LineNum: 1
+CharNum: 89
+
+Type: ! negation
+LineNum: 1
+CharNum: 90
+
+Type: ID
+LineNum: 1
+CharNum: 91
+Value: c
+
+Type: )
+LineNum: 1
+CharNum: 92
+
+Type: && and
+LineNum: 1
+CharNum: 94
+
+Type: (
+LineNum: 1
+CharNum: 97
+
+Type: X next
+LineNum: 1
+CharNum: 98
+
+Type: (
+LineNum: 1
+CharNum: 99
+
+Type: X next
+LineNum: 1
+CharNum: 100
+
+Type: (
+LineNum: 1
+CharNum: 101
+
+Type: ID
+LineNum: 1
+CharNum: 102
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 103
+
+Type: )
+LineNum: 1
+CharNum: 104
+
+Type: )
+LineNum: 1
+CharNum: 105
+
+Type: )
+LineNum: 1
+CharNum: 106
+
+Type: )
+LineNum: 1
+CharNum: 107
+
+Type: )
+LineNum: 1
+CharNum: 108
+
+Type: && and
+LineNum: 1
+CharNum: 110
+
+Type: (
+LineNum: 1
+CharNum: 113
+
+Type: [] always
+LineNum: 1
+CharNum: 114
+
+Type: (
+LineNum: 1
+CharNum: 116
+
+Type: (
+LineNum: 1
+CharNum: 117
+
+Type: ID
+LineNum: 1
+CharNum: 118
+Value: a
+
+Type: && and
+LineNum: 1
+CharNum: 120
+
+Type: ID
+LineNum: 1
+CharNum: 123
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 124
+
+Type: -> implies
+LineNum: 1
+CharNum: 126
+
+Type: (
+LineNum: 1
+CharNum: 129
+
+Type: ID
+LineNum: 1
+CharNum: 130
+Value: c
+
+Type: && and
+LineNum: 1
+CharNum: 132
+
+Type: (
+LineNum: 1
+CharNum: 135
+
+Type: X next
+LineNum: 1
+CharNum: 136
+
+Type: (
+LineNum: 1
+CharNum: 137
+
+Type: X next
+LineNum: 1
+CharNum: 138
+
+Type: (
+LineNum: 1
+CharNum: 139
+
+Type: ! negation
+LineNum: 1
+CharNum: 140
+
+Type: ID
+LineNum: 1
+CharNum: 141
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 142
+
+Type: )
+LineNum: 1
+CharNum: 143
+
+Type: )
+LineNum: 1
+CharNum: 144
+
+Type: )
+LineNum: 1
+CharNum: 145
+
+Type: )
+LineNum: 1
+CharNum: 146
+
+Type: )
+LineNum: 1
+CharNum: 147
+
+Type: && and
+LineNum: 1
+CharNum: 149
+
+Type: (
+LineNum: 1
+CharNum: 152
+
+Type: [] always
+LineNum: 1
+CharNum: 153
+
+Type: (
+LineNum: 1
+CharNum: 155
+
+Type: (
+LineNum: 1
+CharNum: 157
+
+Type: (
+LineNum: 1
+CharNum: 158
+
+Type: ! negation
+LineNum: 1
+CharNum: 159
+
+Type: ID
+LineNum: 1
+CharNum: 160
+Value: c
+
+Type: )
+LineNum: 1
+CharNum: 161
+
+Type: && and
+LineNum: 1
+CharNum: 163
+
+Type: X next
+LineNum: 1
+CharNum: 166
+
+Type: (
+LineNum: 1
+CharNum: 167
+
+Type: ! negation
+LineNum: 1
+CharNum: 168
+
+Type: ID
+LineNum: 1
+CharNum: 169
+Value: a
+
+Type: )
+LineNum: 1
+CharNum: 170
+
+Type: )
+LineNum: 1
+CharNum: 171
+
+Type: -> implies
+LineNum: 1
+CharNum: 173
+
+Type: (
+LineNum: 1
+CharNum: 176
+
+Type: X next
+LineNum: 1
+CharNum: 178
+
+Type: (
+LineNum: 1
+CharNum: 179
+
+Type: ! negation
+LineNum: 1
+CharNum: 180
+
+Type: ID
+LineNum: 1
+CharNum: 181
+Value: c
+
+Type: )
+LineNum: 1
+CharNum: 182
+
+Type: && and
+LineNum: 1
+CharNum: 184
+
+Type: (
+LineNum: 1
+CharNum: 187
+
+Type: X next
+LineNum: 1
+CharNum: 188
+
+Type: (
+LineNum: 1
+CharNum: 189
+
+Type: ID
+LineNum: 1
+CharNum: 190
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 191
+
+Type: -> implies
+LineNum: 1
+CharNum: 193
+
+Type: (
+LineNum: 1
+CharNum: 196
+
+Type: X next
+LineNum: 1
+CharNum: 197
+
+Type: (
+LineNum: 1
+CharNum: 198
+
+Type: X next
+LineNum: 1
+CharNum: 199
+
+Type: (
+LineNum: 1
+CharNum: 200
+
+Type: X next
+LineNum: 1
+CharNum: 201
+
+Type: (
+LineNum: 1
+CharNum: 202
+
+Type: ID
+LineNum: 1
+CharNum: 203
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 204
+
+Type: )
+LineNum: 1
+CharNum: 205
+
+Type: )
+LineNum: 1
+CharNum: 206
+
+Type: )
+LineNum: 1
+CharNum: 207
+
+Type: )
+LineNum: 1
+CharNum: 208
+
+Type: && and
+LineNum: 1
+CharNum: 210
+
+Type: (
+LineNum: 1
+CharNum: 213
+
+Type: X next
+LineNum: 1
+CharNum: 214
+
+Type: (
+LineNum: 1
+CharNum: 215
+
+Type: ! negation
+LineNum: 1
+CharNum: 216
+
+Type: ID
+LineNum: 1
+CharNum: 217
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 218
+
+Type: -> implies
+LineNum: 1
+CharNum: 220
+
+Type: (
+LineNum: 1
+CharNum: 223
+
+Type: X next
+LineNum: 1
+CharNum: 224
+
+Type: (
+LineNum: 1
+CharNum: 225
+
+Type: X next
+LineNum: 1
+CharNum: 226
+
+Type: (
+LineNum: 1
+CharNum: 227
+
+Type: X next
+LineNum: 1
+CharNum: 228
+
+Type: (
+LineNum: 1
+CharNum: 229
+
+Type: ! negation
+LineNum: 1
+CharNum: 230
+
+Type: ID
+LineNum: 1
+CharNum: 231
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 232
+
+Type: )
+LineNum: 1
+CharNum: 233
+
+Type: )
+LineNum: 1
+CharNum: 234
+
+Type: )
+LineNum: 1
+CharNum: 235
+
+Type: )
+LineNum: 1
+CharNum: 237
+
+Type: )
+LineNum: 1
+CharNum: 239
+
+Type: )
+LineNum: 1
+CharNum: 241
+
+Type: )
+LineNum: 1
+CharNum: 242
+
+Type: && and
+LineNum: 1
+CharNum: 244
+
+Type: (
+LineNum: 1
+CharNum: 247
+
+Type: [] always
+LineNum: 1
+CharNum: 248
+
+Type: (
+LineNum: 1
+CharNum: 250
+
+Type: ID
+LineNum: 1
+CharNum: 252
+Value: c
+
+Type: -> implies
+LineNum: 1
+CharNum: 254
+
+Type: (
+LineNum: 1
+CharNum: 257
+
+Type: (
+LineNum: 1
+CharNum: 259
+
+Type: X next
+LineNum: 1
+CharNum: 261
+
+Type: (
+LineNum: 1
+CharNum: 262
+
+Type: ! negation
+LineNum: 1
+CharNum: 263
+
+Type: ID
+LineNum: 1
+CharNum: 264
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 265
+
+Type: -> implies
+LineNum: 1
+CharNum: 267
+
+Type: (
+LineNum: 1
+CharNum: 270
+
+Type: X next
+LineNum: 1
+CharNum: 272
+
+Type: (
+LineNum: 1
+CharNum: 273
+
+Type: ! negation
+LineNum: 1
+CharNum: 274
+
+Type: ID
+LineNum: 1
+CharNum: 275
+Value: c
+
+Type: )
+LineNum: 1
+CharNum: 276
+
+Type: && and
+LineNum: 1
+CharNum: 278
+
+Type: (
+LineNum: 1
+CharNum: 281
+
+Type: X next
+LineNum: 1
+CharNum: 282
+
+Type: (
+LineNum: 1
+CharNum: 283
+
+Type: X next
+LineNum: 1
+CharNum: 284
+
+Type: (
+LineNum: 1
+CharNum: 285
+
+Type: X next
+LineNum: 1
+CharNum: 286
+
+Type: (
+LineNum: 1
+CharNum: 287
+
+Type: ID
+LineNum: 1
+CharNum: 288
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 289
+
+Type: )
+LineNum: 1
+CharNum: 290
+
+Type: )
+LineNum: 1
+CharNum: 291
+
+Type: )
+LineNum: 1
+CharNum: 292
+
+Type: )
+LineNum: 1
+CharNum: 294
+
+Type: )
+LineNum: 1
+CharNum: 296
+
+Type: && and
+LineNum: 1
+CharNum: 298
+
+Type: (
+LineNum: 1
+CharNum: 301
+
+Type: X next
+LineNum: 1
+CharNum: 303
+
+Type: (
+LineNum: 1
+CharNum: 304
+
+Type: ID
+LineNum: 1
+CharNum: 305
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 306
+
+Type: -> implies
+LineNum: 1
+CharNum: 308
+
+Type: (
+LineNum: 1
+CharNum: 311
+
+Type: X next
+LineNum: 1
+CharNum: 313
+
+Type: (
+LineNum: 1
+CharNum: 314
+
+Type: ID
+LineNum: 1
+CharNum: 315
+Value: c
+
+Type: )
+LineNum: 1
+CharNum: 316
+
+Type: && and
+LineNum: 1
+CharNum: 318
+
+Type: (
+LineNum: 1
+CharNum: 321
+
+Type: X next
+LineNum: 1
+CharNum: 322
+
+Type: (
+LineNum: 1
+CharNum: 323
+
+Type: X next
+LineNum: 1
+CharNum: 324
+
+Type: (
+LineNum: 1
+CharNum: 325
+
+Type: X next
+LineNum: 1
+CharNum: 326
+
+Type: (
+LineNum: 1
+CharNum: 327
+
+Type: ! negation
+LineNum: 1
+CharNum: 328
+
+Type: ID
+LineNum: 1
+CharNum: 329
+Value: b
+
+Type: )
+LineNum: 1
+CharNum: 330
+
+Type: )
+LineNum: 1
+CharNum: 331
+
+Type: )
+LineNum: 1
+CharNum: 332
+
+Type: )
+LineNum: 1
+CharNum: 333
+
+Type: )
+LineNum: 1
+CharNum: 335
+
+Type: )
+LineNum: 1
+CharNum: 337
+
+Type: )
+LineNum: 1
+CharNum: 339
+
+Type: )
+LineNum: 1
+CharNum: 340
+
+Type: )
+LineNum: 1
+CharNum: 341
+
+Type: )
+LineNum: 1
+CharNum: 342
+
+Type: (
+LineNum: 3
+CharNum: 1
+
+Type: [] always
+LineNum: 3
+CharNum: 2
+
+Type: (
+LineNum: 3
+CharNum: 4
+
+Type: (
+LineNum: 3
+CharNum: 5
+
+Type: ID
+LineNum: 3
+CharNum: 6
+Value: f0
+
+Type: -> implies
+LineNum: 3
+CharNum: 9
+
+Type: (
+LineNum: 3
+CharNum: 12
+
+Type: (
+LineNum: 3
+CharNum: 13
+
+Type: ! negation
+LineNum: 3
+CharNum: 14
+
+Type: ID
+LineNum: 3
+CharNum: 15
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 17
+
+Type: )
+LineNum: 3
+CharNum: 18
+
+Type: )
+LineNum: 3
+CharNum: 19
+
+Type: )
+LineNum: 3
+CharNum: 20
+
+Type: )
+LineNum: 3
+CharNum: 21
+
+Type: && and
+LineNum: 3
+CharNum: 23
+
+Type: (
+LineNum: 3
+CharNum: 26
+
+Type: ! negation
+LineNum: 3
+CharNum: 27
+
+Type: ID
+LineNum: 3
+CharNum: 28
+Value: u
+
+Type: && and
+LineNum: 3
+CharNum: 30
+
+Type: (
+LineNum: 3
+CharNum: 33
+
+Type: ID
+LineNum: 3
+CharNum: 34
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 36
+
+Type: && and
+LineNum: 3
+CharNum: 38
+
+Type: ! negation
+LineNum: 3
+CharNum: 41
+
+Type: ID
+LineNum: 3
+CharNum: 42
+Value: b0
+
+Type: && and
+LineNum: 3
+CharNum: 45
+
+Type: ! negation
+LineNum: 3
+CharNum: 48
+
+Type: ID
+LineNum: 3
+CharNum: 49
+Value: b1
+
+Type: && and
+LineNum: 3
+CharNum: 52
+
+Type: ! negation
+LineNum: 3
+CharNum: 55
+
+Type: ID
+LineNum: 3
+CharNum: 56
+Value: up
+
+Type: )
+LineNum: 3
+CharNum: 58
+
+Type: && and
+LineNum: 3
+CharNum: 60
+
+Type: (
+LineNum: 3
+CharNum: 63
+
+Type: [] always
+LineNum: 3
+CharNum: 64
+
+Type: (
+LineNum: 3
+CharNum: 66
+
+Type: ID
+LineNum: 3
+CharNum: 67
+Value: u
+
+Type: <-> equivalent
+LineNum: 3
+CharNum: 69
+
+Type: ! negation
+LineNum: 3
+CharNum: 73
+
+Type: X next
+LineNum: 3
+CharNum: 74
+
+Type: ID
+LineNum: 3
+CharNum: 75
+Value: u
+
+Type: )
+LineNum: 3
+CharNum: 76
+
+Type: )
+LineNum: 3
+CharNum: 77
+
+Type: && and
+LineNum: 3
+CharNum: 79
+
+Type: (
+LineNum: 3
+CharNum: 82
+
+Type: [] always
+LineNum: 3
+CharNum: 83
+
+Type: (
+LineNum: 3
+CharNum: 85
+
+Type: (
+LineNum: 3
+CharNum: 86
+
+Type: ID
+LineNum: 3
+CharNum: 87
+Value: u
+
+Type: -> implies
+LineNum: 3
+CharNum: 89
+
+Type: (
+LineNum: 3
+CharNum: 92
+
+Type: (
+LineNum: 3
+CharNum: 93
+
+Type: ID
+LineNum: 3
+CharNum: 94
+Value: f0
+
+Type: <-> equivalent
+LineNum: 3
+CharNum: 97
+
+Type: X next
+LineNum: 3
+CharNum: 101
+
+Type: ID
+LineNum: 3
+CharNum: 103
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 105
+
+Type: && and
+LineNum: 3
+CharNum: 107
+
+Type: (
+LineNum: 3
+CharNum: 110
+
+Type: ID
+LineNum: 3
+CharNum: 111
+Value: f1
+
+Type: <-> equivalent
+LineNum: 3
+CharNum: 114
+
+Type: X next
+LineNum: 3
+CharNum: 118
+
+Type: ID
+LineNum: 3
+CharNum: 120
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 122
+
+Type: )
+LineNum: 3
+CharNum: 123
+
+Type: )
+LineNum: 3
+CharNum: 124
+
+Type: && and
+LineNum: 3
+CharNum: 126
+
+Type: (
+LineNum: 3
+CharNum: 129
+
+Type: (
+LineNum: 3
+CharNum: 130
+
+Type: ID
+LineNum: 3
+CharNum: 131
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 133
+
+Type: -> implies
+LineNum: 3
+CharNum: 135
+
+Type: (
+LineNum: 3
+CharNum: 138
+
+Type: X next
+LineNum: 3
+CharNum: 139
+
+Type: (
+LineNum: 3
+CharNum: 141
+
+Type: (
+LineNum: 3
+CharNum: 142
+
+Type: ID
+LineNum: 3
+CharNum: 143
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 145
+
+Type: || or
+LineNum: 3
+CharNum: 147
+
+Type: (
+LineNum: 3
+CharNum: 150
+
+Type: ID
+LineNum: 3
+CharNum: 151
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 153
+
+Type: )
+LineNum: 3
+CharNum: 154
+
+Type: )
+LineNum: 3
+CharNum: 155
+
+Type: )
+LineNum: 3
+CharNum: 156
+
+Type: && and
+LineNum: 3
+CharNum: 158
+
+Type: (
+LineNum: 3
+CharNum: 161
+
+Type: (
+LineNum: 3
+CharNum: 162
+
+Type: ID
+LineNum: 3
+CharNum: 163
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 165
+
+Type: -> implies
+LineNum: 3
+CharNum: 167
+
+Type: (
+LineNum: 3
+CharNum: 170
+
+Type: X next
+LineNum: 3
+CharNum: 171
+
+Type: (
+LineNum: 3
+CharNum: 173
+
+Type: (
+LineNum: 3
+CharNum: 174
+
+Type: ID
+LineNum: 3
+CharNum: 175
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 177
+
+Type: || or
+LineNum: 3
+CharNum: 179
+
+Type: (
+LineNum: 3
+CharNum: 182
+
+Type: ID
+LineNum: 3
+CharNum: 183
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 185
+
+Type: )
+LineNum: 3
+CharNum: 186
+
+Type: )
+LineNum: 3
+CharNum: 187
+
+Type: )
+LineNum: 3
+CharNum: 188
+
+Type: )
+LineNum: 3
+CharNum: 189
+
+Type: )
+LineNum: 3
+CharNum: 190
+
+Type: && and
+LineNum: 3
+CharNum: 192
+
+Type: (
+LineNum: 3
+CharNum: 195
+
+Type: [] always
+LineNum: 3
+CharNum: 196
+
+Type: (
+LineNum: 3
+CharNum: 198
+
+Type: (
+LineNum: 3
+CharNum: 199
+
+Type: ! negation
+LineNum: 3
+CharNum: 200
+
+Type: ID
+LineNum: 3
+CharNum: 201
+Value: u
+
+Type: -> implies
+LineNum: 3
+CharNum: 203
+
+Type: (
+LineNum: 3
+CharNum: 206
+
+Type: (
+LineNum: 3
+CharNum: 207
+
+Type: ID
+LineNum: 3
+CharNum: 208
+Value: b0
+
+Type: <-> equivalent
+LineNum: 3
+CharNum: 211
+
+Type: X next
+LineNum: 3
+CharNum: 215
+
+Type: ID
+LineNum: 3
+CharNum: 217
+Value: b0
+
+Type: )
+LineNum: 3
+CharNum: 219
+
+Type: && and
+LineNum: 3
+CharNum: 221
+
+Type: (
+LineNum: 3
+CharNum: 224
+
+Type: ID
+LineNum: 3
+CharNum: 225
+Value: b1
+
+Type: <-> equivalent
+LineNum: 3
+CharNum: 228
+
+Type: X next
+LineNum: 3
+CharNum: 232
+
+Type: ID
+LineNum: 3
+CharNum: 234
+Value: b1
+
+Type: )
+LineNum: 3
+CharNum: 236
+
+Type: )
+LineNum: 3
+CharNum: 237
+
+Type: )
+LineNum: 3
+CharNum: 238
+
+Type: && and
+LineNum: 3
+CharNum: 240
+
+Type: (
+LineNum: 3
+CharNum: 243
+
+Type: (
+LineNum: 3
+CharNum: 244
+
+Type: ID
+LineNum: 3
+CharNum: 245
+Value: b0
+
+Type: && and
+LineNum: 3
+CharNum: 248
+
+Type: ! negation
+LineNum: 3
+CharNum: 251
+
+Type: (
+LineNum: 3
+CharNum: 252
+
+Type: ID
+LineNum: 3
+CharNum: 253
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 255
+
+Type: )
+LineNum: 3
+CharNum: 256
+
+Type: -> implies
+LineNum: 3
+CharNum: 258
+
+Type: X next
+LineNum: 3
+CharNum: 261
+
+Type: ID
+LineNum: 3
+CharNum: 263
+Value: b0
+
+Type: )
+LineNum: 3
+CharNum: 265
+
+Type: && and
+LineNum: 3
+CharNum: 267
+
+Type: (
+LineNum: 3
+CharNum: 270
+
+Type: (
+LineNum: 3
+CharNum: 271
+
+Type: ID
+LineNum: 3
+CharNum: 272
+Value: b1
+
+Type: && and
+LineNum: 3
+CharNum: 275
+
+Type: ! negation
+LineNum: 3
+CharNum: 278
+
+Type: (
+LineNum: 3
+CharNum: 279
+
+Type: ID
+LineNum: 3
+CharNum: 280
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 282
+
+Type: )
+LineNum: 3
+CharNum: 283
+
+Type: -> implies
+LineNum: 3
+CharNum: 285
+
+Type: X next
+LineNum: 3
+CharNum: 288
+
+Type: ID
+LineNum: 3
+CharNum: 290
+Value: b1
+
+Type: )
+LineNum: 3
+CharNum: 292
+
+Type: )
+LineNum: 3
+CharNum: 293
+
+Type: )
+LineNum: 3
+CharNum: 294
+
+Type: && and
+LineNum: 3
+CharNum: 296
+
+Type: (
+LineNum: 3
+CharNum: 299
+
+Type: [] always
+LineNum: 3
+CharNum: 300
+
+Type: (
+LineNum: 3
+CharNum: 302
+
+Type: (
+LineNum: 3
+CharNum: 303
+
+Type: (
+LineNum: 3
+CharNum: 304
+
+Type: (
+LineNum: 3
+CharNum: 305
+
+Type: (
+LineNum: 3
+CharNum: 306
+
+Type: ID
+LineNum: 3
+CharNum: 307
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 309
+
+Type: && and
+LineNum: 3
+CharNum: 311
+
+Type: X next
+LineNum: 3
+CharNum: 314
+
+Type: (
+LineNum: 3
+CharNum: 316
+
+Type: ID
+LineNum: 3
+CharNum: 317
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 319
+
+Type: )
+LineNum: 3
+CharNum: 320
+
+Type: -> implies
+LineNum: 3
+CharNum: 322
+
+Type: (
+LineNum: 3
+CharNum: 325
+
+Type: ID
+LineNum: 3
+CharNum: 326
+Value: up
+
+Type: <-> equivalent
+LineNum: 3
+CharNum: 329
+
+Type: X next
+LineNum: 3
+CharNum: 333
+
+Type: ID
+LineNum: 3
+CharNum: 335
+Value: up
+
+Type: )
+LineNum: 3
+CharNum: 337
+
+Type: )
+LineNum: 3
+CharNum: 338
+
+Type: && and
+LineNum: 3
+CharNum: 340
+
+Type: (
+LineNum: 3
+CharNum: 343
+
+Type: (
+LineNum: 3
+CharNum: 344
+
+Type: (
+LineNum: 3
+CharNum: 345
+
+Type: ID
+LineNum: 3
+CharNum: 346
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 348
+
+Type: && and
+LineNum: 3
+CharNum: 350
+
+Type: X next
+LineNum: 3
+CharNum: 353
+
+Type: (
+LineNum: 3
+CharNum: 355
+
+Type: ID
+LineNum: 3
+CharNum: 356
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 358
+
+Type: )
+LineNum: 3
+CharNum: 359
+
+Type: -> implies
+LineNum: 3
+CharNum: 361
+
+Type: (
+LineNum: 3
+CharNum: 364
+
+Type: ID
+LineNum: 3
+CharNum: 365
+Value: up
+
+Type: <-> equivalent
+LineNum: 3
+CharNum: 368
+
+Type: X next
+LineNum: 3
+CharNum: 372
+
+Type: ID
+LineNum: 3
+CharNum: 374
+Value: up
+
+Type: )
+LineNum: 3
+CharNum: 376
+
+Type: )
+LineNum: 3
+CharNum: 377
+
+Type: )
+LineNum: 3
+CharNum: 378
+
+Type: && and
+LineNum: 3
+CharNum: 380
+
+Type: (
+LineNum: 3
+CharNum: 383
+
+Type: (
+LineNum: 3
+CharNum: 384
+
+Type: (
+LineNum: 3
+CharNum: 385
+
+Type: (
+LineNum: 3
+CharNum: 386
+
+Type: ID
+LineNum: 3
+CharNum: 387
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 389
+
+Type: && and
+LineNum: 3
+CharNum: 391
+
+Type: X next
+LineNum: 3
+CharNum: 394
+
+Type: (
+LineNum: 3
+CharNum: 396
+
+Type: ID
+LineNum: 3
+CharNum: 397
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 399
+
+Type: )
+LineNum: 3
+CharNum: 400
+
+Type: -> implies
+LineNum: 3
+CharNum: 402
+
+Type: ID
+LineNum: 3
+CharNum: 405
+Value: up
+
+Type: )
+LineNum: 3
+CharNum: 407
+
+Type: )
+LineNum: 3
+CharNum: 408
+
+Type: && and
+LineNum: 3
+CharNum: 410
+
+Type: (
+LineNum: 3
+CharNum: 413
+
+Type: (
+LineNum: 3
+CharNum: 414
+
+Type: (
+LineNum: 3
+CharNum: 415
+
+Type: (
+LineNum: 3
+CharNum: 416
+
+Type: ID
+LineNum: 3
+CharNum: 417
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 419
+
+Type: && and
+LineNum: 3
+CharNum: 421
+
+Type: X next
+LineNum: 3
+CharNum: 424
+
+Type: (
+LineNum: 3
+CharNum: 426
+
+Type: ID
+LineNum: 3
+CharNum: 427
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 429
+
+Type: )
+LineNum: 3
+CharNum: 430
+
+Type: -> implies
+LineNum: 3
+CharNum: 432
+
+Type: (
+LineNum: 3
+CharNum: 435
+
+Type: ! negation
+LineNum: 3
+CharNum: 436
+
+Type: ID
+LineNum: 3
+CharNum: 437
+Value: up
+
+Type: )
+LineNum: 3
+CharNum: 439
+
+Type: )
+LineNum: 3
+CharNum: 440
+
+Type: )
+LineNum: 3
+CharNum: 441
+
+Type: )
+LineNum: 3
+CharNum: 442
+
+Type: )
+LineNum: 3
+CharNum: 443
+
+Type: && and
+LineNum: 3
+CharNum: 445
+
+Type: (
+LineNum: 3
+CharNum: 448
+
+Type: [] always
+LineNum: 3
+CharNum: 449
+
+Type: (
+LineNum: 3
+CharNum: 451
+
+Type: ID
+LineNum: 3
+CharNum: 452
+Value: sb
+
+Type: <-> equivalent
+LineNum: 3
+CharNum: 455
+
+Type: (
+LineNum: 3
+CharNum: 459
+
+Type: ID
+LineNum: 3
+CharNum: 460
+Value: b0
+
+Type: || or
+LineNum: 3
+CharNum: 463
+
+Type: ID
+LineNum: 3
+CharNum: 466
+Value: b1
+
+Type: )
+LineNum: 3
+CharNum: 468
+
+Type: )
+LineNum: 3
+CharNum: 469
+
+Type: )
+LineNum: 3
+CharNum: 470
+
+Type: && and
+LineNum: 3
+CharNum: 472
+
+Type: (
+LineNum: 3
+CharNum: 475
+
+Type: [] always
+LineNum: 3
+CharNum: 476
+
+Type: (
+LineNum: 3
+CharNum: 478
+
+Type: (
+LineNum: 3
+CharNum: 479
+
+Type: (
+LineNum: 3
+CharNum: 480
+
+Type: (
+LineNum: 3
+CharNum: 481
+
+Type: ID
+LineNum: 3
+CharNum: 482
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 484
+
+Type: && and
+LineNum: 3
+CharNum: 486
+
+Type: ! negation
+LineNum: 3
+CharNum: 489
+
+Type: ID
+LineNum: 3
+CharNum: 490
+Value: sb
+
+Type: )
+LineNum: 3
+CharNum: 492
+
+Type: -> implies
+LineNum: 3
+CharNum: 494
+
+Type: (
+LineNum: 3
+CharNum: 497
+
+Type: (
+LineNum: 3
+CharNum: 498
+
+Type: ID
+LineNum: 3
+CharNum: 499
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 501
+
+Type: U until
+LineNum: 3
+CharNum: 503
+
+Type: (
+LineNum: 3
+CharNum: 505
+
+Type: ID
+LineNum: 3
+CharNum: 506
+Value: sb
+
+Type: V dual
+LineNum: 3
+CharNum: 509
+
+Type: (
+LineNum: 3
+CharNum: 511
+
+Type: (
+LineNum: 3
+CharNum: 512
+
+Type: <> eventually
+LineNum: 3
+CharNum: 513
+
+Type: (
+LineNum: 3
+CharNum: 515
+
+Type: ID
+LineNum: 3
+CharNum: 516
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 518
+
+Type: )
+LineNum: 3
+CharNum: 519
+
+Type: && and
+LineNum: 3
+CharNum: 521
+
+Type: (
+LineNum: 3
+CharNum: 524
+
+Type: ! negation
+LineNum: 3
+CharNum: 525
+
+Type: ID
+LineNum: 3
+CharNum: 526
+Value: up
+
+Type: )
+LineNum: 3
+CharNum: 528
+
+Type: )
+LineNum: 3
+CharNum: 529
+
+Type: )
+LineNum: 3
+CharNum: 530
+
+Type: )
+LineNum: 3
+CharNum: 531
+
+Type: )
+LineNum: 3
+CharNum: 532
+
+Type: && and
+LineNum: 3
+CharNum: 534
+
+Type: (
+LineNum: 3
+CharNum: 537
+
+Type: (
+LineNum: 3
+CharNum: 538
+
+Type: (
+LineNum: 3
+CharNum: 539
+
+Type: ID
+LineNum: 3
+CharNum: 540
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 542
+
+Type: && and
+LineNum: 3
+CharNum: 544
+
+Type: ! negation
+LineNum: 3
+CharNum: 547
+
+Type: ID
+LineNum: 3
+CharNum: 548
+Value: sb
+
+Type: )
+LineNum: 3
+CharNum: 550
+
+Type: -> implies
+LineNum: 3
+CharNum: 552
+
+Type: (
+LineNum: 3
+CharNum: 555
+
+Type: (
+LineNum: 3
+CharNum: 556
+
+Type: ID
+LineNum: 3
+CharNum: 557
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 559
+
+Type: U until
+LineNum: 3
+CharNum: 561
+
+Type: (
+LineNum: 3
+CharNum: 563
+
+Type: ID
+LineNum: 3
+CharNum: 564
+Value: sb
+
+Type: V dual
+LineNum: 3
+CharNum: 567
+
+Type: (
+LineNum: 3
+CharNum: 569
+
+Type: (
+LineNum: 3
+CharNum: 570
+
+Type: <> eventually
+LineNum: 3
+CharNum: 571
+
+Type: (
+LineNum: 3
+CharNum: 573
+
+Type: ID
+LineNum: 3
+CharNum: 574
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 576
+
+Type: )
+LineNum: 3
+CharNum: 577
+
+Type: && and
+LineNum: 3
+CharNum: 579
+
+Type: (
+LineNum: 3
+CharNum: 582
+
+Type: ! negation
+LineNum: 3
+CharNum: 583
+
+Type: ID
+LineNum: 3
+CharNum: 584
+Value: up
+
+Type: )
+LineNum: 3
+CharNum: 586
+
+Type: )
+LineNum: 3
+CharNum: 587
+
+Type: )
+LineNum: 3
+CharNum: 588
+
+Type: )
+LineNum: 3
+CharNum: 589
+
+Type: )
+LineNum: 3
+CharNum: 590
+
+Type: )
+LineNum: 3
+CharNum: 591
+
+Type: )
+LineNum: 3
+CharNum: 592
+
+Type: && and
+LineNum: 3
+CharNum: 594
+
+Type: (
+LineNum: 3
+CharNum: 597
+
+Type: [] always
+LineNum: 3
+CharNum: 598
+
+Type: (
+LineNum: 3
+CharNum: 600
+
+Type: (
+LineNum: 3
+CharNum: 601
+
+Type: ID
+LineNum: 3
+CharNum: 602
+Value: b0
+
+Type: -> implies
+LineNum: 3
+CharNum: 605
+
+Type: (
+LineNum: 3
+CharNum: 608
+
+Type: <> eventually
+LineNum: 3
+CharNum: 609
+
+Type: (
+LineNum: 3
+CharNum: 612
+
+Type: ID
+LineNum: 3
+CharNum: 613
+Value: f0
+
+Type: )
+LineNum: 3
+CharNum: 615
+
+Type: )
+LineNum: 3
+CharNum: 616
+
+Type: )
+LineNum: 3
+CharNum: 617
+
+Type: && and
+LineNum: 3
+CharNum: 618
+
+Type: (
+LineNum: 3
+CharNum: 621
+
+Type: ID
+LineNum: 3
+CharNum: 622
+Value: b1
+
+Type: -> implies
+LineNum: 3
+CharNum: 625
+
+Type: (
+LineNum: 3
+CharNum: 628
+
+Type: <> eventually
+LineNum: 3
+CharNum: 629
+
+Type: (
+LineNum: 3
+CharNum: 632
+
+Type: ID
+LineNum: 3
+CharNum: 633
+Value: f1
+
+Type: )
+LineNum: 3
+CharNum: 635
+
+Type: )
+LineNum: 3
+CharNum: 636
+
+Type: )
+LineNum: 3
+CharNum: 637
+
+Type: )
+LineNum: 3
+CharNum: 638
+
+Type: )
+LineNum: 3
+CharNum: 639
+
+Type: (
+LineNum: 5
+CharNum: 1
+
+Type: ! negation
+LineNum: 5
+CharNum: 3
+
+Type: (
+LineNum: 5
+CharNum: 4
+
+Type: (
+LineNum: 5
+CharNum: 6
+
+Type: ! negation
+LineNum: 5
+CharNum: 8
+
+Type: (
+LineNum: 5
+CharNum: 9
+
+Type: (
+LineNum: 5
+CharNum: 10
+
+Type: ! negation
+LineNum: 5
+CharNum: 12
+
+Type: (
+LineNum: 5
+CharNum: 13
+
+Type: (
+LineNum: 5
+CharNum: 15
+
+Type: ! negation
+LineNum: 5
+CharNum: 17
+
+Type: (
+LineNum: 5
+CharNum: 18
+
+Type: (
+LineNum: 5
+CharNum: 19
+
+Type: ! negation
+LineNum: 5
+CharNum: 20
+
+Type: (
+LineNum: 5
+CharNum: 22
+
+Type: ID
+LineNum: 5
+CharNum: 23
+Value: b
+
+Type: )
+LineNum: 5
+CharNum: 24
+
+Type: )
+LineNum: 5
+CharNum: 25
+
+Type: )
+LineNum: 5
+CharNum: 26
+
+Type: )
+LineNum: 5
+CharNum: 27
+
+Type: U until
+LineNum: 5
+CharNum: 29
+
+Type: (
+LineNum: 5
+CharNum: 31
+
+Type: ! negation
+LineNum: 5
+CharNum: 32
+
+Type: (
+LineNum: 5
+CharNum: 33
+
+Type: (
+LineNum: 5
+CharNum: 34
+
+Type: ! negation
+LineNum: 5
+CharNum: 35
+
+Type: (
+LineNum: 5
+CharNum: 37
+
+Type: ID
+LineNum: 5
+CharNum: 38
+Value: a
+
+Type: )
+LineNum: 5
+CharNum: 39
+
+Type: )
+LineNum: 5
+CharNum: 40
+
+Type: )
+LineNum: 5
+CharNum: 41
+
+Type: )
+LineNum: 5
+CharNum: 42
+
+Type: )
+LineNum: 5
+CharNum: 43
+
+Type: )
+LineNum: 5
+CharNum: 45
+
+Type: )
+LineNum: 5
+CharNum: 46
+
+Type: )
+LineNum: 5
+CharNum: 47
+
+Type: U until
+LineNum: 5
+CharNum: 49
+
+Type: (
+LineNum: 5
+CharNum: 51
+
+Type: ! negation
+LineNum: 5
+CharNum: 52
+
+Type: (
+LineNum: 5
+CharNum: 53
+
+Type: (
+LineNum: 5
+CharNum: 54
+
+Type: ID
+LineNum: 5
+CharNum: 55
+Value: a
+
+Type: )
+LineNum: 5
+CharNum: 56
+
+Type: U until
+LineNum: 5
+CharNum: 58
+
+Type: (
+LineNum: 5
+CharNum: 60
+
+Type: (
+LineNum: 5
+CharNum: 61
+
+Type: X next
+LineNum: 5
+CharNum: 62
+
+Type: (
+LineNum: 5
+CharNum: 64
+
+Type: ID
+LineNum: 5
+CharNum: 65
+Value: a
+
+Type: )
+LineNum: 5
+CharNum: 66
+
+Type: )
+LineNum: 5
+CharNum: 67
+
+Type: )
+LineNum: 5
+CharNum: 68
+
+Type: )
+LineNum: 5
+CharNum: 69
+
+Type: )
+LineNum: 5
+CharNum: 70
+
+Type: )
+LineNum: 5
+CharNum: 71
+
+Type: )
+LineNum: 5
+CharNum: 73
+
+Type: (
+LineNum: 6
+CharNum: 1
+
+Type: ! negation
+LineNum: 6
+CharNum: 2
+
+Type: (
+LineNum: 6
+CharNum: 4
+
+Type: (
+LineNum: 6
+CharNum: 5
+
+Type: (
+LineNum: 6
+CharNum: 6
+
+Type: ID
+LineNum: 6
+CharNum: 7
+Value: a
+
+Type: )
+LineNum: 6
+CharNum: 8
+
+Type: || or
+LineNum: 6
+CharNum: 10
+
+Type: (
+LineNum: 6
+CharNum: 13
+
+Type: ID
+LineNum: 6
+CharNum: 14
+Value: a
+
+Type: )
+LineNum: 6
+CharNum: 15
+
+Type: )
+LineNum: 6
+CharNum: 16
+
+Type: U until
+LineNum: 6
+CharNum: 18
+
+Type: (
+LineNum: 6
+CharNum: 20
+
+Type: (
+LineNum: 6
+CharNum: 21
+
+Type: X next
+LineNum: 6
+CharNum: 22
+
+Type: (
+LineNum: 6
+CharNum: 24
+
+Type: (
+LineNum: 6
+CharNum: 25
+
+Type: ID
+LineNum: 6
+CharNum: 26
+Value: b
+
+Type: )
+LineNum: 6
+CharNum: 27
+
+Type: || or
+LineNum: 6
+CharNum: 29
+
+Type: (
+LineNum: 6
+CharNum: 32
+
+Type: (
+LineNum: 6
+CharNum: 33
+
+Type: ! negation
+LineNum: 6
+CharNum: 34
+
+Type: (
+LineNum: 6
+CharNum: 36
+
+Type: ID
+LineNum: 6
+CharNum: 37
+Value: b
+
+Type: )
+LineNum: 6
+CharNum: 38
+
+Type: )
+LineNum: 6
+CharNum: 39
+
+Type: )
+LineNum: 6
+CharNum: 40
+
+Type: )
+LineNum: 6
+CharNum: 41
+
+Type: )
+LineNum: 6
+CharNum: 42
+
+Type: )
+LineNum: 6
+CharNum: 43
+
+Type: )
+LineNum: 6
+CharNum: 44
+
+Type: )
+LineNum: 6
+CharNum: 45
+
+Type: (
+LineNum: 8
+CharNum: 1
+
+Type: (
+LineNum: 8
+CharNum: 2
+
+Type: (
+LineNum: 8
+CharNum: 3
+
+Type: (
+LineNum: 8
+CharNum: 4
+
+Type: (
+LineNum: 8
+CharNum: 5
+
+Type: [] always
+LineNum: 8
+CharNum: 7
+
+Type: (
+LineNum: 8
+CharNum: 9
+
+Type: <> eventually
+LineNum: 8
+CharNum: 11
+
+Type: (
+LineNum: 8
+CharNum: 13
+
+Type: ID
+LineNum: 8
+CharNum: 14
+Value: taken12
+
+Type: )
+LineNum: 8
+CharNum: 21
+
+Type: )
+LineNum: 8
+CharNum: 22
+
+Type: && and
+LineNum: 8
+CharNum: 24
+
+Type: (
+LineNum: 8
+CharNum: 27
+
+Type: (
+LineNum: 8
+CharNum: 28
+
+Type: [] always
+LineNum: 8
+CharNum: 30
+
+Type: (
+LineNum: 8
+CharNum: 32
+
+Type: <> eventually
+LineNum: 8
+CharNum: 34
+
+Type: (
+LineNum: 8
+CharNum: 36
+
+Type: ID
+LineNum: 8
+CharNum: 37
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 44
+
+Type: )
+LineNum: 8
+CharNum: 45
+
+Type: && and
+LineNum: 8
+CharNum: 47
+
+Type: [] always
+LineNum: 8
+CharNum: 51
+
+Type: (
+LineNum: 8
+CharNum: 53
+
+Type: <> eventually
+LineNum: 8
+CharNum: 55
+
+Type: (
+LineNum: 8
+CharNum: 57
+
+Type: ID
+LineNum: 8
+CharNum: 58
+Value: taken34
+
+Type: )
+LineNum: 8
+CharNum: 65
+
+Type: )
+LineNum: 8
+CharNum: 66
+
+Type: )
+LineNum: 8
+CharNum: 67
+
+Type: || or
+LineNum: 8
+CharNum: 69
+
+Type: (
+LineNum: 8
+CharNum: 72
+
+Type: (
+LineNum: 8
+CharNum: 73
+
+Type: ! negation
+LineNum: 8
+CharNum: 74
+
+Type: (
+LineNum: 8
+CharNum: 75
+
+Type: [] always
+LineNum: 8
+CharNum: 77
+
+Type: (
+LineNum: 8
+CharNum: 79
+
+Type: <> eventually
+LineNum: 8
+CharNum: 81
+
+Type: (
+LineNum: 8
+CharNum: 83
+
+Type: ID
+LineNum: 8
+CharNum: 84
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 91
+
+Type: )
+LineNum: 8
+CharNum: 92
+
+Type: )
+LineNum: 8
+CharNum: 93
+
+Type: )
+LineNum: 8
+CharNum: 94
+
+Type: && and
+LineNum: 8
+CharNum: 96
+
+Type: [] always
+LineNum: 8
+CharNum: 100
+
+Type: (
+LineNum: 8
+CharNum: 102
+
+Type: <> eventually
+LineNum: 8
+CharNum: 104
+
+Type: (
+LineNum: 8
+CharNum: 106
+
+Type: ID
+LineNum: 8
+CharNum: 107
+Value: taken35
+
+Type: )
+LineNum: 8
+CharNum: 114
+
+Type: )
+LineNum: 8
+CharNum: 115
+
+Type: )
+LineNum: 8
+CharNum: 116
+
+Type: )
+LineNum: 8
+CharNum: 117
+
+Type: )
+LineNum: 8
+CharNum: 118
+
+Type: )
+LineNum: 8
+CharNum: 119
+
+Type: && and
+LineNum: 8
+CharNum: 121
+
+Type: (
+LineNum: 8
+CharNum: 124
+
+Type: (
+LineNum: 8
+CharNum: 125
+
+Type: [] always
+LineNum: 8
+CharNum: 127
+
+Type: (
+LineNum: 8
+CharNum: 129
+
+Type: <> eventually
+LineNum: 8
+CharNum: 131
+
+Type: (
+LineNum: 8
+CharNum: 133
+
+Type: ID
+LineNum: 8
+CharNum: 134
+Value: taken71
+
+Type: )
+LineNum: 8
+CharNum: 141
+
+Type: )
+LineNum: 8
+CharNum: 142
+
+Type: && and
+LineNum: 8
+CharNum: 144
+
+Type: (
+LineNum: 8
+CharNum: 147
+
+Type: (
+LineNum: 8
+CharNum: 148
+
+Type: [] always
+LineNum: 8
+CharNum: 150
+
+Type: (
+LineNum: 8
+CharNum: 152
+
+Type: <> eventually
+LineNum: 8
+CharNum: 154
+
+Type: (
+LineNum: 8
+CharNum: 156
+
+Type: ID
+LineNum: 8
+CharNum: 157
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 164
+
+Type: )
+LineNum: 8
+CharNum: 165
+
+Type: && and
+LineNum: 8
+CharNum: 167
+
+Type: [] always
+LineNum: 8
+CharNum: 171
+
+Type: (
+LineNum: 8
+CharNum: 173
+
+Type: <> eventually
+LineNum: 8
+CharNum: 175
+
+Type: (
+LineNum: 8
+CharNum: 177
+
+Type: ID
+LineNum: 8
+CharNum: 178
+Value: taken34
+
+Type: )
+LineNum: 8
+CharNum: 185
+
+Type: )
+LineNum: 8
+CharNum: 186
+
+Type: )
+LineNum: 8
+CharNum: 187
+
+Type: || or
+LineNum: 8
+CharNum: 189
+
+Type: (
+LineNum: 8
+CharNum: 192
+
+Type: (
+LineNum: 8
+CharNum: 193
+
+Type: ! negation
+LineNum: 8
+CharNum: 194
+
+Type: (
+LineNum: 8
+CharNum: 195
+
+Type: [] always
+LineNum: 8
+CharNum: 197
+
+Type: (
+LineNum: 8
+CharNum: 199
+
+Type: <> eventually
+LineNum: 8
+CharNum: 201
+
+Type: (
+LineNum: 8
+CharNum: 203
+
+Type: ID
+LineNum: 8
+CharNum: 204
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 211
+
+Type: )
+LineNum: 8
+CharNum: 212
+
+Type: )
+LineNum: 8
+CharNum: 213
+
+Type: )
+LineNum: 8
+CharNum: 214
+
+Type: && and
+LineNum: 8
+CharNum: 216
+
+Type: [] always
+LineNum: 8
+CharNum: 220
+
+Type: (
+LineNum: 8
+CharNum: 222
+
+Type: <> eventually
+LineNum: 8
+CharNum: 224
+
+Type: (
+LineNum: 8
+CharNum: 226
+
+Type: ID
+LineNum: 8
+CharNum: 227
+Value: taken35
+
+Type: )
+LineNum: 8
+CharNum: 234
+
+Type: )
+LineNum: 8
+CharNum: 235
+
+Type: )
+LineNum: 8
+CharNum: 236
+
+Type: )
+LineNum: 8
+CharNum: 237
+
+Type: )
+LineNum: 8
+CharNum: 238
+
+Type: )
+LineNum: 8
+CharNum: 239
+
+Type: && and
+LineNum: 8
+CharNum: 241
+
+Type: (
+LineNum: 8
+CharNum: 244
+
+Type: (
+LineNum: 8
+CharNum: 245
+
+Type: [] always
+LineNum: 8
+CharNum: 247
+
+Type: (
+LineNum: 8
+CharNum: 249
+
+Type: <> eventually
+LineNum: 8
+CharNum: 251
+
+Type: (
+LineNum: 8
+CharNum: 253
+
+Type: ID
+LineNum: 8
+CharNum: 254
+Value: taken23
+
+Type: )
+LineNum: 8
+CharNum: 261
+
+Type: )
+LineNum: 8
+CharNum: 262
+
+Type: && and
+LineNum: 8
+CharNum: 264
+
+Type: (
+LineNum: 8
+CharNum: 267
+
+Type: (
+LineNum: 8
+CharNum: 268
+
+Type: [] always
+LineNum: 8
+CharNum: 270
+
+Type: (
+LineNum: 8
+CharNum: 272
+
+Type: <> eventually
+LineNum: 8
+CharNum: 274
+
+Type: (
+LineNum: 8
+CharNum: 276
+
+Type: ID
+LineNum: 8
+CharNum: 277
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 284
+
+Type: )
+LineNum: 8
+CharNum: 285
+
+Type: && and
+LineNum: 8
+CharNum: 287
+
+Type: [] always
+LineNum: 8
+CharNum: 291
+
+Type: (
+LineNum: 8
+CharNum: 293
+
+Type: <> eventually
+LineNum: 8
+CharNum: 295
+
+Type: (
+LineNum: 8
+CharNum: 297
+
+Type: ID
+LineNum: 8
+CharNum: 298
+Value: taken34
+
+Type: )
+LineNum: 8
+CharNum: 305
+
+Type: )
+LineNum: 8
+CharNum: 306
+
+Type: )
+LineNum: 8
+CharNum: 307
+
+Type: || or
+LineNum: 8
+CharNum: 309
+
+Type: (
+LineNum: 8
+CharNum: 312
+
+Type: (
+LineNum: 8
+CharNum: 313
+
+Type: ! negation
+LineNum: 8
+CharNum: 314
+
+Type: (
+LineNum: 8
+CharNum: 315
+
+Type: [] always
+LineNum: 8
+CharNum: 317
+
+Type: (
+LineNum: 8
+CharNum: 319
+
+Type: <> eventually
+LineNum: 8
+CharNum: 321
+
+Type: (
+LineNum: 8
+CharNum: 323
+
+Type: ID
+LineNum: 8
+CharNum: 324
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 331
+
+Type: )
+LineNum: 8
+CharNum: 332
+
+Type: )
+LineNum: 8
+CharNum: 333
+
+Type: )
+LineNum: 8
+CharNum: 334
+
+Type: && and
+LineNum: 8
+CharNum: 336
+
+Type: [] always
+LineNum: 8
+CharNum: 340
+
+Type: (
+LineNum: 8
+CharNum: 342
+
+Type: <> eventually
+LineNum: 8
+CharNum: 344
+
+Type: (
+LineNum: 8
+CharNum: 346
+
+Type: ID
+LineNum: 8
+CharNum: 347
+Value: taken35
+
+Type: )
+LineNum: 8
+CharNum: 354
+
+Type: )
+LineNum: 8
+CharNum: 355
+
+Type: )
+LineNum: 8
+CharNum: 356
+
+Type: )
+LineNum: 8
+CharNum: 357
+
+Type: )
+LineNum: 8
+CharNum: 358
+
+Type: )
+LineNum: 8
+CharNum: 359
+
+Type: && and
+LineNum: 8
+CharNum: 361
+
+Type: (
+LineNum: 8
+CharNum: 364
+
+Type: (
+LineNum: 8
+CharNum: 365
+
+Type: [] always
+LineNum: 8
+CharNum: 367
+
+Type: (
+LineNum: 8
+CharNum: 369
+
+Type: <> eventually
+LineNum: 8
+CharNum: 371
+
+Type: (
+LineNum: 8
+CharNum: 373
+
+Type: ID
+LineNum: 8
+CharNum: 374
+Value: taken56
+
+Type: )
+LineNum: 8
+CharNum: 381
+
+Type: )
+LineNum: 8
+CharNum: 382
+
+Type: && and
+LineNum: 8
+CharNum: 384
+
+Type: (
+LineNum: 8
+CharNum: 387
+
+Type: (
+LineNum: 8
+CharNum: 388
+
+Type: [] always
+LineNum: 8
+CharNum: 390
+
+Type: (
+LineNum: 8
+CharNum: 392
+
+Type: <> eventually
+LineNum: 8
+CharNum: 394
+
+Type: (
+LineNum: 8
+CharNum: 396
+
+Type: ID
+LineNum: 8
+CharNum: 397
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 404
+
+Type: )
+LineNum: 8
+CharNum: 405
+
+Type: && and
+LineNum: 8
+CharNum: 407
+
+Type: [] always
+LineNum: 8
+CharNum: 411
+
+Type: (
+LineNum: 8
+CharNum: 413
+
+Type: <> eventually
+LineNum: 8
+CharNum: 415
+
+Type: (
+LineNum: 8
+CharNum: 417
+
+Type: ID
+LineNum: 8
+CharNum: 418
+Value: taken34
+
+Type: )
+LineNum: 8
+CharNum: 425
+
+Type: )
+LineNum: 8
+CharNum: 426
+
+Type: )
+LineNum: 8
+CharNum: 427
+
+Type: || or
+LineNum: 8
+CharNum: 429
+
+Type: (
+LineNum: 8
+CharNum: 432
+
+Type: (
+LineNum: 8
+CharNum: 433
+
+Type: ! negation
+LineNum: 8
+CharNum: 434
+
+Type: (
+LineNum: 8
+CharNum: 435
+
+Type: [] always
+LineNum: 8
+CharNum: 437
+
+Type: (
+LineNum: 8
+CharNum: 439
+
+Type: <> eventually
+LineNum: 8
+CharNum: 441
+
+Type: (
+LineNum: 8
+CharNum: 443
+
+Type: ID
+LineNum: 8
+CharNum: 444
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 451
+
+Type: )
+LineNum: 8
+CharNum: 452
+
+Type: )
+LineNum: 8
+CharNum: 453
+
+Type: )
+LineNum: 8
+CharNum: 454
+
+Type: && and
+LineNum: 8
+CharNum: 456
+
+Type: [] always
+LineNum: 8
+CharNum: 460
+
+Type: (
+LineNum: 8
+CharNum: 462
+
+Type: <> eventually
+LineNum: 8
+CharNum: 464
+
+Type: (
+LineNum: 8
+CharNum: 466
+
+Type: ID
+LineNum: 8
+CharNum: 467
+Value: taken35
+
+Type: )
+LineNum: 8
+CharNum: 474
+
+Type: )
+LineNum: 8
+CharNum: 475
+
+Type: )
+LineNum: 8
+CharNum: 476
+
+Type: )
+LineNum: 8
+CharNum: 477
+
+Type: )
+LineNum: 8
+CharNum: 478
+
+Type: )
+LineNum: 8
+CharNum: 479
+
+Type: && and
+LineNum: 8
+CharNum: 481
+
+Type: (
+LineNum: 8
+CharNum: 484
+
+Type: (
+LineNum: 8
+CharNum: 485
+
+Type: [] always
+LineNum: 8
+CharNum: 487
+
+Type: (
+LineNum: 8
+CharNum: 489
+
+Type: <> eventually
+LineNum: 8
+CharNum: 491
+
+Type: (
+LineNum: 8
+CharNum: 493
+
+Type: ID
+LineNum: 8
+CharNum: 494
+Value: taken67
+
+Type: )
+LineNum: 8
+CharNum: 501
+
+Type: )
+LineNum: 8
+CharNum: 502
+
+Type: && and
+LineNum: 8
+CharNum: 504
+
+Type: (
+LineNum: 8
+CharNum: 507
+
+Type: (
+LineNum: 8
+CharNum: 508
+
+Type: [] always
+LineNum: 8
+CharNum: 510
+
+Type: (
+LineNum: 8
+CharNum: 512
+
+Type: <> eventually
+LineNum: 8
+CharNum: 514
+
+Type: (
+LineNum: 8
+CharNum: 516
+
+Type: ID
+LineNum: 8
+CharNum: 517
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 524
+
+Type: )
+LineNum: 8
+CharNum: 525
+
+Type: && and
+LineNum: 8
+CharNum: 527
+
+Type: [] always
+LineNum: 8
+CharNum: 531
+
+Type: (
+LineNum: 8
+CharNum: 533
+
+Type: <> eventually
+LineNum: 8
+CharNum: 535
+
+Type: (
+LineNum: 8
+CharNum: 537
+
+Type: ID
+LineNum: 8
+CharNum: 538
+Value: taken34
+
+Type: )
+LineNum: 8
+CharNum: 545
+
+Type: )
+LineNum: 8
+CharNum: 546
+
+Type: )
+LineNum: 8
+CharNum: 547
+
+Type: || or
+LineNum: 8
+CharNum: 549
+
+Type: (
+LineNum: 8
+CharNum: 552
+
+Type: (
+LineNum: 8
+CharNum: 553
+
+Type: ! negation
+LineNum: 8
+CharNum: 554
+
+Type: (
+LineNum: 8
+CharNum: 555
+
+Type: [] always
+LineNum: 8
+CharNum: 557
+
+Type: (
+LineNum: 8
+CharNum: 559
+
+Type: <> eventually
+LineNum: 8
+CharNum: 561
+
+Type: (
+LineNum: 8
+CharNum: 563
+
+Type: ID
+LineNum: 8
+CharNum: 564
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 571
+
+Type: )
+LineNum: 8
+CharNum: 572
+
+Type: )
+LineNum: 8
+CharNum: 573
+
+Type: )
+LineNum: 8
+CharNum: 574
+
+Type: && and
+LineNum: 8
+CharNum: 576
+
+Type: [] always
+LineNum: 8
+CharNum: 580
+
+Type: (
+LineNum: 8
+CharNum: 582
+
+Type: <> eventually
+LineNum: 8
+CharNum: 584
+
+Type: (
+LineNum: 8
+CharNum: 586
+
+Type: ID
+LineNum: 8
+CharNum: 587
+Value: taken35
+
+Type: )
+LineNum: 8
+CharNum: 594
+
+Type: )
+LineNum: 8
+CharNum: 595
+
+Type: )
+LineNum: 8
+CharNum: 596
+
+Type: )
+LineNum: 8
+CharNum: 597
+
+Type: )
+LineNum: 8
+CharNum: 598
+
+Type: )
+LineNum: 8
+CharNum: 599
+
+Type: )
+LineNum: 8
+CharNum: 600
+
+Type: || or
+LineNum: 8
+CharNum: 602
+
+Type: (
+LineNum: 8
+CharNum: 605
+
+Type: (
+LineNum: 8
+CharNum: 606
+
+Type: (
+LineNum: 8
+CharNum: 607
+
+Type: ! negation
+LineNum: 8
+CharNum: 608
+
+Type: (
+LineNum: 8
+CharNum: 609
+
+Type: [] always
+LineNum: 8
+CharNum: 611
+
+Type: (
+LineNum: 8
+CharNum: 613
+
+Type: <> eventually
+LineNum: 8
+CharNum: 615
+
+Type: (
+LineNum: 8
+CharNum: 617
+
+Type: ID
+LineNum: 8
+CharNum: 618
+Value: taken12
+
+Type: )
+LineNum: 8
+CharNum: 625
+
+Type: )
+LineNum: 8
+CharNum: 626
+
+Type: )
+LineNum: 8
+CharNum: 627
+
+Type: )
+LineNum: 8
+CharNum: 628
+
+Type: )
+LineNum: 8
+CharNum: 629
+
+Type: && and
+LineNum: 8
+CharNum: 631
+
+Type: (
+LineNum: 8
+CharNum: 634
+
+Type: (
+LineNum: 8
+CharNum: 635
+
+Type: ! negation
+LineNum: 8
+CharNum: 636
+
+Type: (
+LineNum: 8
+CharNum: 637
+
+Type: [] always
+LineNum: 8
+CharNum: 639
+
+Type: (
+LineNum: 8
+CharNum: 641
+
+Type: <> eventually
+LineNum: 8
+CharNum: 643
+
+Type: (
+LineNum: 8
+CharNum: 645
+
+Type: ID
+LineNum: 8
+CharNum: 646
+Value: taken71
+
+Type: )
+LineNum: 8
+CharNum: 653
+
+Type: )
+LineNum: 8
+CharNum: 654
+
+Type: )
+LineNum: 8
+CharNum: 655
+
+Type: )
+LineNum: 8
+CharNum: 656
+
+Type: )
+LineNum: 8
+CharNum: 657
+
+Type: && and
+LineNum: 8
+CharNum: 659
+
+Type: (
+LineNum: 8
+CharNum: 662
+
+Type: (
+LineNum: 8
+CharNum: 663
+
+Type: ! negation
+LineNum: 8
+CharNum: 664
+
+Type: (
+LineNum: 8
+CharNum: 665
+
+Type: [] always
+LineNum: 8
+CharNum: 667
+
+Type: (
+LineNum: 8
+CharNum: 669
+
+Type: <> eventually
+LineNum: 8
+CharNum: 671
+
+Type: (
+LineNum: 8
+CharNum: 673
+
+Type: ID
+LineNum: 8
+CharNum: 674
+Value: taken23
+
+Type: )
+LineNum: 8
+CharNum: 681
+
+Type: )
+LineNum: 8
+CharNum: 682
+
+Type: )
+LineNum: 8
+CharNum: 683
+
+Type: )
+LineNum: 8
+CharNum: 684
+
+Type: )
+LineNum: 8
+CharNum: 685
+
+Type: && and
+LineNum: 8
+CharNum: 687
+
+Type: (
+LineNum: 8
+CharNum: 690
+
+Type: (
+LineNum: 8
+CharNum: 691
+
+Type: ! negation
+LineNum: 8
+CharNum: 692
+
+Type: (
+LineNum: 8
+CharNum: 693
+
+Type: [] always
+LineNum: 8
+CharNum: 695
+
+Type: (
+LineNum: 8
+CharNum: 697
+
+Type: <> eventually
+LineNum: 8
+CharNum: 699
+
+Type: (
+LineNum: 8
+CharNum: 701
+
+Type: ID
+LineNum: 8
+CharNum: 702
+Value: taken34
+
+Type: )
+LineNum: 8
+CharNum: 709
+
+Type: )
+LineNum: 8
+CharNum: 710
+
+Type: )
+LineNum: 8
+CharNum: 711
+
+Type: )
+LineNum: 8
+CharNum: 712
+
+Type: )
+LineNum: 8
+CharNum: 713
+
+Type: && and
+LineNum: 8
+CharNum: 715
+
+Type: (
+LineNum: 8
+CharNum: 718
+
+Type: (
+LineNum: 8
+CharNum: 719
+
+Type: ! negation
+LineNum: 8
+CharNum: 720
+
+Type: (
+LineNum: 8
+CharNum: 721
+
+Type: [] always
+LineNum: 8
+CharNum: 723
+
+Type: (
+LineNum: 8
+CharNum: 725
+
+Type: <> eventually
+LineNum: 8
+CharNum: 727
+
+Type: (
+LineNum: 8
+CharNum: 729
+
+Type: ID
+LineNum: 8
+CharNum: 730
+Value: taken35
+
+Type: )
+LineNum: 8
+CharNum: 737
+
+Type: )
+LineNum: 8
+CharNum: 738
+
+Type: )
+LineNum: 8
+CharNum: 739
+
+Type: )
+LineNum: 8
+CharNum: 740
+
+Type: )
+LineNum: 8
+CharNum: 741
+
+Type: && and
+LineNum: 8
+CharNum: 743
+
+Type: (
+LineNum: 8
+CharNum: 746
+
+Type: (
+LineNum: 8
+CharNum: 747
+
+Type: ! negation
+LineNum: 8
+CharNum: 748
+
+Type: (
+LineNum: 8
+CharNum: 749
+
+Type: [] always
+LineNum: 8
+CharNum: 751
+
+Type: (
+LineNum: 8
+CharNum: 753
+
+Type: <> eventually
+LineNum: 8
+CharNum: 755
+
+Type: (
+LineNum: 8
+CharNum: 757
+
+Type: ID
+LineNum: 8
+CharNum: 758
+Value: taken45
+
+Type: )
+LineNum: 8
+CharNum: 765
+
+Type: )
+LineNum: 8
+CharNum: 766
+
+Type: )
+LineNum: 8
+CharNum: 767
+
+Type: )
+LineNum: 8
+CharNum: 768
+
+Type: )
+LineNum: 8
+CharNum: 769
+
+Type: && and
+LineNum: 8
+CharNum: 771
+
+Type: (
+LineNum: 8
+CharNum: 774
+
+Type: (
+LineNum: 8
+CharNum: 775
+
+Type: ! negation
+LineNum: 8
+CharNum: 776
+
+Type: (
+LineNum: 8
+CharNum: 777
+
+Type: [] always
+LineNum: 8
+CharNum: 779
+
+Type: (
+LineNum: 8
+CharNum: 781
+
+Type: <> eventually
+LineNum: 8
+CharNum: 783
+
+Type: (
+LineNum: 8
+CharNum: 785
+
+Type: ID
+LineNum: 8
+CharNum: 786
+Value: taken56
+
+Type: )
+LineNum: 8
+CharNum: 793
+
+Type: )
+LineNum: 8
+CharNum: 794
+
+Type: )
+LineNum: 8
+CharNum: 795
+
+Type: )
+LineNum: 8
+CharNum: 796
+
+Type: )
+LineNum: 8
+CharNum: 797
+
+Type: && and
+LineNum: 8
+CharNum: 799
+
+Type: (
+LineNum: 8
+CharNum: 802
+
+Type: (
+LineNum: 8
+CharNum: 803
+
+Type: ! negation
+LineNum: 8
+CharNum: 804
+
+Type: (
+LineNum: 8
+CharNum: 805
+
+Type: [] always
+LineNum: 8
+CharNum: 807
+
+Type: (
+LineNum: 8
+CharNum: 809
+
+Type: <> eventually
+LineNum: 8
+CharNum: 811
+
+Type: (
+LineNum: 8
+CharNum: 813
+
+Type: ID
+LineNum: 8
+CharNum: 814
+Value: taken67
+
+Type: )
+LineNum: 8
+CharNum: 821
+
+Type: )
+LineNum: 8
+CharNum: 822
+
+Type: )
+LineNum: 8
+CharNum: 823
+
+Type: )
+LineNum: 8
+CharNum: 824
+
+Type: )
+LineNum: 8
+CharNum: 825
+
+Type: )
+LineNum: 8
+CharNum: 826
+
+Type: )
+LineNum: 8
+CharNum: 827
+
+Type: -> implies
+LineNum: 8
+CharNum: 829
+
+Type: [] always
+LineNum: 8
+CharNum: 833
+
+Type: (
+LineNum: 8
+CharNum: 835
+
+Type: <> eventually
+LineNum: 8
+CharNum: 837
+
+Type: (
+LineNum: 8
+CharNum: 839
+
+Type: ID
+LineNum: 8
+CharNum: 840
+Value: aPc7
+
+Type: )
+LineNum: 8
+CharNum: 844
+
+Type: )
+LineNum: 8
+CharNum: 845
+
+Type: )
+LineNum: 8
+CharNum: 846
+
