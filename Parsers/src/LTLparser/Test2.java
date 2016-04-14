@@ -1,8 +1,13 @@
 package LTLparser;
 
-import java.io.*;
-import java_cup.runtime.*;
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashSet;
+import java.util.Set;
+
+import java_cup.runtime.Symbol;
 
 /**
  * Main program to test the cats parser.
