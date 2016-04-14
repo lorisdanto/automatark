@@ -1,0 +1,20 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q41 : Node {
+	  Zero() where true
+}
+Lang fastacc_q69 : Node {
+	  One(x1) where ((x <= 4814) and (6766 > y) and (y > (0 - 856) )) given (fastacc_q41 x1)
+}
+Lang fastacc_q5 : Node {
+	  One(x1) where ((x <= 4814) and (6766 > y) and (y <= (0 - 856) )) given (fastacc_q41 x1)
+}
+Lang fastacc_q1 : Node {
+	  One(x1) where (((x > 4814) or (6766 <= y)) and (y <= (0 - 856) )) given (fastacc_q41 x1)
+	| One(x1) where true given (fastacc x1)
+	| One(x1) where true given (fastacc_q1 x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where (((x > 4814) or (6766 <= y)) and (y > (0 - 856) )) given (fastacc_q41 x1)
+	| One(x1) where true given (fastacc_q5 x1)
+	| One(x1) where true given (fastacc_q69 x1)
+}

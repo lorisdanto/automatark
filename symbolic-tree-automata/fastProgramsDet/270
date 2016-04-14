@@ -1,0 +1,44 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q144 : Node {
+	  Zero() where true
+}
+Lang fastacc_q40 : Node {
+	  One(x1) where true given (fastacc_q144 x1)
+}
+Lang fastacc_q4 : Node {
+	  Three(x1,x2,x3) where (5683 > y) given (fastacc_q144 x1)(fastacc_q144 x2)(fastacc_q40 x3)
+	| Three(x1,x2,x3) where (5683 > y) given (fastacc_q144 x1)(fastacc_q144 x2)(fastacc_q32 x3)
+}
+Lang fastacc_q2 : Node {
+	  Three(x1,x2,x3) where (y > 8295) given (fastacc_q4 x1)(fastacc_q40 x2)(fastacc_q144 x3)
+	| Three(x1,x2,x3) where (y > 8295) given (fastacc_q4 x1)(fastacc_q40 x2)(fastacc_q16 x3)
+	| Three(x1,x2,x3) where (y > 8295) given (fastacc_q4 x1)(fastacc_q8 x2)(fastacc_q144 x3)
+	| Three(x1,x2,x3) where (y > 8295) given (fastacc_q4 x1)(fastacc_q8 x2)(fastacc_q16 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q40 x1)(fastacc_q4 x2)(fastacc_q64 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q32 x1)(fastacc_q4 x2)(fastacc_q64 x3)
+	| One(x1) where true given (fastacc_q8 x1)
+	| One(x1) where true given (fastacc_q40 x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where true given (fastacc_q2 x1)
+}
+Lang fastacc_q256 : Node {
+	  Three(x1,x2,x3) where ((x <= 1209) and (y == 9484)) given (fastacc_q4 x1)(fastacc x2)(fastacc_q4 x3)
+	| Three(x1,x2,x3) where (y >= (0 - 5067) ) given (fastacc_q40 x1)(fastacc_q64 x2)(fastacc x3)
+	| Three(x1,x2,x3) where (y >= (0 - 5067) ) given (fastacc_q8 x1)(fastacc_q64 x2)(fastacc x3)
+}
+Lang fastacc_q16 : Node {
+	  Three(x1,x2,x3) where (6646 > x) given (fastacc_q256 x1)(fastacc_q4 x2)(fastacc_q4 x3)
+}
+Lang fastacc_q8 : Node {
+	  One(x1) where true given (fastacc_q16 x1)
+}
+Lang fastacc_q32 : Node {
+	  Three(x1,x2,x3) where true given (fastacc_q64 x1)(fastacc_q2 x2)(fastacc_q2 x3)
+	| One(x1) where true given (fastacc x1)
+}
+Lang fastacc_q64 : Node {
+	  Three(x1,x2,x3) where true given (fastacc_q144 x1)(fastacc_q40 x2)(fastacc_q64 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q144 x1)(fastacc_q32 x2)(fastacc_q64 x3)
+	| One(x1) where true given (fastacc_q4 x1)
+}

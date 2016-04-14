@@ -1,0 +1,37 @@
+Ops yred:2 yblack:2 yNULL:2 xppred:2 xppblack:2 xblack:2 rootxpblack:2 red:2 normal:2 bot2:2 bot0:0 black:2 UNDEF:2 NULL:2
+
+Automaton a
+
+States q1024 q1536 q1 q8 q16 q128 q4 q64 q2 q2048 q256 q32
+Final States q256
+Transitions
+bot0() -> q1024
+bot2(q1024,q1024) -> q1536
+bot2(q1024,q1536) -> q1536
+bot2(q1536,q1024) -> q1536
+yblack(q1536,q1536) -> q1
+xppblack(q1536,q1536) -> q8
+xblack(q1536,q1536) -> q16
+bot2(q1536,q1536) -> q1536
+black(q1536,q1536) -> q128
+xppred(q1,q128) -> q4
+xppblack(q1,q128) -> q4
+rootxpblack(q16,q4) -> q64
+red(q128,q64) -> q64
+black(q128,q64) -> q64
+NULL(q64,q1536) -> q2
+UNDEF(q2,q1536) -> q2048
+normal(q2048,q1536) -> q256
+red(q64,q128) -> q64
+black(q64,q128) -> q64
+yred(q128,q128) -> q1
+yblack(q128,q128) -> q1
+red(q128,q128) -> q128
+black(q128,q128) -> q128
+rootxpblack(q16,q8) -> q32
+red(q128,q32) -> q32
+black(q128,q32) -> q32
+yNULL(q32,q1536) -> q2
+red(q32,q128) -> q32
+black(q32,q128) -> q32
+

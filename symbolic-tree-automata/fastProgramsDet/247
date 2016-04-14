@@ -1,0 +1,102 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q2 : Node {
+	  One(x1) where (x <= 1245) given (fastacc_q8 x1)
+	| Zero() where true
+}
+Lang fastacc_q9 : Node {
+	  One(x1) where true given (fastacc_q2 x1)
+}
+Lang fastacc_q32 : Node {
+	  One(x1) where (x > 1245) given (fastacc_q9 x1)
+	| One(x1) where true given (fastacc x1)
+}
+Lang fastacc_q34 : Node {
+	  One(x1) where (x <= 1245) given (fastacc_q9 x1)
+}
+Lang fastacc_q25 : Node {
+	  One(x1) where true given (fastacc_q34 x1)
+	| One(x1) where true given (fastacc_q38 x1)
+}
+Lang fastacc_q16 : Node {
+	  Three(x1,x2,x3) where true given (fastacc_q25 x1)(fastacc_q25 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q16 x1)(fastacc_q25 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q25 x1)(fastacc_q16 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q16 x1)(fastacc_q16 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q16 x1)(fastacc_q25 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q25 x1)(fastacc_q16 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q16 x1)(fastacc_q16 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q25 x1)(fastacc_q25 x2)(fastacc x3)
+	| Three(x1,x2,x3) where true given (fastacc_q16 x1)(fastacc_q25 x2)(fastacc x3)
+	| Three(x1,x2,x3) where true given (fastacc_q25 x1)(fastacc_q16 x2)(fastacc x3)
+	| Three(x1,x2,x3) where true given (fastacc_q16 x1)(fastacc_q16 x2)(fastacc x3)
+	| Three(x1,x2,x3) where true given (fastacc_q25 x1)(fastacc_q25 x2)(fastacc_q25 x3)
+	| One(x1) where true given (fastacc_q36 x1)
+	| One(x1) where true given (fastacc_q32 x1)
+}
+Lang fastacc_q4 : Node {
+	  One(x1) where true given (fastacc_q16 x1)
+}
+Public Lang fastacc : Node {
+	  Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q2 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q34 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q2 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q34 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q2 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q34 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q2 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q34 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q38 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q38 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q38 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q2 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q34 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q38 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q38 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q38 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q2 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q34 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q4 x1)(fastacc_q38 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q38 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q38 x1)(fastacc_q38 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q2 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q34 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q2 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q34 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q2 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q36 x1)(fastacc_q34 x2)(fastacc_q8 x3)
+}
+Lang fastacc_q8 : Node {
+	  Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q4 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q4 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q4 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q4 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q4 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q4 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q4 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q4 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q4 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q38 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q38 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q38 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q38 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q38 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q38 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q38 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q38 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q38 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q36 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q36 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q36 x2)(fastacc_q9 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q36 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q36 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q36 x2)(fastacc_q25 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q9 x1)(fastacc_q36 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q25 x1)(fastacc_q36 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (y > 7017) given (fastacc_q8 x1)(fastacc_q36 x2)(fastacc_q8 x3)
+}
+Lang fastacc_q36 : Node {
+	  One(x1) where (x > 1245) given (fastacc_q25 x1)
+}
+Lang fastacc_q38 : Node {
+	  One(x1) where (x <= 1245) given (fastacc_q25 x1)
+}

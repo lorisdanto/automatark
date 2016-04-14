@@ -1,0 +1,29 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q4 : Node {
+	  Zero() where true
+}
+Lang fastacc_q8 : Node {
+	  One(x1) where ((y < 5081) and (x < 1004)) given (fastacc_q4 x1)
+	| One(x1) where true given (fastacc_q1 x1)
+	| One(x1) where ((x > 7723) or (329 < y)) given (fastacc_q9 x1)
+	| One(x1) where (x < 2707) given (fastacc x1)
+}
+Lang fastacc_q9 : Node {
+	  One(x1) where ((y >= 5081) and (x < 1004)) given (fastacc_q4 x1)
+	| One(x1) where (x >= 2707) given (fastacc x1)
+}
+Lang fastacc_q1 : Node {
+	  One(x1) where ((y >= 5081) and (x >= 1004)) given (fastacc_q4 x1)
+	| One(x1) where ((x >= 2707) and ((x > 7723) or (329 < y))) given (fastacc_q10 x1)
+	| One(x1) where (x >= 2707) given (fastacc_q2 x1)
+}
+Lang fastacc_q10 : Node {
+	  One(x1) where ((x <= 7723) and (329 >= y)) given (fastacc_q9 x1)
+}
+Lang fastacc_q2 : Node {
+	  One(x1) where ((x < 2707) and (x <= 7723) and (329 >= y)) given (fastacc_q10 x1)
+	| One(x1) where ((x <= 7723) and (329 >= y)) given (fastacc_q8 x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where ((x >= 2707) and (x <= 7723) and (329 >= y)) given (fastacc_q10 x1)
+}

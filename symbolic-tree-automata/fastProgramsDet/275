@@ -1,0 +1,11 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q1089 : Node {
+	  Zero() where true
+}
+Lang fastacc_q33 : Node {
+	  One(x1) where true given (fastacc_q1089 x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where true given (fastacc_q33 x1)
+	| One(x1) where true given (fastacc x1)
+}

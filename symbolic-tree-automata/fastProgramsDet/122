@@ -1,0 +1,38 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q8 : Node {
+	  One(x1) where ((y >= 7939) and (x <= 5149)) given (fastacc_q3 x1)
+	| One(x1) where ((y >= 7939) and (x <= 5149)) given (fastacc_q2 x1)
+	| Zero() where true
+}
+Lang fastacc_q2 : Node {
+	  One(x1) where ((0 - 1867)  < y) given (fastacc_q8 x1)
+	| One(x1) where ((y >= 7939) and ((0 - 1867)  < y) and (x > 5149)) given (fastacc_q10 x1)
+	| One(x1) where ((y >= 7939) and ((0 - 1867)  < y) and (x > 5149)) given (fastacc_q11 x1)
+	| One(x1) where ((0 - 1867)  < y) given (fastacc x1)
+}
+Lang fastacc_q10 : Node {
+	  One(x1) where ((0 - 1867)  >= y) given (fastacc_q8 x1)
+	| One(x1) where ((y >= 7939) and ((0 - 1867)  < y) and (x <= 5149)) given (fastacc_q10 x1)
+	| One(x1) where ((y >= 7939) and ((0 - 1867)  < y) and (x <= 5149)) given (fastacc_q11 x1)
+	| One(x1) where ((0 - 1867)  >= y) given (fastacc x1)
+}
+Lang fastacc_q3 : Node {
+	  One(x1) where ((y < 7939) and ((0 - 1867)  < y) and (x > 5149)) given (fastacc_q10 x1)
+	| One(x1) where ((y < 7939) and ((0 - 1867)  < y) and (x > 5149)) given (fastacc_q11 x1)
+}
+Lang fastacc_q11 : Node {
+	  One(x1) where ((y < 7939) and ((0 - 1867)  < y) and (x <= 5149)) given (fastacc_q10 x1)
+	| One(x1) where ((y < 7939) and ((0 - 1867)  >= y) and (x <= 5149)) given (fastacc_q10 x1)
+	| One(x1) where ((y < 7939) and ((0 - 1867)  >= y) and (x > 5149)) given (fastacc_q10 x1)
+	| One(x1) where ((y < 7939) and ((0 - 1867)  < y) and (x <= 5149)) given (fastacc_q11 x1)
+	| One(x1) where ((y < 7939) and ((0 - 1867)  >= y) and (x <= 5149)) given (fastacc_q11 x1)
+	| One(x1) where ((y < 7939) and ((0 - 1867)  >= y) and (x > 5149)) given (fastacc_q11 x1)
+}
+Lang fastacc_q1 : Node {
+	  One(x1) where ((y < 7939) and (x > 5149)) given (fastacc_q3 x1)
+	| One(x1) where ((y < 7939) and (x > 5149)) given (fastacc_q2 x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where ((y < 7939) and (x <= 5149)) given (fastacc_q3 x1)
+	| One(x1) where ((y < 7939) and (x <= 5149)) given (fastacc_q2 x1)
+}

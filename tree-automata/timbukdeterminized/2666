@@ -1,0 +1,17 @@
+Ops bot0:0 m:1 n:1
+
+Automaton a
+
+States q3 q12 q48 q2 q8 q32
+Final States q32 q48
+Transitions
+bot0() -> q3
+m(q3) -> q12
+m(q12) -> q48
+m(q48) -> q3
+n(q48) -> q2
+m(q2) -> q8
+m(q8) -> q32
+m(q32) -> q2
+n(q32) -> q2
+

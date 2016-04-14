@@ -1,0 +1,4 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Public Lang fastacc : Node {
+	  Zero() where true
+}

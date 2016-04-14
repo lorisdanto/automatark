@@ -1,0 +1,10 @@
+Ops b:2 bot0:0
+
+Automaton a
+
+States q3 q1
+Final States q1 q3
+Transitions
+bot0() -> q3
+b(q3,q3) -> q1
+

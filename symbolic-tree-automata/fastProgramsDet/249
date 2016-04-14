@@ -1,0 +1,24 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q2 : Node {
+	  One(x1) where (x < 3934) given (fastacc_q2 x1)
+	| Zero() where true
+}
+Lang fastacc_q3 : Node {
+	  One(x1) where (x >= 3934) given (fastacc_q2 x1)
+	| One(x1) where ((x >= 3934) and (8651 < x) and (408 <= y)) given (fastacc_q3 x1)
+	| One(x1) where ((x >= 3934) and (8651 >= x) and (408 <= y)) given (fastacc_q3 x1)
+	| One(x1) where ((x < 3934) and (8651 >= x) and (408 <= y)) given (fastacc_q3 x1)
+	| One(x1) where ((x >= 3934) and (8651 < x) and (6860 <= x) and (408 <= y)) given (fastacc x1)
+	| One(x1) where ((x >= 3934) and (8651 >= x) and (6860 <= x) and (408 <= y)) given (fastacc x1)
+	| One(x1) where ((x >= 3934) and (8651 >= x) and (6860 > x) and (408 <= y)) given (fastacc x1)
+	| One(x1) where ((x < 3934) and (8651 >= x) and (6860 > x) and (408 <= y)) given (fastacc x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where ((x < 3934) and (8651 >= x) and (408 > y)) given (fastacc_q3 x1)
+	| One(x1) where ((x >= 3934) and (8651 < x) and (408 > y)) given (fastacc_q3 x1)
+	| One(x1) where ((x >= 3934) and (8651 >= x) and (408 > y)) given (fastacc_q3 x1)
+	| One(x1) where ((x < 3934) and (8651 >= x) and (6860 > x) and (408 > y)) given (fastacc x1)
+	| One(x1) where ((x >= 3934) and (8651 < x) and (6860 <= x) and (408 > y)) given (fastacc x1)
+	| One(x1) where ((x >= 3934) and (8651 >= x) and (6860 <= x) and (408 > y)) given (fastacc x1)
+	| One(x1) where ((x >= 3934) and (8651 >= x) and (6860 > x) and (408 > y)) given (fastacc x1)
+}

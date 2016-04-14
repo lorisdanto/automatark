@@ -1,0 +1,33 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q2 : Node {
+	  Three(x1,x2,x3) where true given (fastacc_q2 x1)(fastacc_q2 x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q17 x1)(fastacc_q19 x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q19 x1)(fastacc_q17 x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q17 x1)(fastacc_q17 x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q17 x1)(fastacc_q19 x2)(fastacc_q19 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q19 x1)(fastacc_q17 x2)(fastacc_q19 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q17 x1)(fastacc_q17 x2)(fastacc_q19 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q19 x1)(fastacc x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q17 x1)(fastacc x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q19 x1)(fastacc x2)(fastacc_q19 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q17 x1)(fastacc x2)(fastacc_q19 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q19 x1)(fastacc_q2 x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q2 x1)(fastacc_q19 x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q19 x1)(fastacc_q19 x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q2 x1)(fastacc_q2 x2)(fastacc_q19 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q19 x1)(fastacc_q2 x2)(fastacc_q19 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q2 x1)(fastacc_q19 x2)(fastacc_q19 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q19 x1)(fastacc_q19 x2)(fastacc_q19 x3)
+	| Zero() where true
+}
+Lang fastacc_q19 : Node {
+	  One(x1) where (679 > x) given (fastacc_q2 x1)
+	| One(x1) where (679 > x) given (fastacc_q19 x1)
+}
+Lang fastacc_q17 : Node {
+	  One(x1) where (679 <= x) given (fastacc_q2 x1)
+	| One(x1) where (679 <= x) given (fastacc_q19 x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where true given (fastacc_q17 x1)
+}

@@ -1,0 +1,5 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Public Lang fastacc : Node {
+	  One(x1) where (547 > y) given (fastacc x1)
+	| Zero() where true
+}

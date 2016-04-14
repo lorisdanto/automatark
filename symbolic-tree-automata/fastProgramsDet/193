@@ -1,0 +1,22 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q1 : Node {
+	  Three(x1,x2,x3) where ((0 - 860)  <= x) given (fastacc x1)(fastacc_q1 x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where ((0 - 860)  <= x) given (fastacc_q1 x1)(fastacc x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where ((0 - 860)  <= x) given (fastacc x1)(fastacc x2)(fastacc_q2 x3)
+	| Three(x1,x2,x3) where ((0 - 860)  <= x) given (fastacc_q1 x1)(fastacc_q1 x2)(fastacc x3)
+	| Three(x1,x2,x3) where ((0 - 860)  <= x) given (fastacc x1)(fastacc_q1 x2)(fastacc x3)
+	| Three(x1,x2,x3) where ((0 - 860)  <= x) given (fastacc_q1 x1)(fastacc x2)(fastacc x3)
+	| Three(x1,x2,x3) where ((0 - 860)  <= x) given (fastacc x1)(fastacc x2)(fastacc x3)
+	| Three(x1,x2,x3) where ((0 - 860)  <= x) given (fastacc_q1 x1)(fastacc_q1 x2)(fastacc_q2 x3)
+	| One(x1) where (((0 - 2140)  > x) and (y <= 1639)) given (fastacc_q1 x1)
+	| One(x1) where (((0 - 2140)  > x) and (y <= 1639)) given (fastacc x1)
+	| Zero() where true
+}
+Lang fastacc_q2 : Node {
+	  One(x1) where (((0 - 2140)  <= x) and (y > 1639)) given (fastacc_q1 x1)
+	| One(x1) where (((0 - 2140)  <= x) and (y > 1639)) given (fastacc x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where (((0 - 2140)  > x) and (y > 1639)) given (fastacc_q1 x1)
+	| One(x1) where (((0 - 2140)  > x) and (y > 1639)) given (fastacc x1)
+}

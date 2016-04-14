@@ -1,0 +1,21 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q15 : Node {
+	  Zero() where true
+}
+Lang fastacc_q1 : Node {
+	  Three(x1,x2,x3) where true given (fastacc_q15 x1)(fastacc_q15 x2)(fastacc_q15 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q15 x1)(fastacc_q15 x2)(fastacc_q1 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q15 x1)(fastacc_q11 x2)(fastacc_q15 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q15 x1)(fastacc_q11 x2)(fastacc_q1 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q15 x1)(fastacc_q15 x2)(fastacc_q11 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q15 x1)(fastacc_q11 x2)(fastacc_q11 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q15 x1)(fastacc_q15 x2)(fastacc x3)
+	| Three(x1,x2,x3) where true given (fastacc_q15 x1)(fastacc_q11 x2)(fastacc x3)
+}
+Lang fastacc_q11 : Node {
+	  One(x1) where true given (fastacc_q15 x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where true given (fastacc_q11 x1)
+	| One(x1) where true given (fastacc x1)
+}

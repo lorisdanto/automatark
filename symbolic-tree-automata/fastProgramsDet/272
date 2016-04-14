@@ -1,0 +1,38 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q72 : Node {
+	  Zero() where true
+}
+Lang fastacc_q128 : Node {
+	  Three(x1,x2,x3) where (447 == x) given (fastacc_q72 x1)(fastacc_q72 x2)(fastacc_q72 x3)
+	| Three(x1,x2,x3) where (447 == x) given (fastacc_q72 x1)(fastacc_q72 x2)(fastacc_q64 x3)
+	| Three(x1,x2,x3) where (447 == x) given (fastacc_q72 x1)(fastacc_q72 x2)(fastacc x3)
+	| Three(x1,x2,x3) where (447 == x) given (fastacc_q72 x1)(fastacc_q72 x2)(fastacc_q67 x3)
+}
+Lang fastacc_q16 : Node {
+	  One(x1) where ((x > 6517) and (812 <= y)) given (fastacc_q72 x1)
+	| One(x1) where ((x > 6517) and (812 <= y)) given (fastacc_q64 x1)
+	| One(x1) where ((x > 6517) and (812 <= y)) given (fastacc x1)
+	| One(x1) where ((x <= 6517) or (812 > y)) given (fastacc x1)
+	| One(x1) where ((y >= 7628) and (x > 6517) and (812 <= y)) given (fastacc_q67 x1)
+	| One(x1) where ((y >= 7628) and ((x <= 6517) or (812 > y))) given (fastacc_q67 x1)
+}
+Lang fastacc_q67 : Node {
+	  One(x1) where ((746 <= x) and (y > 2635)) given (fastacc_q16 x1)
+	| One(x1) where ((746 <= x) and (y > 2635) and (y < 7628)) given (fastacc_q18 x1)
+	| One(x1) where ((746 <= x) and (y > 2635) and (y >= 7628)) given (fastacc_q18 x1)
+	| One(x1) where (((746 > x) or (y <= 2635)) and (y < 7628)) given (fastacc_q18 x1)
+}
+Public Lang fastacc : Node {
+	  One(x1) where ((746 > x) or (y <= 2635)) given (fastacc_q16 x1)
+	| One(x1) where (((746 > x) or (y <= 2635)) and (y >= 7628)) given (fastacc_q18 x1)
+}
+Lang fastacc_q64 : Node {
+	  Three(x1,x2,x3) where true given (fastacc x1)(fastacc_q67 x2)(fastacc_q128 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q67 x1)(fastacc_q67 x2)(fastacc_q128 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q67 x1)(fastacc_q18 x2)(fastacc_q128 x3)
+	| Three(x1,x2,x3) where true given (fastacc x1)(fastacc_q18 x2)(fastacc_q128 x3)
+}
+Lang fastacc_q18 : Node {
+	  One(x1) where ((y < 7628) and (x > 6517) and (812 <= y)) given (fastacc_q67 x1)
+	| One(x1) where ((y < 7628) and ((x <= 6517) or (812 > y))) given (fastacc_q67 x1)
+}

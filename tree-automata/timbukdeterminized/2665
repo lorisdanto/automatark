@@ -1,0 +1,19 @@
+Ops yred:2 yblack:2 yNULL:2 xppred:2 xppblack:2 xblack:2 rootxpblack:2 red:2 normal:2 bot2:2 bot0:0 black:2 UNDEF:2 NULL:2
+
+Automaton a
+
+States q64 q32 q2 q4 q128 q8 q1 q256 q16
+Final States q16
+Transitions
+bot0() -> q64
+bot2(q64,q64) -> q32
+xppblack(q32,q32) -> q2
+xblack(q32,q32) -> q4
+black(q32,q32) -> q128
+rootxpblack(q4,q2) -> q8
+black(q128,q8) -> q8
+yNULL(q8,q32) -> q1
+UNDEF(q1,q32) -> q256
+normal(q256,q32) -> q16
+black(q8,q128) -> q8
+

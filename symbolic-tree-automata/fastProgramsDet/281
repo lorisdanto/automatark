@@ -1,0 +1,34 @@
+Alphabet Node[x:int,y:int,s:string]{Three(3),One(1),Zero(0),Cons(2),Nil(0)}
+Lang fastacc_q641 : Node {
+	  Zero() where true
+}
+Lang fastacc_q1032 : Node {
+	  One(x1) where ((y < 11273) and (9697 >= y) and (5418 > y)) given (fastacc_q641 x1)
+	| One(x1) where ((y >= 11273) and ((9697 < y) or (5418 <= y))) given (fastacc_q641 x1)
+}
+Lang fastacc_q8 : Node {
+	  One(x1) where ((y < 11273) and ((9697 < y) or (5418 <= y))) given (fastacc_q641 x1)
+}
+Lang fastacc_q264 : Node {
+	  One(x1) where true given (fastacc_q1032 x1)
+	| One(x1) where true given (fastacc_q1024 x1)
+}
+Lang fastacc_q2 : Node {
+	  Three(x1,x2,x3) where true given (fastacc_q641 x1)(fastacc_q1032 x2)(fastacc_q264 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q641 x1)(fastacc_q8 x2)(fastacc_q264 x3)
+	| Three(x1,x2,x3) where true given (fastacc_q641 x1)(fastacc_q264 x2)(fastacc_q264 x3)
+	| One(x1) where (x > 1894) given (fastacc_q264 x1)
+}
+Lang fastacc_q4 : Node {
+	  Three(x1,x2,x3) where (y <= 453) given (fastacc_q641 x1)(fastacc_q2 x2)(fastacc_q641 x3)
+	| Three(x1,x2,x3) where (y <= 453) given (fastacc_q641 x1)(fastacc_q2 x2)(fastacc x3)
+	| Three(x1,x2,x3) where true given (fastacc_q641 x1)(fastacc_q4 x2)(fastacc_q264 x3)
+}
+Public Lang fastacc : Node {
+	  Three(x1,x2,x3) where (5295 <= x) given (fastacc_q2 x1)(fastacc_q4 x2)(fastacc_q1032 x3)
+	| Three(x1,x2,x3) where (5295 <= x) given (fastacc_q2 x1)(fastacc_q4 x2)(fastacc_q8 x3)
+	| Three(x1,x2,x3) where (5295 <= x) given (fastacc_q2 x1)(fastacc_q4 x2)(fastacc_q264 x3)
+}
+Lang fastacc_q1024 : Node {
+	  One(x1) where (y >= 11273) given (fastacc x1)
+}
