@@ -1,7 +1,0 @@
-(((a) && ( G(a -> ((X(!a)))))))
-
-(! (((a) || (a)) U ((X ((b) || ((! (b))))))))
-
-( !( ( !(( !( ( !((! (b)))) U (!((! (a))))) ))) U (!((a) U ((X (a)))))) )
-
-((((( G ( F (taken12)) & (( G ( F (taken45)) &  G ( F (taken34))) | ((!( G ( F (taken45)))) &  G ( F (taken35)))))) & (( G ( F (taken71)) & (( G ( F (taken45)) &  G ( F (taken34))) | ((!( G ( F (taken45)))) &  G ( F (taken35)))))) & (( G ( F (taken23)) & (( G ( F (taken45)) &  G ( F (taken34))) | ((!( G ( F (taken45)))) &  G ( F (taken35)))))) & (( G ( F (taken56)) & (( G ( F (taken45)) &  G ( F (taken34))) | ((!( G ( F (taken45)))) &  G ( F (taken35)))))) & (( G ( F (taken67)) & (( G ( F (taken45)) &  G ( F (taken34))) | ((!( G ( F (taken45)))) &  G ( F (taken35))))))) | (((!( G ( F (taken12))))) & ((!( G ( F (taken71))))) & ((!( G ( F (taken23))))) & ((!( G ( F (taken34))))) & ((!( G ( F (taken35))))) & ((!( G ( F (taken45))))) & ((!( G ( F (taken56))))) & ((!( G ( F (taken67))))))) ->  G ( F (aPc7)))

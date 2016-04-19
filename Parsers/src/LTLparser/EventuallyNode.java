@@ -15,4 +15,11 @@ public class EventuallyNode extends UnaryLTLNode {
         myLTL.unparse(p, 0);
         p.print(")");
     }
+
+	@Override
+	public void toString(StringBuilder s, int indent) {
+		s.append("(F");
+        myLTL.toString(s, 0);
+        s.append(")");
+	}
 }

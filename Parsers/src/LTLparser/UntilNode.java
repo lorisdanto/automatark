@@ -15,4 +15,13 @@ public class UntilNode extends BinaryLTLNode {
         myLTL2.unparse(p, 0);
         p.print(")");
     }
+
+	@Override
+	public void toString(StringBuilder s, int indent) {
+		s.append("(");
+        myLTL1.toString(s, 0);
+        s.append(" U ");
+        myLTL2.toString(s, 0);
+        s.append(")");
+	}
 }

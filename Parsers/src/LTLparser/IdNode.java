@@ -45,4 +45,10 @@ public class IdNode extends LTLNode {
     private int myLineNum;
     private int myCharNum;
     private String myStrVal;
+	@Override
+	public void toString(StringBuilder s, int indent) {
+		s.append("(");
+        s.append(myStrVal);
+        s.append(")");
+	}
 }

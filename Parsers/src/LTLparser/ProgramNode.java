@@ -11,7 +11,7 @@ public class ProgramNode extends FormulaNode {
     
     public void unparse(PrintWriter p, int indent) {
     	myLTLList.unparse(p, indent);
-    	p.println();
+    	p.print(System.getProperty("line.separator"));
     }
     
     public Set<String> returnLeafNodes(Set<String> set, boolean returnExp) {
@@ -20,4 +20,13 @@ public class ProgramNode extends FormulaNode {
 
     
     private LTLListNode myLTLList;
+
+
+	@Override
+	public void toString(StringBuilder s, int indent) {
+		myLTLList.toString(s, indent);
+    	s.append(System.getProperty("line.separator"));
+	}
+
+
 }

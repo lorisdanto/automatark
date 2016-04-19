@@ -9,11 +9,11 @@ public class LTLListNode extends FormulaNode {
     }
  
     public void unparse(PrintWriter p, int indent) {
-        Iterator it = myLTLs.iterator();
+        Iterator<LTLNode> it = myLTLs.iterator();
         try {
             while (it.hasNext()) {
                 ((LTLNode)it.next()).unparse(p, indent);
-                p.println();
+                p.print(System.getProperty("line.separator"));
             }
         } catch (NoSuchElementException ex) {
             System.err.println("unexpected NoSuchElementException in DeclListNode.print");
@@ -22,7 +22,7 @@ public class LTLListNode extends FormulaNode {
     }
     
     public Set<String> returnLeafNodes(Set<String> set, boolean returnExp) {
-    	 Iterator it = myLTLs.iterator();
+    	 Iterator<LTLNode> it = myLTLs.iterator();
         try {
             while (it.hasNext()) {
                 Set<String> tempSet = new HashSet<String>();
@@ -37,4 +37,20 @@ public class LTLListNode extends FormulaNode {
     }
 
     private List<LTLNode> myLTLs;
+
+	@Override
+	public void toString(StringBuilder s, int indent) {
+		Iterator<LTLNode> it = myLTLs.iterator();
+        try {
+            while (it.hasNext()) {
+                ((LTLNode)it.next()).toString(s, indent);
+                s.append(System.getProperty("line.separator"));
+            }
+        } catch (NoSuchElementException ex) {
+            System.err.println("unexpected NoSuchElementException in DeclListNode.print");
+            System.exit(-1);
+        }
+    }
+		
+	
 }

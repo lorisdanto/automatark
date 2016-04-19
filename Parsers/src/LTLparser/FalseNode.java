@@ -20,4 +20,8 @@ public class FalseNode extends LTLNode {
 
     private int myLineNum;
     private int myCharNum;
+	@Override
+	public void toString(StringBuilder s, int indent) {
+		s.append("false");
+	}
 }

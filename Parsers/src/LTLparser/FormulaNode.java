@@ -46,5 +46,9 @@ public abstract class FormulaNode {
     protected void doIndent(PrintWriter p, int indent) {
         for (int k=0; k<indent; k++) p.print(" ");
     }
+    protected void doIndent(StringBuilder s, int indent) {
+        for (int k=0; k<indent; k++) s.append(" ");
+    }
+	abstract public void toString(StringBuilder s, int indent);
 }
 

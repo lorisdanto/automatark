@@ -14,4 +14,11 @@ public class NegationNode extends UnaryLTLNode {
         myLTL.unparse(p, 0);
         p.print(")");
     }
+
+	@Override
+	public void toString(StringBuilder s, int indent) {
+		s.append("(!");
+        myLTL.toString(s, 0);
+        s.append(")");
+	}
 }
