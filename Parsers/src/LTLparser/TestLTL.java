@@ -20,6 +20,8 @@ public class TestLTL {
 	private static PrintWriter outFile;
 	private static boolean fileOrString; // true for file, false for string
 	private String inputAsString;
+	public static TestLTL test;
+	
 	public TestLTL(String[] args) {
 		// check for command-line args
 		if (args.length == 1) {
@@ -97,7 +99,7 @@ public class TestLTL {
 	
 	public static void toFile(LTLListNode root){
 		if(fileOrString){
-			((LTLListNode) root).unparse(outFile, 0);
+			root.unparse(outFile, 0);
 			System.out.println("Unparsing finished.");
 			System.out.println("return leafNodes");
 			outFile.close();
@@ -113,8 +115,7 @@ public class TestLTL {
 	public static StringBuilder toStringBuilder(LTLListNode root, boolean printString){
 		if(!fileOrString){
 			StringBuilder s = new StringBuilder();
-			LTLListNode list= (LTLListNode)root; 
-			list.toString(s, 0);
+			root.toString(s, 0);
 			if(printString){
 				String result = s.toString();
 				System.out.println(result);
@@ -134,14 +135,36 @@ public class TestLTL {
 		}
 		System.out.println("All leafNodes are printed");
 	}
+	
+	public static List<LTLNode> parse(String[] args){
+		test = new TestLTL(args);
+		LTLListNode root= test.process();
+		return root.getList();
+		
+	}
 
 	public static void main(String[] args) throws IOException
 	{
-		TestLTL test = new TestLTL(args);
-		LTLListNode root= test.process();
-		printAllNodes(root);
-		Set<String> hset = extractLeaf(root, true);
-		printLeaf(hset);
+		//This is how you get a list of LTLNodes, I still use command line arguments,
+		//The explanation of how to use the command line argument is at the comment of the program above
+		List<LTLNode> nodes = parse(args);
+		
+		//This is for verification
+		StringBuilder s = new StringBuilder();
+		for(LTLNode node: nodes){
+			node.toString(s, 0);
+		}
+		System.out.println(s.toString());
+		
+		/*
+		 * 
+		 *test = new TestLTL(args);
+		 *LTLListNode root= test.process();
+		 *printAllNodes(root);
+		 *Set<String> hset = extractLeaf(root, true);
+		 *printLeaf(hset);
+		 * */
+		
 	}
 
 	
