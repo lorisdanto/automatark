@@ -1,8 +1,16 @@
 package LTLparser;
 
-import java.io.*;
-import java_cup.runtime.*;
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Reader;
+import java.io.StringReader;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import java_cup.runtime.Symbol;
 
 /**
  * Main program to test the parser.
@@ -15,21 +23,21 @@ import java.util.*;
  * parser. If the parse is successful, the formula can be unparsed.
  */
 
-public class TestLTL {
+public class LTLParserProvider {
 	FileReader inFile;
 	private static PrintWriter outFile;
-	private static boolean fileOrString; // true for file, false for string
+	private static boolean isFile; // true for file, false for string
 	private String inputAsString;
-	public static TestLTL test;
+	public static LTLParserProvider test;
 	
-	public TestLTL(String[] args) {
+	public LTLParserProvider(String[] args) {
 		// check for command-line args
 		if (args.length == 1) {
-			fileOrString = false;
+			isFile = false;
 			inputAsString = args[0];
 			System.out.println("the String to be parsed is " + args[0]);
 		} else if (args.length == 2) {
-			fileOrString = true;
+			isFile = true;
 			System.out
 					.println("the input file to be parsed is " + args[0] + "\nthe unparsed output file is " + args[1]);
 		} else {
@@ -57,9 +65,14 @@ public class TestLTL {
 
 	}
 
+	public LTLParserProvider(FileReader reader) {
+		isFile=true;
+		inFile = reader;
+	}
+	
 	private Symbol parseFormula() {
 		try {
-			if (fileOrString) {
+			if (isFile) {
 				parser P = new parser(new Yylex(inFile));
 				return P.parse();
 			}
@@ -90,7 +103,7 @@ public class TestLTL {
 	 * This is a general method that print root according to its type(whether it is a String or a File)
 	 * */
 	public static void printAllNodes(LTLListNode root){
-		if(fileOrString){
+		if(isFile){
 			toFile(root);
 		}else{
 			toStringBuilder(root, true);
@@ -98,7 +111,7 @@ public class TestLTL {
 	}
 	
 	public static void toFile(LTLListNode root){
-		if(fileOrString){
+		if(isFile){
 			root.unparse(outFile, 0);
 			System.out.println("Unparsing finished.");
 			System.out.println("return leafNodes");
@@ -113,7 +126,7 @@ public class TestLTL {
 	 * @param boolean is can be set to true if you want to print the output in the console 
 	 * */
 	public static StringBuilder toStringBuilder(LTLListNode root, boolean printString){
-		if(!fileOrString){
+		if(!isFile){
 			StringBuilder s = new StringBuilder();
 			root.toString(s, 0);
 			if(printString){
@@ -137,7 +150,14 @@ public class TestLTL {
 	}
 	
 	public static List<LTLNode> parse(String[] args){
-		test = new TestLTL(args);
+		test = new LTLParserProvider(args);
+		LTLListNode root= test.process();
+		return root.getList();
+		
+	}
+	
+	public static List<LTLNode> parse(FileReader reader){
+		test = new LTLParserProvider(reader);
 		LTLListNode root= test.process();
 		return root.getList();
 		

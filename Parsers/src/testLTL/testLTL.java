@@ -1,5 +1,5 @@
 package testLTL;
-import LTLparser.TestLTL;
+import LTLparser.LTLParserProvider;
 import LTLparser.LTLListNode;
 import LTLparser.LTLNode;
 
@@ -23,10 +23,10 @@ public class testLTL {
 	
 	private void run(String input[][], String rightOutput){
 		for(String[] i: input){
-			TestLTL test = new TestLTL(i);
+			LTLParserProvider test = new LTLParserProvider(i);
 			LTLListNode root=  (LTLListNode) test.process();
 			//TestLTL.printAllNodes(root);
-			StringBuilder s= TestLTL.toStringBuilder(root, false);
+			StringBuilder s= LTLParserProvider.toStringBuilder(root, false);
 			String output =s.toString();
 			System.out.print("Output of test: "+output);
 		    System.out.println("RightOutput: "+rightOutput);
