@@ -20,22 +20,31 @@ import java.util.Set;
 
 
 public class testLTL {
+	
+	private void run(String input[][], String rightOutput){
+		for(String[] i: input){
+			TestLTL test = new TestLTL(i);
+			LTLListNode root=  (LTLListNode) test.process();
+			//TestLTL.printAllNodes(root);
+			StringBuilder s= TestLTL.toStringBuilder(root, false);
+			String output =s.toString();
+			System.out.print("Output of test: "+output);
+		    System.out.println("RightOutput: "+rightOutput);
+		    assertTrue(output.equals(rightOutput+System.getProperty("line.separator")));
+		}
+		
+	}
 
 	@Test
 	public void testAnd(){
 		
-		String[] input = {"a&&b"};
-		TestLTL test = new TestLTL(input);
-		LTLListNode root=  (LTLListNode) test.process();
-		//TestLTL.printAllNodes(root);
-		StringBuilder s= TestLTL.toStringBuilder(root, false);
-		String str = s.toString();
+		String[][] input = {{"a&&b"},{"a&b"}, {"a*b"}};
 		String rightOutput = "((a) && (b))";
-		System.out.print("Output of test: "+str);
-	    System.out.println("RightOutput: "+rightOutput);
+		run(input,rightOutput);
+		
 
 	    //use System.getProperty("line.separator") so the newline can be adjusted according to the operating system
-		assertTrue(str.equals(rightOutput+System.getProperty("line.separator")));
+		
 		
 		/*
 		 * below is a example of how to use extraLeaf methods outside of TestLTL.java
@@ -44,7 +53,9 @@ public class testLTL {
 		//FormulaNode root= test.process();
 		//Set<String> hset = TestLTL.extractLeaf(root, true);
 		//TestLTL.printLeaf(hset);
-		List<LTLNode> list = root.getList();
+		
+		/**
+		 * List<LTLNode> list = root.getList();
 		for(LTLNode node: list){
 			StringBuilder nodes = new StringBuilder();
 			LTLNode node1 = node.getMyLTL1();
@@ -54,6 +65,10 @@ public class testLTL {
 			String info = nodes.toString();
 			System.out.print(info);
 		}
+		 * 
+		 * **/
+		
+		
 		
 		
 	}

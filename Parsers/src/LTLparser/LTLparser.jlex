@@ -42,7 +42,7 @@ LOWERCASELETTER= [a-z]
 LETTER=          [a-zA-Z]
 WHITESPACE=      [\040\t]
 NOTNEWLINE=      [^\n]
-BACKSLASH=		 [\\]
+
 SLASH = 	     [/]
 UNDERSCORE=      [_]
 ESCAPEDCHAR=   [nt'\"?\\]
@@ -102,23 +102,25 @@ return new Symbol(sym.EOF);
 				CharNum.num +=yytext().length();
 				return S;
 			}
-
-{SLASH}{BACKSLASH}  { Symbol S = new Symbol(sym.AND, new TokenVal(yyline+1, CharNum.num));
-            CharNum.num+=2;
-            return S;
-          }
-          
-{BACKSLASH}{SLASH}      { Symbol S = new Symbol(sym.OR, new TokenVal(yyline+1, CharNum.num));
-            CharNum.num+=2;
-            return S;
-          }
-          
+            
 {LOWERCASELETTER}({LETTER}|{DIGIT}|{UNDERSCORE})* {
             Symbol S = new Symbol(sym.ID, 
                              new IdTokenVal(yyline+1, CharNum.num, yytext()));
             CharNum.num += yytext().length();
             return S;
           } 
+
+"/\\"  { Symbol S = new Symbol(sym.AND, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num+=2;
+            return S;
+          }
+          
+"\\/"      { Symbol S = new Symbol(sym.OR, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num+=2;
+            return S;
+          }
+          
+
           
           
 \"({NOTNEWLINEORQUOTEORESCAPE}|\\{ESCAPEDCHAR})*\" {
