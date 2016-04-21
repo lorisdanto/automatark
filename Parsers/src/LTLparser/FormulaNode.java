@@ -41,6 +41,13 @@ public abstract class FormulaNode {
     abstract public void unparse(PrintWriter p, int indent);
     // set second argument to false if you wish to exclude embedded expressions
     abstract public Set<String> returnLeafNodes(Set<String> set, boolean returnExp);
+    
+    // set second argument to false if you wish to exclude embedded expressions
+    public Set<String> returnLeafNodes(){
+    	Set<String> set = new HashSet<String>();
+    	returnLeafNodes(set,true);
+    	return set;
+    }
 
     // this method can be used by the unparse methods to do indenting
     protected void doIndent(PrintWriter p, int indent) {

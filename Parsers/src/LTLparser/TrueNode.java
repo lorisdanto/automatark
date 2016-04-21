@@ -24,16 +24,4 @@ public class TrueNode extends LTLNode {
 	public void toString(StringBuilder s, int indent) {
 		s.append("true");
 	}
-
-	@Override
-	public LTLNode getMyLTL1() {
-		System.out.println("This is a true node");
-		return null;
-	}
-
-	@Override
-	public LTLNode getMyLTL2() {
-		System.out.println("This is a true node");
-		return null;
-	}
 }

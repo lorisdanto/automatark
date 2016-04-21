@@ -51,16 +51,4 @@ public class IdNode extends LTLNode {
         s.append(myStrVal);
         s.append(")");
 	}
-
-	@Override
-	public LTLNode getMyLTL1() {
-		System.out.println("This is the IdNode: " + myStrVal);
-		return null;
-	}
-
-	@Override
-	public LTLNode getMyLTL2() {
-		System.out.println("This is the IdNode: " + myStrVal);
-		return null;
-	}
 }

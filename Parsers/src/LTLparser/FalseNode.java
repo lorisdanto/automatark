@@ -24,16 +24,4 @@ public class FalseNode extends LTLNode {
 	public void toString(StringBuilder s, int indent) {
 		s.append("false");
 	}
-
-	@Override
-	public LTLNode getMyLTL1() {
-		System.out.println("This is a false node");
-		return null;
-	}
-
-	@Override
-	public LTLNode getMyLTL2() {
-		System.out.println("This is a false node");
-		return null;
-	}
 }

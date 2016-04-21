@@ -14,11 +14,6 @@ public abstract class UnaryLTLNode extends LTLNode {
 	public LTLNode getMyLTL1() {
 		return myLTL;
 	}
-
-	public LTLNode getMyLTL2() {
-		System.out.println("This is an UnaryLTLNode");
-		return null;
-	}
 	
 	protected LTLNode myLTL;
 }
