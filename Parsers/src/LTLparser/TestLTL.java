@@ -69,9 +69,9 @@ public class TestLTL {
 		}
 	}
 
-	public FormulaNode process() {
+	public LTLListNode process() {
 		Symbol formula = parseFormula();
-		FormulaNode root = (FormulaNode) formula.value;
+		LTLListNode root = (LTLListNode) formula.value;
 		return root;
 	}
 	
@@ -80,14 +80,14 @@ public class TestLTL {
 	 * if boolean is true, return all leafNodes including embedded expressions,
 	 * if it is false, return leafNodes except embedded expressions 
 	 * */
-	public static Set<String> extractLeaf(FormulaNode root, boolean returnEmbeddedExp){
+	public static Set<String> extractLeaf(LTLListNode root, boolean returnEmbeddedExp){
 		return root.returnLeafNodes(new HashSet<String>(), returnEmbeddedExp);
 	}
 	
 	/**
 	 * This is a general method that print root according to its type(whether it is a String or a File)
 	 * */
-	public static void printAllNodes(FormulaNode root){
+	public static void printAllNodes(LTLListNode root){
 		if(fileOrString){
 			toFile(root);
 		}else{
@@ -95,9 +95,9 @@ public class TestLTL {
 		}
 	}
 	
-	public static void toFile(FormulaNode root){
+	public static void toFile(LTLListNode root){
 		if(fileOrString){
-			root.unparse(outFile, 0);
+			((LTLListNode) root).unparse(outFile, 0);
 			System.out.println("Unparsing finished.");
 			System.out.println("return leafNodes");
 			outFile.close();
@@ -110,10 +110,11 @@ public class TestLTL {
 	 * If you have something to do with the String output, use this method
 	 * @param boolean is can be set to true if you want to print the output in the console 
 	 * */
-	public static StringBuilder toStringBuilder(FormulaNode root, boolean printString){
+	public static StringBuilder toStringBuilder(LTLListNode root, boolean printString){
 		if(!fileOrString){
 			StringBuilder s = new StringBuilder();
-			root.toString(s, 0);
+			LTLListNode list= (LTLListNode)root; 
+			list.toString(s, 0);
 			if(printString){
 				String result = s.toString();
 				System.out.println(result);
@@ -137,7 +138,7 @@ public class TestLTL {
 	public static void main(String[] args) throws IOException
 	{
 		TestLTL test = new TestLTL(args);
-		FormulaNode root= test.process();
+		LTLListNode root= test.process();
 		printAllNodes(root);
 		Set<String> hset = extractLeaf(root, true);
 		printLeaf(hset);

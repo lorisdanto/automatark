@@ -46,7 +46,7 @@ terminal                RPAREN;
 
 /* Nonterminals */
 
-non terminal ProgramNode program;
+non terminal LTLListNode program;
 non terminal LinkedList ltlList;
 non terminal LTLNode ltl;
 non terminal LTLNode opd;
@@ -58,7 +58,8 @@ precedence left OR;
 precedence left AND;
 precedence right UNTIL, DUAL, WEAKUNTIL, RELEASE, STRONGRELEASE;
 precedence right ALWAYS, EVENTUALLY;
-precedence right NEGATION, NEXT;
+precedence right NEXT;
+precedence right NEGATION;
 
 start with program;
 
@@ -66,10 +67,10 @@ start with program;
 /* Grammar with actions */
 
 program ::= ltlList: l
-        {: RESULT = new ProgramNode(new LTLListNode(l));
+        {: RESULT = new LTLListNode(l);
         :}
         ;
-        
+
 ltlList ::= ltlList:lList ltl: l
         {: lList.addLast(l);
            RESULT = lList;

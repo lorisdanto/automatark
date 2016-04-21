@@ -21,6 +21,10 @@ public class LTLListNode extends FormulaNode {
         }
     }
     
+    public List<LTLNode> getList(){
+    	return myLTLs;
+    }
+    
     public Set<String> returnLeafNodes(Set<String> set, boolean returnExp) {
     	 Iterator<LTLNode> it = myLTLs.iterator();
         try {
