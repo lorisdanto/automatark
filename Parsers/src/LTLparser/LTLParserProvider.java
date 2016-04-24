@@ -13,7 +13,7 @@ import java.util.Set;
 import java_cup.runtime.Symbol;
 
 /**
- * Main program to test the parser.
+ * Main program to test and generate the parser.
  *
  * Two ways to use this program:
  * 1. When there is ONLY 1 command-line argument. the argument will be interpreted as a String as input 

@@ -17,7 +17,22 @@ public class FalseNode extends LTLNode {
         set.add("false");
     	return set;
     }
+    
+    /**
+     * Return the line number for this ID.
+     */
+    public int getLineNum() {
+        return myLineNum;
+    }
+    
+    /**
+     * Return the char number for this ID.
+     */
+    public int getCharNum() {
+        return myCharNum;
+    } 
 
+    
     private int myLineNum;
     private int myCharNum;
 	@Override

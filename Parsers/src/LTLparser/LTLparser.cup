@@ -29,7 +29,6 @@ terminal IdTokenVal     ID;
 terminal ExpTokenVal    EXP;
 terminal                UNTIL;
 terminal                WEAKUNTIL;
-terminal                DUAL;
 terminal                RELEASE;
 terminal                STRONGRELEASE;
 terminal                IMPLICATION;
@@ -56,7 +55,7 @@ precedence right IMPLICATION, EQUIVALENCE;
 precedence left XOR;
 precedence left OR;
 precedence left AND;
-precedence right UNTIL, DUAL, WEAKUNTIL, RELEASE, STRONGRELEASE;
+precedence right UNTIL, WEAKUNTIL, RELEASE, STRONGRELEASE;
 precedence right ALWAYS, EVENTUALLY;
 precedence right NEXT;
 precedence right NEGATION;
@@ -100,9 +99,6 @@ ltl ::= ltl: l1 AND ltl: l2
     :}
     | ltl:l1 WEAKUNTIL ltl:l2
     {: RESULT = new WeakUntilNode(l1,l2);
-    :}
-    | ltl:l1 DUAL ltl:l2
-    {: RESULT = new DualNode(l1,l2);
     :}
     | ltl:l1 RELEASE ltl:l2
     {: RESULT = new ReleaseNode(l1,l2);

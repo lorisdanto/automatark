@@ -1,7 +1,6 @@
 package LTLparser;
 
 import java.io.*;
-import java.util.*;
 
 public class WeakUntilNode extends BinaryLTLNode {
     public WeakUntilNode(LTLNode l1, LTLNode l2) {

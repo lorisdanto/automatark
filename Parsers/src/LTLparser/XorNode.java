@@ -1,7 +1,7 @@
 package LTLparser;
 
 import java.io.*;
-import java.util.*;
+
 
 public class XorNode extends BinaryLTLNode {
     public XorNode(LTLNode l1, LTLNode l2) {

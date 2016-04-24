@@ -1,7 +1,6 @@
 package LTLparser;
 
 import java.io.*;
-import java.util.*;
 
 public class EquivalenceNode extends BinaryLTLNode {
     public EquivalenceNode(LTLNode l1, LTLNode l2) {

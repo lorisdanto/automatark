@@ -1,7 +1,6 @@
 package LTLparser;
 
 import java.io.*;
-import java.util.*;
 
 public class UntilNode extends BinaryLTLNode {
     public UntilNode(LTLNode l1, LTLNode l2) {

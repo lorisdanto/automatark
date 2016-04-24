@@ -1,7 +1,6 @@
 package LTLparser;
 
 import java.io.*;
-import java.util.*;
 
 public class ImplicationNode extends BinaryLTLNode {
     public ImplicationNode(LTLNode l1, LTLNode l2) {

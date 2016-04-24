@@ -6,7 +6,7 @@ import java.util.*;
 /*
  * 	Subclass              Kids
  * 	------------------------------
- * 	ProgramNode			 LTLListNode
+ * 
  * 	LTLListNode		 	 LTLNode
  * 
  * 	LTLNode:
@@ -18,7 +18,6 @@ import java.util.*;
  * 		EquivalenceNode
  * 		UntilNode
  * 		WeakUntilNode
- * 		DualNode
  * 		ReleaseNode
  * 		StrongReleaseNode
  * 
@@ -37,7 +36,7 @@ import java.util.*;
  */
 
 public abstract class FormulaNode { 
-    // every subclass must provide an unparse operation
+    // every subclass must provide an unparse operation, currently the default indent is 0
     abstract public void unparse(PrintWriter p, int indent);
     // set second argument to false if you wish to exclude embedded expressions
     abstract public Set<String> returnLeafNodes(Set<String> set, boolean returnExp);

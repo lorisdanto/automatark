@@ -1,7 +1,6 @@
 package LTLparser;
 
 import java.io.*;
-import java.util.*;
 
 public class ReleaseNode extends BinaryLTLNode {
     public ReleaseNode(LTLNode l1, LTLNode l2) {

@@ -1,7 +1,7 @@
 package LTLparser;
 
 import java.io.*;
-import java.util.*;
+
 
 
 public class NegationNode extends UnaryLTLNode {
