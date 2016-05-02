@@ -1,0 +1,38 @@
+program ::= treeList
+        ;
+        
+treeList ::= treeList treeAutomata
+            | /* epsilon */
+         ;
+         
+treeAutomata ::= OPS arityList AUTOMATION ID STATES stateList FINALSTATES finalStateList TRANSITIONS transitionList
+             ;
+             
+arityList ::= arityList arity
+            | /* epsilon */
+            ;
+            
+arity ::= ID COLON INT
+        ;
+       
+stateList ::= stateList state
+            | /* epsilon */
+            ;
+                   
+state ::= ID COLON INT
+        ;
+                            
+finalStateList ::= finalStateList ID
+                | /* epsilon */
+                ;
+ 
+transitionList ::= transitionList transition
+                | /* epsilon */
+                ;
+                
+transition ::= ID LPAREN idList RPAREN ARROW ID
+           ;
+           
+idList ::= ID
+        | idList COMMA ID
+        ;                                                       

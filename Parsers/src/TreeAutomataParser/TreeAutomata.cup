@@ -1,0 +1,138 @@
+import java_cup.runtime.*;
+import java.util.*;
+
+/* The code below redefines method syntax_error to give better error messages
+ * than just "Syntax error"
+ */
+parser code {:
+
+public void syntax_error(Symbol currToken) {
+    if (currToken.value == null) {
+        ErrMsg.fatal(0,0, "Syntax error at end of file");
+    }
+    else {
+        ErrMsg.fatal(((TokenVal)currToken.value).linenum,
+                     ((TokenVal)currToken.value).charnum,
+                     "Syntax error");
+    }
+    System.exit(-1);
+}
+:};
+
+
+/* Terminals (tokens returned by the scanner) */
+terminal     IntTokenVal           INT;
+terminal                           OPS;
+terminal                           AUTOMATION;
+terminal                           STATES;
+terminal                           FINALSTATES;
+terminal                           TRANSITIONS;
+terminal     IdTokenVal            ID;
+terminal                           ARROW;
+terminal                           LPAREN;
+terminal                           RPAREN;
+terminal                           COLON;
+terminal                           COMMA;
+
+
+/* Nonterminals */
+non terminal TreeListNode program;
+non terminal LinkedList treeList;
+non terminal TreeNode treeAutomata;
+non terminal ArrayList arityList;
+non terminal ArityNode arity;
+non terminal ArrayList stateList;
+non terminal String state;
+non terminal ArrayList finalStateList;
+non terminal ArrayList transitionList;
+non terminal TransitionNode transition;
+non terminal ArrayList idList;
+
+
+start with program;
+/* Grammar with actions */
+
+program ::= treeList: l
+        {: RESULT = new TreeListNode(l);
+        :}
+        ;
+        
+treeList ::= treeList:l treeAutomata:t
+        {: l.addLast(t);
+           RESULT = l;
+        :}
+         | /* epsilon */
+          {:  RESULT = new LinkedList<TreeNode>();
+        :}
+         ;
+         
+treeAutomata ::= OPS arityList: aList AUTOMATION ID:id STATES stateList:sList FINALSTATES finalStateList:fList TRANSITIONS transitionList:tList
+            {: RESULT = new TreeNode(aList, id.getId(), sList, fList, tList);
+            :}
+            ;
+             
+arityList ::= arityList: aList arity:a
+           {: aList.add(a);
+              RESULT = aList;
+           :}
+           | /* epsilon */
+           {: RESULT = new ArrayList<ArityNode>(); 
+           :}
+           ;
+            
+arity ::= ID:id COLON INT: i
+       {: RESULT = new ArityNode(id.getId(), i.getInt());
+       :}
+        ;
+       
+stateList ::= stateList:sList state:s
+            {: sList.add(s);
+              RESULT = sList;
+            :}
+            | /* epsilon */
+            {: RESULT = new ArrayList<String>();
+            :}
+            ;
+                   
+state ::= ID:id COLON INT
+        {: RESULT = id.getId();
+        :}
+        ;
+                            
+finalStateList ::= finalStateList:fList ID:id
+                {: fList.add(id.getId());
+                    RESULT = fList;
+                :}
+                | /* epsilon */
+                {: RESULT = new ArrayList<String>();
+                :}
+                ;
+ 
+transitionList ::= transitionList:tList transition:t
+                {: tList.add(t);
+                    RESULT = tList;
+                :}
+                | /* epsilon */
+                {: RESULT = new ArrayList<TransitionNode>();
+                :}
+                ;
+                
+transition ::= ID:symbol LPAREN idList:children RPAREN ARROW ID:finalState
+            {: RESULT = new TransitionNode(symbol.getId(), children, finalState.getId());
+            :}
+            | ID:symbol  ARROW ID:finalState
+            {: RESULT = new TransitionNode(symbol.getId(), null, finalState.getId());
+            :}
+           ;
+           
+idList ::= ID:i
+        {: ArrayList<String> iList= new ArrayList<String>();
+           iList.add(i.getId());
+           RESULT = iList;
+        :}
+        | idList:iList COMMA ID:i
+        {: iList.add(i.getId());
+           RESULT = iList;
+        :}
+        ;
+              

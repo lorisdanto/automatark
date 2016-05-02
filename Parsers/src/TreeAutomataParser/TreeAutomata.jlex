@@ -1,0 +1,159 @@
+import java_cup.runtime.*;
+
+class TokenVal {
+  // fields
+    int linenum;
+    int charnum;
+  // constructor
+    TokenVal(int line, int ch) {
+        linenum = line;
+        charnum = ch;
+    }
+}
+
+class IdTokenVal extends TokenVal {
+  // new field: the value of the identifier
+    String idVal;
+  // constructor
+    IdTokenVal(int line, int ch, String val) {
+        super(line, ch);
+    idVal = val;
+    }
+    
+    public String getId(){
+    return idVal;
+    }
+}
+
+class IntTokenVal extends TokenVal {
+  // new field: the value of the integer literal
+    int intVal;
+  // constructor
+    IntTokenVal(int line, int ch, int val) {
+        super(line, ch);
+        intVal = val;
+    }
+    
+    public int getInt(){
+    return intVal;
+    }
+}
+
+// the current token starts on its line.
+class CharNum {
+    static int num=1;
+}
+%%
+
+DIGIT=           [0-9]
+LOWERCASELETTER= [a-z]
+LETTER=          [a-zA-Z]
+WHITESPACE=      [\040\t]
+NOTNEWLINE=      [^\n]
+UNDERSCORE=      [_]
+
+
+
+%implements java_cup.runtime.Scanner
+%function next_token
+%type java_cup.runtime.Symbol
+
+%eofval{
+return new Symbol(sym.EOF);
+%eofval}
+
+%line
+
+%%
+
+"Ops"		{
+				Symbol S = new Symbol(sym.OPS, new TokenVal(yyline+1, CharNum.num));
+				CharNum.num +=yytext().length();
+				return S;
+			}
+            
+            
+"Automaton"  {
+				Symbol S = new Symbol(sym.AUTOMATION, new TokenVal(yyline+1, CharNum.num));
+				CharNum.num +=yytext().length();
+				return S;
+			}
+
+"States"  {
+				Symbol S = new Symbol(sym.STATES, new TokenVal(yyline+1, CharNum.num));
+				CharNum.num +=yytext().length();
+				return S;
+			}
+            
+"Final States"  {
+				Symbol S = new Symbol(sym.FINALSTATES, new TokenVal(yyline+1, CharNum.num));
+				CharNum.num +=yytext().length();
+				return S;
+			}                        
+ 
+"Transitions"  {
+				Symbol S = new Symbol(sym.TRANSITIONS, new TokenVal(yyline+1, CharNum.num));
+				CharNum.num +=yytext().length();
+				return S;
+			}
+            
+ {LETTER}({LETTER}|{DIGIT}|{UNDERSCORE})* {
+            Symbol S = new Symbol(sym.ID, 
+                             new IdTokenVal(yyline+1, CharNum.num, yytext()));
+            CharNum.num += yytext().length();
+            return S;
+          }
+
+{DIGIT}+  { double val = Double.parseDouble(yytext());
+            int intVal;
+            if (val > Integer.MAX_VALUE) {
+                ErrMsg.warn(yyline+1, CharNum.num,
+                            "integer literal too large; using max value");
+                intVal = Integer.MAX_VALUE;
+            } else {
+                intVal = Integer.parseInt(yytext());
+            }
+            Symbol S = new Symbol(sym.INT,
+                             new IntTokenVal(yyline+1, CharNum.num, intVal));
+            CharNum.num += yytext().length();
+            return S;
+          }          
+          
+          
+\n        { CharNum.num = 1; }
+
+{WHITESPACE}+  { CharNum.num += yytext().length(); }    
+
+          
+          
+"->"      { Symbol S = new Symbol(sym.ARROW, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num+=2;
+            return S;
+          }
+          
+"("       { Symbol S = new Symbol(sym.LPAREN, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num++;
+            return S;
+          }
+
+")"       { Symbol S = new Symbol(sym.RPAREN, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num++;
+            return S;
+          }
+          
+":"       { Symbol S = new Symbol(sym.COLON, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num++;
+            return S;
+          }
+          
+           
+","       { Symbol S = new Symbol(sym.COMMA, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num++;
+            return S;
+          }         
+          
+          
+.         { ErrMsg.fatal(yyline+1, CharNum.num,
+                         "illegal character ignored: " + yytext());
+            CharNum.num++;
+          }                                                                        

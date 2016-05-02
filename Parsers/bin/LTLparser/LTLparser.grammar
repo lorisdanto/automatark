@@ -1,0 +1,39 @@
+program ::= ltlList
+        ;
+        
+ltlList ::= ltlList ltl
+        | /* epsilon */
+        ;
+
+ltl ::= ltl AND ltl
+    | ltl OR ltl
+    | ltl XOR ltl
+    | ltl IMPLICATION ltl
+    | ltl UNTIL ltl
+    | ltl WEAKUNTIL ltl
+    | ltl RELEASE ltl
+    | ltl STRONGRELEASE ltl
+    | NEXT ltl
+    | ALWAYS ltl
+    | EVENTUALLY ltl
+    | NEGATION ltl
+    | LPAREN ltl RPAREN
+    | opd
+    ;
+
+opd ::= TRUE
+    | FALSE
+    | ID
+    | EXP
+    ;
+    
+/* precedence (from low to high) and associativity declarations */
+
+precedence right IMPLICATION, EQUIVALENCE;
+precedence left XOR;
+precedence left OR;
+precedence left AND;
+precedence right UNTIL, WEAKUNTIL, RELEASE, STRONGRELEASE;
+precedence right ALWAYS, EVENTUALLY;
+precedence right NEXT;
+precedence right NEGATION;
