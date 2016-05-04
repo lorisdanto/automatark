@@ -1,8 +1,8 @@
 package TreeAutomataParser;
 
-public class ArityNode {
+public class SymbolWithArityNode {
 
-	public ArityNode(String symbol, int arity) {
+	public SymbolWithArityNode(String symbol, int arity) {
 		mySym = symbol;
         myArity = arity;
 	}

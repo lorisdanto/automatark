@@ -32,13 +32,12 @@ public class parser extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\023\000\002\002\004\000\002\002\003\000\002\003" +
-    "\004\000\002\003\002\000\002\004\014\000\002\005\004" +
+    "\000\020\000\002\002\004\000\002\002\014\000\002\003" +
+    "\004\000\002\003\002\000\002\004\005\000\002\005\004" +
     "\000\002\005\002\000\002\006\005\000\002\007\004\000" +
-    "\002\007\002\000\002\010\005\000\002\011\004\000\002" +
-    "\011\002\000\002\012\004\000\002\012\002\000\002\013" +
-    "\010\000\002\013\005\000\002\014\003\000\002\014\005" +
-    "" });
+    "\002\007\002\000\002\010\004\000\002\010\002\000\002" +
+    "\011\010\000\002\011\005\000\002\012\003\000\002\012" +
+    "\005" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -46,28 +45,25 @@ public class parser extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\044\000\006\002\ufffe\005\ufffe\001\002\000\004\002" +
-    "\046\001\002\000\006\002\000\005\006\001\002\000\006" +
-    "\006\ufffb\012\ufffb\001\002\000\006\002\uffff\005\uffff\001" +
-    "\002\000\006\006\012\012\011\001\002\000\004\016\044" +
-    "\001\002\000\004\012\014\001\002\000\006\006\ufffc\012" +
-    "\ufffc\001\002\000\004\007\015\001\002\000\006\010\ufff8" +
-    "\012\ufff8\001\002\000\006\010\020\012\017\001\002\000" +
-    "\004\016\042\001\002\000\006\011\ufff5\012\ufff5\001\002" +
-    "\000\006\010\ufff9\012\ufff9\001\002\000\006\011\024\012" +
-    "\023\001\002\000\006\011\ufff6\012\ufff6\001\002\000\010" +
-    "\002\ufff3\005\ufff3\012\ufff3\001\002\000\010\002\ufffd\005" +
-    "\ufffd\012\026\001\002\000\006\013\030\014\031\001\002" +
-    "\000\010\002\ufff4\005\ufff4\012\ufff4\001\002\000\004\012" +
-    "\041\001\002\000\004\012\032\001\002\000\006\015\ufff0" +
-    "\017\ufff0\001\002\000\006\015\035\017\034\001\002\000" +
-    "\004\012\040\001\002\000\004\013\036\001\002\000\004" +
-    "\012\037\001\002\000\010\002\ufff2\005\ufff2\012\ufff2\001" +
-    "\002\000\006\015\uffef\017\uffef\001\002\000\010\002\ufff1" +
-    "\005\ufff1\012\ufff1\001\002\000\004\004\043\001\002\000" +
-    "\006\010\ufff7\012\ufff7\001\002\000\004\004\045\001\002" +
-    "\000\006\006\ufffa\012\ufffa\001\002\000\004\002\001\001" +
-    "\002" });
+    "\000\042\000\004\005\004\001\002\000\006\006\ufffe\012" +
+    "\ufffe\001\002\000\004\002\006\001\002\000\004\002\001" +
+    "\001\002\000\006\006\011\012\010\001\002\000\004\016" +
+    "\043\001\002\000\004\012\013\001\002\000\006\006\uffff" +
+    "\012\uffff\001\002\000\004\007\014\001\002\000\006\010" +
+    "\ufffb\012\ufffb\001\002\000\006\010\017\012\016\001\002" +
+    "\000\004\016\041\001\002\000\006\011\ufff8\012\ufff8\001" +
+    "\002\000\006\010\ufffc\012\ufffc\001\002\000\006\011\023" +
+    "\012\022\001\002\000\006\011\ufff9\012\ufff9\001\002\000" +
+    "\006\002\ufff6\012\ufff6\001\002\000\006\002\000\012\025" +
+    "\001\002\000\006\013\027\014\030\001\002\000\006\002" +
+    "\ufff7\012\ufff7\001\002\000\004\012\040\001\002\000\004" +
+    "\012\031\001\002\000\006\015\ufff3\017\ufff3\001\002\000" +
+    "\006\015\034\017\033\001\002\000\004\012\037\001\002" +
+    "\000\004\013\035\001\002\000\004\012\036\001\002\000" +
+    "\006\002\ufff5\012\ufff5\001\002\000\006\015\ufff2\017\ufff2" +
+    "\001\002\000\006\002\ufff4\012\ufff4\001\002\000\004\004" +
+    "\042\001\002\000\006\010\ufffa\012\ufffa\001\002\000\004" +
+    "\004\044\001\002\000\006\006\ufffd\012\ufffd\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -75,19 +71,19 @@ public class parser extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\044\000\006\002\003\003\004\001\001\000\002\001" +
-    "\001\000\004\004\006\001\001\000\004\005\007\001\001" +
-    "\000\002\001\001\000\004\006\012\001\001\000\002\001" +
+    "\000\042\000\004\002\004\001\001\000\004\003\006\001" +
+    "\001\000\002\001\001\000\002\001\001\000\004\004\011" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\004\005\014\001\001\000\004" +
+    "\006\017\001\001\000\002\001\001\000\004\007\020\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\004\007\015\001\001\000\004\010\020\001\001\000" +
-    "\002\001\001\000\004\011\021\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\004\012\024\001" +
-    "\001\000\004\013\026\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001\000\004\014\032\001\001\000" +
+    "\000\004\010\023\001\001\000\004\011\025\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\004" +
+    "\012\031\001\001\000\002\001\001\000\002\001\001\000" +
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001" });
+    "" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -165,12 +161,12 @@ class CUP$parser$actions {
       switch (CUP$parser$act_num)
         {
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 0: // $START ::= program EOF 
+          case 0: // $START ::= treeAutomata EOF 
             {
               Object RESULT =null;
 		int start_valleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
 		int start_valright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
-		TreeListNode start_val = (TreeListNode)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
+		TreeNode start_val = (TreeNode)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		RESULT = start_val;
               CUP$parser$result = parser.getSymbolFactory().newSymbol("$START",0, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
@@ -179,47 +175,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 1: // program ::= treeList 
-            {
-              TreeListNode RESULT =null;
-		int lleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int lright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
-		LinkedList l = (LinkedList)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-		 RESULT = new TreeListNode(l);
-        
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("program",0, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
-            }
-          return CUP$parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 2: // treeList ::= treeList treeAutomata 
-            {
-              LinkedList RESULT =null;
-		int lleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
-		int lright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
-		LinkedList l = (LinkedList)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
-		int tleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int tright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
-		TreeNode t = (TreeNode)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-		 l.addLast(t);
-           RESULT = l;
-        
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("treeList",1, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
-            }
-          return CUP$parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 3: // treeList ::= 
-            {
-              LinkedList RESULT =null;
-		  RESULT = new LinkedList<TreeNode>();
-        
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("treeList",1, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
-            }
-          return CUP$parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 4: // treeAutomata ::= OPS arityList AUTOMATION ID STATES stateList FINALSTATES finalStateList TRANSITIONS transitionList 
+          case 1: // treeAutomata ::= OPS arityList AUTOMATION ID STATES stateList FINALSTATES finalStateList TRANSITIONS transitionList 
             {
               TreeNode RESULT =null;
 		int aListleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-8)).left;
@@ -239,12 +195,12 @@ class CUP$parser$actions {
 		ArrayList tList = (ArrayList)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = new TreeNode(aList, id.getId(), sList, fList, tList);
             
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("treeAutomata",2, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-9)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("treeAutomata",0, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-9)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 5: // arityList ::= arityList arity 
+          case 2: // arityList ::= arityList arity 
             {
               ArrayList RESULT =null;
 		int aListleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
@@ -252,42 +208,42 @@ class CUP$parser$actions {
 		ArrayList aList = (ArrayList)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		int aleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int aright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
-		ArityNode a = (ArityNode)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
+		SymbolWithArityNode a = (SymbolWithArityNode)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 aList.add(a);
               RESULT = aList;
            
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("arityList",3, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("arityList",1, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 6: // arityList ::= 
+          case 3: // arityList ::= 
             {
               ArrayList RESULT =null;
-		 RESULT = new ArrayList<ArityNode>(); 
+		 RESULT = new ArrayList<SymbolWithArityNode>(); 
            
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("arityList",3, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("arityList",1, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 7: // arity ::= ID COLON INT 
+          case 4: // arity ::= ID COLON INT 
             {
-              ArityNode RESULT =null;
+              SymbolWithArityNode RESULT =null;
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		IdTokenVal id = (IdTokenVal)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
 		int ileft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int iright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		IntTokenVal i = (IntTokenVal)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-		 RESULT = new ArityNode(id.getId(), i.getInt());
+		 RESULT = new SymbolWithArityNode(id.getId(), i.getInt());
        
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("arity",4, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("arity",2, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 8: // stateList ::= stateList state 
+          case 5: // stateList ::= stateList state 
             {
               ArrayList RESULT =null;
 		int sListleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
@@ -299,22 +255,22 @@ class CUP$parser$actions {
 		 sList.add(s);
               RESULT = sList;
             
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("stateList",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("stateList",3, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // stateList ::= 
+          case 6: // stateList ::= 
             {
               ArrayList RESULT =null;
 		 RESULT = new ArrayList<String>();
             
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("stateList",5, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("stateList",3, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 10: // state ::= ID COLON INT 
+          case 7: // state ::= ID COLON INT 
             {
               String RESULT =null;
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -322,12 +278,12 @@ class CUP$parser$actions {
 		IdTokenVal id = (IdTokenVal)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
 		 RESULT = id.getId();
         
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("state",6, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("state",4, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 11: // finalStateList ::= finalStateList ID 
+          case 8: // finalStateList ::= finalStateList ID 
             {
               ArrayList RESULT =null;
 		int fListleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
@@ -339,22 +295,22 @@ class CUP$parser$actions {
 		 fList.add(id.getId());
                     RESULT = fList;
                 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("finalStateList",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("finalStateList",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 12: // finalStateList ::= 
+          case 9: // finalStateList ::= 
             {
               ArrayList RESULT =null;
 		 RESULT = new ArrayList<String>();
                 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("finalStateList",7, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("finalStateList",5, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 13: // transitionList ::= transitionList transition 
+          case 10: // transitionList ::= transitionList transition 
             {
               ArrayList RESULT =null;
 		int tListleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
@@ -366,22 +322,22 @@ class CUP$parser$actions {
 		 tList.add(t);
                     RESULT = tList;
                 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("transitionList",8, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("transitionList",6, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 14: // transitionList ::= 
+          case 11: // transitionList ::= 
             {
               ArrayList RESULT =null;
 		 RESULT = new ArrayList<TransitionNode>();
                 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("transitionList",8, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("transitionList",6, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 15: // transition ::= ID LPAREN idList RPAREN ARROW ID 
+          case 12: // transition ::= ID LPAREN idList RPAREN ARROW ID 
             {
               TransitionNode RESULT =null;
 		int symbolleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-5)).left;
@@ -395,12 +351,12 @@ class CUP$parser$actions {
 		IdTokenVal finalState = (IdTokenVal)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = new TransitionNode(symbol.getId(), children, finalState.getId());
             
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("transition",9, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-5)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("transition",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-5)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 16: // transition ::= ID ARROW ID 
+          case 13: // transition ::= ID ARROW ID 
             {
               TransitionNode RESULT =null;
 		int symbolleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -411,12 +367,12 @@ class CUP$parser$actions {
 		IdTokenVal finalState = (IdTokenVal)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = new TransitionNode(symbol.getId(), null, finalState.getId());
             
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("transition",9, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("transition",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 17: // idList ::= ID 
+          case 14: // idList ::= ID 
             {
               ArrayList RESULT =null;
 		int ileft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
@@ -426,12 +382,12 @@ class CUP$parser$actions {
            iList.add(i.getId());
            RESULT = iList;
         
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("idList",10, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("idList",8, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 18: // idList ::= idList COMMA ID 
+          case 15: // idList ::= idList COMMA ID 
             {
               ArrayList RESULT =null;
 		int iListleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -443,7 +399,7 @@ class CUP$parser$actions {
 		 iList.add(i.getId());
            RESULT = iList;
         
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("idList",10, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("idList",8, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 

@@ -61,7 +61,7 @@ public class TreeParserProvider {
 	            System.err.println("Exception occured during parse: " + ex);
 	            System.exit(-1);
 	        }
-	        ((TreeListNode)root.value).unparse(outFile);
+	        ((TreeNode)root.value).unparse(outFile);
 	        System.out.println ("unparsing finished.");
 	        
 	        outFile.close();

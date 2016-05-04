@@ -36,11 +36,10 @@ terminal                           COMMA;
 
 
 /* Nonterminals */
-non terminal TreeListNode program;
-non terminal LinkedList treeList;
+
 non terminal TreeNode treeAutomata;
 non terminal ArrayList arityList;
-non terminal ArityNode arity;
+non terminal SymbolWithArityNode arity;
 non terminal ArrayList stateList;
 non terminal String state;
 non terminal ArrayList finalStateList;
@@ -49,22 +48,9 @@ non terminal TransitionNode transition;
 non terminal ArrayList idList;
 
 
-start with program;
+start with treeAutomata;
 /* Grammar with actions */
 
-program ::= treeList: l
-        {: RESULT = new TreeListNode(l);
-        :}
-        ;
-        
-treeList ::= treeList:l treeAutomata:t
-        {: l.addLast(t);
-           RESULT = l;
-        :}
-         | /* epsilon */
-          {:  RESULT = new LinkedList<TreeNode>();
-        :}
-         ;
          
 treeAutomata ::= OPS arityList: aList AUTOMATION ID:id STATES stateList:sList FINALSTATES finalStateList:fList TRANSITIONS transitionList:tList
             {: RESULT = new TreeNode(aList, id.getId(), sList, fList, tList);
@@ -76,12 +62,12 @@ arityList ::= arityList: aList arity:a
               RESULT = aList;
            :}
            | /* epsilon */
-           {: RESULT = new ArrayList<ArityNode>(); 
+           {: RESULT = new ArrayList<SymbolWithArityNode>(); 
            :}
            ;
             
 arity ::= ID:id COLON INT: i
-       {: RESULT = new ArityNode(id.getId(), i.getInt());
+       {: RESULT = new SymbolWithArityNode(id.getId(), i.getInt());
        :}
         ;
        

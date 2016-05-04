@@ -1,9 +1,7 @@
-program ::= treeList
+program ::= treeAutomata
         ;
         
-treeList ::= treeList treeAutomata
-            | /* epsilon */
-         ;
+
          
 treeAutomata ::= OPS arityList AUTOMATION ID STATES stateList FINALSTATES finalStateList TRANSITIONS transitionList
              ;

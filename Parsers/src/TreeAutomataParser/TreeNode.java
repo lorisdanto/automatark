@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class TreeNode {
 
-	public TreeNode(ArrayList<ArityNode> aList, String ID, ArrayList<String> sList, ArrayList<String> fList, ArrayList<TransitionNode> tList){
+	public TreeNode(ArrayList<SymbolWithArityNode> aList, String ID, ArrayList<String> sList, ArrayList<String> fList, ArrayList<TransitionNode> tList){
 		arityList = aList;
 		myID = ID;
 		stateList = sList;
@@ -16,7 +16,7 @@ public class TreeNode {
     public void unparse(PrintWriter p){
     	//print Ops first
     	p.print("Ops ");
-        for(ArityNode node: arityList){
+        for(SymbolWithArityNode node: arityList){
             p.print(node.getSymbol());
             p.print(":");
             p.print(node.getArity());
@@ -58,7 +58,7 @@ public class TreeNode {
 		p.print(System.getProperty("line.separator"));
     }
     
-    public ArrayList<ArityNode> getArity(){
+    public ArrayList<SymbolWithArityNode> getArity(){
     	return arityList;
     }
     
@@ -78,7 +78,7 @@ public class TreeNode {
     	return transitionList;
     }
 
-	private ArrayList<ArityNode> arityList;
+	private ArrayList<SymbolWithArityNode> arityList;
 	private String myID;
     private ArrayList<String> stateList;
     private ArrayList<String> finalStateList;
