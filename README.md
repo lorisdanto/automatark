@@ -14,6 +14,8 @@ AutomataArk contains benchmark from the following sources.
 * Lukas Holik's page, [http://www.fit.vutbr.cz/~holik/]
 * Limi CAV15 experiments [https://github.com/thorstent/Limi]
 * LibVata library [http://www.fit.vutbr.cz/research/groups/verifit/tools/libvata/]
+* RegexLib [http://www.regexlib.com/]
+* Snort [https://www.snort.org/]
 
 ## Contact
 You are encouraged to contribute more benchmark problems, parsers, or help in any way you want. Please contact me at
