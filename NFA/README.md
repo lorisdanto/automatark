@@ -32,12 +32,12 @@ An example could look like this:
 Ops a:0 b:1 c:2
 
 Automaton A
-States q0 q1 q2
-Final States q2 
+States q0 q1
+Final States q1 
 Transitions
 a() -> q0
 b(q0) -> q1
-c(q1, q1) -> q1
-c(q1, q1) -> q2
-c(q2, q2) -> q2
+c(q1) -> q1
 ```
+
+Here q0 is the initial state
