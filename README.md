@@ -16,6 +16,8 @@ AutomataArk contains benchmark from the following sources.
 * LibVata library [http://www.fit.vutbr.cz/research/groups/verifit/tools/libvata/]
 * RegexLib [http://www.regexlib.com/]
 * Snort [https://www.snort.org/]
+* Becchi et al. 
+"A workload for evaluating deep packet inspection architectures" [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4636093&tag=1]
 
 ## Contact
 You are encouraged to contribute more benchmark problems, parsers, or help in any way you want. Please contact me at
