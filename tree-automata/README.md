@@ -1,11 +1,8 @@
-# AutomatArk (Automata Benchmark)
-Benchmark problems for different models of automata, transducers, and related logics
+# Nondeterministic finite tree automata
 
 ##Input Format
 
-This description is taken from the [libvata](http://www.fit.vutbr.cz/research/groups/verifit/tools/libvata/)
-webpage.
-All automata are expressed using the Timbuk format for tree automata. 
+We use the Timbuk format for tree automata and this description is available at [libvata](http://www.fit.vutbr.cz/research/groups/verifit/tools/libvata/).
 The format is specified by the following grammar with the start symbol <file>.
 
 ```
@@ -41,15 +38,3 @@ c(q1, q1) -> q1
 c(q1, q1) -> q2
 c(q2, q2) -> q2
 ```
-
-By default automata are meant to be bottom-up.
-For string automata all symbols but one will have arity 1, and one symbol will have arity 
-0 (the beginning-of-string).
-
-## Sources
-AutomataArk contains benchmark from the following sources.
-
-* Alaska TACAS08 experiments, [http://lit2.ulb.ac.be/alaska/experiments.html]
-* Lukas Holik's page, [http://www.fit.vutbr.cz/~holik/]
-* Limi CAV15 experiments [https://github.com/thorstent/Limi]
-* LibVata library [http://www.fit.vutbr.cz/research/groups/verifit/tools/libvata/]
