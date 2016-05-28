@@ -1,0 +1,63 @@
+
+//not using all regexNode instead of using regexNode, unionRegex,concateRegex, and elementaryRegex 
+//because there is no way to add precedemce of concatenation
+
+program ::= regexList
+        
+regexList ::= regexList regexNode | /* epsilon */
+                       
+regexNode	::=	regexNode "|" unionRegex | unionRegex     //UNION
+
+unionRegex	::=	unionRegex concateRegex | concateRegex   //CONCATENATION
+
+concateRegex	::=	elementaryRegex"*" | elementaryRegex"+" | elementaryRegex"?" | elementaryRegex
+
+elementaryRegex	::= "(" regexNode ")" | "." | "^" | "$" | char | set 
+
+char ::= nonmetachar | metachar
+
+set	::=	"[" intervals "]" 
+
+        | "[" "^" intervals "]"
+        
+        | { integer }
+
+        | { integer ,  }
+
+        | { integer , integer }
+
+integer = digit 
+        | digit integer
+         
+intervals	::=	 intervals interval  | interval
+
+interval	::=	char "-" char | char	
+
+nonmetachar ::= [^\\]|[\\][^tnrfbBdDsSvwW] //split this string to character when necessary
+
+metachar ::=    \t {tab character}
+
+                \n {newline character}
+
+                \r {carriage return character}
+
+                \f {form feed character}
+
+                \b {match a 'word' boundary}
+
+                \B {match not a 'word' boundary}
+
+                \d {a digit, [0-9]}
+
+                \D {not a digit, [^0-9]}
+
+                \s {whitespace, [ \t\n\r\f]}
+
+                \S {not a whitespace, [^ \t\n\r\f]}
+
+                \v {matches a vertical tab character}
+                
+                \w {'word' character, [a-zA-Z0-9_]}
+
+                \W {not a 'word' character, [^a-zA-Z0-9_]}
+
