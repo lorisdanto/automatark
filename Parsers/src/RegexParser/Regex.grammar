@@ -1,41 +1,152 @@
+/**
+* @author Fang Wang, UW-Madison student, 05/29/2016
+* the rule of the grammar is derived from http://web.archive.org/web/20090129224504/http://faqts.com/knowledge_base/view.phtml/aid/25718/fid/200
+* and http://regexr.com/
+**/
 
-//not using all regexNode instead of using regexNode, unionRegex,concateRegex, and elementaryRegex 
-//because there is no way to add precedemce of concatenation
+
+// detailed info of each node will be updated in FormulaNode.java
+
+//I'm not using all regexNode instead of using regexNode, simpleRegex and basicRegex 
+//because I have to use the conventional way to add precedence to concatenation
+
+/* Nonterminals */
+non terminal RegexListNode program;
+non terminal LinkedList regexList;
+non terminal RegexNode regexNode;
+non terminal RegexNode simpleRegex;
+non terminal RegexNode basicRegex;
+non terminal int integer;
+non terminal LinkedList intervals;
+non terminal IntervalNode interval;
+non terminal RegexNode insideChar;
+non terminal RegexNode outsideChar;
+non terminal RegexNode metachar;
+
+/* precedence and associativity declarations */
+precedence left UNION;
+precedence left MINUS;
+precedence left STAR, PLUS, OPTIONAL;
+
+/* Grammar with comments */
+start with program;
 
 program ::= regexList
-        
-regexList ::= regexList regexNode | /* epsilon */
+       
+regexList ::= regexList regexNode 
+            
+            | /* epsilon */
+            
                        
-regexNode	::=	regexNode "|" unionRegex | unionRegex     //UNION
+regexNode   ::=regexNode UNION simpleRegex
+            
+            | simpleRegex    
+            
+            
+simpleRegex ::=	simpleRegex basicRegex
+            
+            | basicRegex
+            
 
-unionRegex	::=	unionRegex concateRegex | concateRegex   //CONCATENATION
+basicRegex	::= LPAREN regexNode RPAREN 
+               
+                | basicRegex "*" 
+                
+                | basicRegex "+" 
+                
+                | basicRegex "?" 
+                
+                | basicRegex "{" integer "}"
+                                     
+                | basicRegex "{" integer ","  "}"
+                
+                | basicRegex  "{" integer "," integer "}"
+                
+                | "."           // meta character, all characters except line breaker
+                
+                | "^"           // meta character, start of string
+                   
+                | "$"           // meta character, end of string
+                   
+                | outsideChar   //chacters that can be outside of characterClass
+                   
+                | "[" intervals "]"  //chacterClass
+                 
+                | "[" "^" intervals "]" //notCharacterClass
+                
+                
+integer ::= integer DIGIT // compute min and max of repetition
+          
+          | DIGIT
+          
+    
+intervals   ::=	 intervals interval // linedList of intervals
+            
+            | /* epsilon */
+            
 
-concateRegex	::=	elementaryRegex"*" | elementaryRegex"+" | elementaryRegex"?" | elementaryRegex
-
-elementaryRegex	::= "(" regexNode ")" | "." | "^" | "$" | char | set 
-
-char ::= nonmetachar | metachar
-
-set	::=	"[" intervals "]" 
-
-        | "[" "^" intervals "]"
+interval    ::=	insideChar //characters that can be inside characterClass
+            
+            | insideChar MINUS insideChar // range
+            
         
-        | { integer }
+insideChar ::=  DIGIT
+                
+                | ESCAPEDCHAR  //characters of format \X where X can be character except metacharacters
+                
+                | metaChar
+                
+                | NOTDIGIT //single character that exclude digits and special characters such as +.*{}[] etc.
+                
+                | "-" //below special characters lose their meaning inside character class
+                
+                | "." 
+                
+                | "+"  
+                
+                | "*" 
+                
+                | "?" 
+                
+                | "^" 
+                
+                | "$" 
+                
+                | "[" 
+                
+                | "]" 
+                
+                | "(" 
+                
+                | ")" 
+                
+                | "{" 
+               
+                | "}" 
+                
+                | "|" 
+                
+                | ","
+                
+                
+outsideChar ::=  DIGIT
+                
+                | ESCAPEDCHAR   
+                
+                | metaChar
+                
+                | NOTDIGIT
+                
+                | "-" 
+                
+                | "{" 
+                
+                | "}" 
+                
+                | ","
+               
 
-        | { integer ,  }
-
-        | { integer , integer }
-
-integer = digit 
-        | digit integer
-         
-intervals	::=	 intervals interval  | interval
-
-interval	::=	char "-" char | char	
-
-nonmetachar ::= [^\\]|[\\][^tnrfbBdDsSvwW] //split this string to character when necessary
-
-metachar ::=    \t {tab character}
+metaChar ::=    \t {tab character}
 
                 \n {newline character}
 
@@ -60,4 +171,4 @@ metachar ::=    \t {tab character}
                 \w {'word' character, [a-zA-Z0-9_]}
 
                 \W {not a 'word' character, [^a-zA-Z0-9_]}
-
+                

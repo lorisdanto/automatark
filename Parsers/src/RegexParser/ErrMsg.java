@@ -1,4 +1,4 @@
-package LTLparser;
+package RegexParser;
 
 /**
  * ErrMsg
