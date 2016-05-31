@@ -14,9 +14,9 @@ class TokenVal {
 
 class CharTokenVal extends TokenVal {
   // new field: the value of the identifier
-    Char charVal;
+    char charVal;
   // constructor
-    CharTokenVal(int line, int ch, Char val) {
+    CharTokenVal(int line, int ch, char val) {
         super(line, ch);
     charVal = val;
     }
@@ -51,69 +51,69 @@ return new Symbol(sym.EOF);
 
 %%
 
+\n        { CharNum.num = 1; }  
 
-
-"\t"      { Symbol S = new Symbol(sym.METATAB, new TokenVal(yyline+1, CharNum.num));
+"\\t"      { Symbol S = new Symbol(sym.METATAB, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }
           
-"\n"      { Symbol S = new Symbol(sym.METANEWLINE, new TokenVal(yyline+1, CharNum.num));
+"\\n"      { Symbol S = new Symbol(sym.METANEWLINE, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }
 
-"\r"      { Symbol S = new Symbol(sym.METARETURN, new TokenVal(yyline+1, CharNum.num));
+"\\r"      { Symbol S = new Symbol(sym.METARETURN, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }                    
 
-"\f"      { Symbol S = new Symbol(sym.METAFEED, new TokenVal(yyline+1, CharNum.num));
+"\\f"      { Symbol S = new Symbol(sym.METAFEED, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }
 
-"\b"      { Symbol S = new Symbol(sym.METABOUNDARY, new TokenVal(yyline+1, CharNum.num));
+"\\b"      { Symbol S = new Symbol(sym.METABOUNDARY, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }                    
 
-"\B"      { Symbol S = new Symbol(sym.METANOTBOUNDARY, new TokenVal(yyline+1, CharNum.num));
+"\\B"      { Symbol S = new Symbol(sym.METANOTBOUNDARY, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }
           
-"\d"      { Symbol S = new Symbol(sym.METADIGIT, new TokenVal(yyline+1, CharNum.num));
+"\\d"      { Symbol S = new Symbol(sym.METADIGIT, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }
 
-"\D"      { Symbol S = new Symbol(sym.METANOTDIGIT, new TokenVal(yyline+1, CharNum.num));
+"\\D"      { Symbol S = new Symbol(sym.METANOTDIGIT, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }                    
 
-"\s"      { Symbol S = new Symbol(sym.METASPACE, new TokenVal(yyline+1, CharNum.num));
+"\\s"      { Symbol S = new Symbol(sym.METASPACE, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }
 
-"\S"      { Symbol S = new Symbol(sym.METANOTSPACE, new TokenVal(yyline+1, CharNum.num));
+"\\S"      { Symbol S = new Symbol(sym.METANOTSPACE, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           } 
           
-"\v"      { Symbol S = new Symbol(sym.METAVERTICALTAB, new TokenVal(yyline+1, CharNum.num));
+"\\v"      { Symbol S = new Symbol(sym.METAVERTICALTAB, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }                    
 
-"\w"      { Symbol S = new Symbol(sym.METAWORD, new TokenVal(yyline+1, CharNum.num));
+"\\w"      { Symbol S = new Symbol(sym.METAWORD, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }
 
-"\W"      { Symbol S = new Symbol(sym.METANOTWORD, new TokenVal(yyline+1, CharNum.num));
+"\\W"      { Symbol S = new Symbol(sym.METANOTWORD, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
           }
@@ -204,7 +204,7 @@ return new Symbol(sym.EOF);
             return S;
           }                                                  
           
-\n        { CharNum.num = 1; }            
+          
           
 
 {DIGIT}   {

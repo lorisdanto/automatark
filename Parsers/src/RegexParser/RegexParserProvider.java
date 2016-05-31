@@ -33,7 +33,7 @@ public class RegexParserProvider {
 					.println("the input file to be parsed is " + args[0] + "\nthe unparsed output file is " + args[1]);
 		} else {
 			System.err.println("For file input/output, please supply name of file to be parsed "
-					+ "and name of file for unparsed version in two args.");
+					+ "and name of file for unparsed version in two args.\nFor String input, use one arg");
 			System.exit(-1);
 		}
 		// open input file

@@ -60,17 +60,17 @@ non terminal LinkedList regexList;
 non terminal RegexNode regexNode;
 non terminal RegexNode simpleRegex;
 non terminal RegexNode basicRegex;
-non terminal int integer;
+non terminal Integer integer;
 non terminal LinkedList intervals;
 non terminal IntervalNode interval;
-non terminal RegexNode insideChar;
-non terminal RegexNode outsideChar;
-non terminal RegexNode metaChar;
+non terminal CharNode insideChar;
+non terminal CharNode outsideChar;
+non terminal CharNode metaChar;
 
 /* precedence and associativity declarations */
 precedence left UNION;
 precedence left MINUS;
-precedence left STAR, PLUS, OPTIONAL;
+precedence left STAR, PLUS, OPTIONAL, CARET, RCURLY, DIGIT;
 
 
 
@@ -151,10 +151,10 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
                 ;
                 
 integer ::= integer:i DIGIT:d 
-          {: RESULT = Integer.parseInt(d.charVal)+ i*10;
+          {: RESULT = Integer.parseInt(String.valueOf(d.charVal))+ i*10;
           :}
           | DIGIT:d
-          {: RESULT = Integer.parseInt(d.charVal); 
+          {: RESULT = Integer.parseInt(String.valueOf(d.charVal)); 
           :}
           ;
     
