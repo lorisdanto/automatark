@@ -12,13 +12,13 @@ class TokenVal {
 }
 
 
-class StrTokenVal extends TokenVal {
+class CharTokenVal extends TokenVal {
   // new field: the value of the identifier
-    String strVal;
+    Char charVal;
   // constructor
-    StrTokenVal(int line, int ch, String val) {
+    CharTokenVal(int line, int ch, Char val) {
         super(line, ch);
-    strVal = val;
+    charVal = val;
     }
 }
 
@@ -123,7 +123,7 @@ return new Symbol(sym.EOF);
             String val = yytext();
             char charVal = val.charAt(1);
             Symbol S = new Symbol(sym.ESCAPEDCHAR,
-                             new StrTokenVal(yyline+1, CharNum.num, charVal));
+                             new CharTokenVal(yyline+1, CharNum.num, charVal));
             CharNum.num += yytext().length();
             return S;
           }
@@ -209,16 +209,18 @@ return new Symbol(sym.EOF);
 
 {DIGIT}   {
             String val = yytext();
+            char charVal = val.charAt(0);
             Symbol S = new Symbol(sym.DIGIT,
-                             new StrTokenVal(yyline+1, CharNum.num, charVal));
+                             new CharTokenVal(yyline+1, CharNum.num, charVal));
             CharNum.num += yytext().length();
             return S;
           }        
 
 {NOTDIGIT} {
             String val = yytext();
+            char charVal = val.charAt(0);
             Symbol S = new Symbol(sym.NOTDIGIT,
-                             new StrTokenVal(yyline+1, CharNum.num, charVal));
+                             new CharTokenVal(yyline+1, CharNum.num, charVal));
             CharNum.num += yytext().length();
             return S;
           } 

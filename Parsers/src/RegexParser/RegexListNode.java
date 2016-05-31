@@ -5,8 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import RegexParser.FormulaNode;
 
-public class RegexListNode {
+
+public class RegexListNode extends FormulaNode{
 	private List<RegexNode> myRegexList;
 
 	public RegexListNode(List<RegexNode> S) {

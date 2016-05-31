@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
+import LTLparser.LTLNode;
 import java_cup.runtime.Symbol;
 
 public class RegexParserProvider {
@@ -94,7 +94,7 @@ public class RegexParserProvider {
 	
 	public static void toFile(RegexListNode root){
 		if(isFile){
-			root.unparse(outFile, 0);
+			root.unparse(outFile);
 			System.out.println("Unparsing finished.");
 			outFile.close();
 		}else{
@@ -109,7 +109,7 @@ public class RegexParserProvider {
 	public static StringBuilder toStringBuilder(RegexListNode root, boolean printString){
 		if(!isFile){
 			StringBuilder s = new StringBuilder();
-			root.toString(s, 0);
+			root.toString(s);
 			if(printString){
 				String result = s.toString();
 				System.out.println(result);
@@ -134,26 +134,16 @@ public class RegexParserProvider {
 		return root.getList();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+	public static void main(String[] args) {
+		List<RegexNode> nodes = parse(args);
+		
+		//This is for verification
+		StringBuilder s = new StringBuilder();
+		for(RegexNode node: nodes){
+			node.toString(s);
+		}
+		System.out.println(s.toString());
 	}
 
 }

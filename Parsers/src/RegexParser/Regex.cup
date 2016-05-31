@@ -33,9 +33,9 @@ terminal TokenVal METANOTSPACE;
 terminal TokenVal METAVERTICALTAB;
 terminal TokenVal METAWORD;
 terminal TokenVal METANOTWORD;
-terminal StrTokenVal ESCAPEDCHAR;
-terminal StrTokenVal DIGIT;
-terminal StrTokenVal NOTDIGIT;
+terminal CharTokenVal ESCAPEDCHAR;
+terminal CharTokenVal DIGIT;
+terminal CharTokenVal NOTDIGIT;
 
 terminal  TokenVal MINUS;
 terminal  TokenVal DOT;
@@ -65,7 +65,7 @@ non terminal LinkedList intervals;
 non terminal IntervalNode interval;
 non terminal RegexNode insideChar;
 non terminal RegexNode outsideChar;
-non terminal RegexNode metachar;
+non terminal RegexNode metaChar;
 
 /* precedence and associativity declarations */
 precedence left UNION;
@@ -131,13 +131,13 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
                 {: RESULT = new RepetitionNode(3,r, i1, i2); 
                 :}
                 | DOT
-                {: RESULT = new DotNode(); 
+                {: RESULT = new DotNode('.'); 
                 :}    
                 | CARET 
-                {: RESULT = new StartAnchorNode(); 
+                {: RESULT = new StartAnchorNode('^'); 
                 :}    
                 | DOLLAR 
-                {: RESULT = new EndAnchorNode(); 
+                {: RESULT = new EndAnchorNode('$'); 
                 :}    
                 | outsideChar: c 
                 {: RESULT = c; 
@@ -151,10 +151,10 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
                 ;
                 
 integer ::= integer:i DIGIT:d 
-          {: RESULT = Integer.parseInt(d.strVal)+ i*10;
+          {: RESULT = Integer.parseInt(d.charVal)+ i*10;
           :}
           | DIGIT:d
-          {: RESULT = Integer.parseInt(d.strVal); 
+          {: RESULT = Integer.parseInt(d.charVal); 
           :}
           ;
     
@@ -176,126 +176,127 @@ interval	::=	insideChar:c
             ;
         
 insideChar ::=  DIGIT:c
-                {: RESULT = new CharNode(c.strVal); 
+                {: RESULT = new NormalCharNode(c.charVal); 
                 :}
                 | ESCAPEDCHAR:c 
-                {: RESULT = new EscapedCharNode(c.strVal); 
+                {: RESULT = new EscapedCharNode(c.charVal); 
                 :}
                 | metaChar:c 
                 {: RESULT = c; 
                 :}
                 | NOTDIGIT:c 
-                {: RESULT = new CharNode(c.strVal); 
+                {: RESULT = new NormalCharNode(c.charVal); 
                 :}
                 | MINUS:c 
-                {: RESULT = new CharNode("-"); 
+                {: RESULT = new NormalCharNode('-'); 
                 :}
                 | DOT 
-                {: RESULT = new CharNode("."); 
+                {: RESULT = new NormalCharNode('.'); 
                 :}
                 | PLUS 
-                {: RESULT = new CharNode("+"); 
+                {: RESULT = new NormalCharNode('+'); 
                 :}
                 | STAR 
-                {: RESULT = new CharNode("*"); 
+                {: RESULT = new NormalCharNode('*'); 
                 :}
                 | OPTIONAL 
-                {: RESULT = new CharNode("?"); 
+                {: RESULT = new NormalCharNode('?'); 
                 :}
                 | CARET 
-                {: RESULT = new CharNode("^"); 
+                {: RESULT = new NormalCharNode('^'); 
                 :}
                 | DOLLAR 
-                {: RESULT = new CharNode("$"); 
+                {: RESULT = new NormalCharNode('$'); 
                 :}
                 | LBRACKET 
-                {: RESULT = new CharNode("["); 
+                {: RESULT = new NormalCharNode('['); 
                 :}
                 | RBRACKET 
-                {: RESULT = new CharNode("]"); 
+                {: RESULT = new NormalCharNode(']'); 
                 :}
                 | LPAREN 
-                {: RESULT = new CharNode("("); 
+                {: RESULT = new NormalCharNode('('); 
                 :}
                 | RPAREN 
-                {: RESULT = new CharNode(")"); 
+                {: RESULT = new NormalCharNode(')'); 
                 :}
                 | LCURLY 
-                {: RESULT = new CharNode("{"); 
+                {: RESULT = new NormalCharNode('{'); 
                 :}
                 | RCURLY 
-                {: RESULT = new CharNode("}"); 
+                {: RESULT = new NormalCharNode('}'); 
                 :}
                 | UNION 
-                {: RESULT = new CharNode("|"); 
+                {: RESULT = new NormalCharNode('|'); 
                 :}
                 | COMMA
-                {: RESULT = new CharNode(","); 
+                {: RESULT = new NormalCharNode(','); 
                 :}
                 ;
                 
 outsideChar ::= DIGIT:c
-                {: RESULT = new CharNode(c.strVal); 
+                {: RESULT = new NormalCharNode(c.charVal); 
                 :}
                 | ESCAPEDCHAR:c 
-                {: RESULT = new CharNode(c.strVal); 
+                {: RESULT = new EscapedCharNode(c.charVal); 
                 :}
                 | metaChar:c 
                 {: RESULT = c; 
                 :}
                 | NOTDIGIT:c 
-                {: RESULT = new CharNode(c.strVal); 
+                {: RESULT = new NormalCharNode(c.charVal); 
                 :}
                 | MINUS
-                {: RESULT = new CharNode("-"); 
+                {: RESULT = new NormalCharNode('-'); 
                 :}
                 | LCURLY 
-                {: RESULT = new CharNode("{"); 
+                {: RESULT = new NormalCharNode('{'); 
                 :}
                 | RCURLY 
-                {: RESULT = new CharNode("}"); 
+                {: RESULT = new NormalCharNode('}'); 
                 :}
                 | COMMA
-                {: RESULT = new CharNode(","); 
+                {: RESULT = new NormalCharNode(','); 
                 :}
                 ;
 
 metaChar  ::=   METATAB 
-                {: RESULT = new MetaCharNode("\t"); 
+                {: RESULT = new MetaCharNode('t'); 
                 :}
                 | METANEWLINE
-                {: RESULT = new MetaCharNode("\n"); 
+                {: RESULT = new MetaCharNode('n'); 
                 :}
                 | METARETURN
-                {: RESULT = new MetaCharNode("\r"); 
+                {: RESULT = new MetaCharNode('r'); 
                 :}
                 | METAFEED
-                {: RESULT = new MetaCharNode("\f"); 
+                {: RESULT = new MetaCharNode('f'); 
                 :}
                 | METABOUNDARY
-                {: RESULT = new MetaCharNode("\b"); 
+                {: RESULT = new MetaCharNode('b'); 
                 :}
                 | METANOTBOUNDARY
-                {: RESULT = new MetaCharNode("\B"); 
+                {: RESULT = new MetaCharNode('B'); 
                 :}
                 | METADIGIT
-                {: RESULT = new MetaCharNode("\d"); 
+                {: RESULT = new MetaCharNode('d'); 
                 :}
                 | METANOTDIGIT
-                {: RESULT = new MetaCharNode("\D"); 
+                {: RESULT = new MetaCharNode('D'); 
                 :}
                 | METASPACE
-                {: RESULT = new MetaCharNode("\s"); 
+                {: RESULT = new MetaCharNode('s'); 
                 :}
                 | METANOTSPACE
-                {: RESULT = new MetaCharNode("\S"); 
+                {: RESULT = new MetaCharNode('S'); 
                 :}
                 | METAVERTICALTAB
-                {: RESULT = new MetaCharNode("\v"); 
+                {: RESULT = new MetaCharNode('v'); 
                 :}
                 | METAWORD
-                {: RESULT = new MetaCharNode("\w"); 
+                {: RESULT = new MetaCharNode('w'); 
                 :}
                 | METANOTWORD
-                {: RESULT = new MetaCharNode("\W"); 
+                {: RESULT = new MetaCharNode('W'); 
                 :}
+                ;
