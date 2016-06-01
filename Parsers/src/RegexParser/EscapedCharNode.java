@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 /**
  * 
  * EscapedCharacters are the character that appears after a backslash but is not 
- * a metaCharacter.
+ * a metaCharacter. "\\" is treated as one backslash
  * 
  * MetaCharacters are: 
  * \t {tab character} 
@@ -33,12 +33,14 @@ public class EscapedCharNode extends CharNode{
 	}
 	
 	public void unparse(PrintWriter p) {
-		p.print("\\");
+		//p.print("\\");
+		p.print("Escaped:");
 		p.print(myChar);
 	}
 	
 	public void toString(StringBuilder s) {
-		s.append("\\");
+		//s.append("\\");
+		s.append("Escaped:");
 		s.append(myChar);
 	}
 }

@@ -47,6 +47,14 @@ public class CharacterClassNode extends RegexNode{
     	return myList;
     }
 	
+	public void addInterval(IntervalNode i){
+		myList.add(i);
+	}
+	
+	public int getSize(){
+		return myList.size();
+	}
+	
 	private List<IntervalNode> myList;
 
 }

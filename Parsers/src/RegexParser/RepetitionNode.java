@@ -30,6 +30,10 @@ public class RepetitionNode extends RegexNode {
 			System.err.println("Wrong construction of RepetitionNode");
 		}
 	}
+	
+	public RegexNode getRegexNode1(){
+		return myRegex1;
+	}
 
 	@Override
 	public void unparse(PrintWriter p) {

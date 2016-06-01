@@ -29,12 +29,14 @@ public class MetaCharNode extends CharNode {
 	}
 
 	public void unparse(PrintWriter p) {
-		p.print("\\");
+		p.print("Meta:");
+		//p.print("\\");
 		p.print(myChar);
 	}
 
 	public void toString(StringBuilder s) {
-		s.append("\\");
+		s.append("Meta:");
+		//s.append("\\");
 		s.append(myChar);
 	}
 }

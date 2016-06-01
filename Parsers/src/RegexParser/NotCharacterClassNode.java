@@ -20,7 +20,7 @@ public class NotCharacterClassNode extends RegexNode{
                 ((IntervalNode)it.next()).unparse(p);
             }
         } catch (NoSuchElementException ex) {
-            System.err.println("unexpected NoSuchElementException in CharacterClassNode.print");
+            System.err.println("unexpected NoSuchElementException in NotCharacterClassNode.print");
             System.exit(-1);
         }
         
@@ -36,7 +36,7 @@ public class NotCharacterClassNode extends RegexNode{
                 ((IntervalNode)it.next()).toString(s);
             }
         } catch (NoSuchElementException ex) {
-            System.err.println("unexpected NoSuchElementException in CharacterClassNode.print");
+            System.err.println("unexpected NoSuchElementException in NotCharacterClassNode.print");
             System.exit(-1);
         }
         
@@ -46,6 +46,14 @@ public class NotCharacterClassNode extends RegexNode{
 	public List<IntervalNode> getIntervals(){
     	return myList;
     }
+	
+	public int getSize(){
+		return myList.size();
+	}
+	
+	public void addInterval(IntervalNode i){
+		myList.add(i);
+	}
 	
 	private List<IntervalNode> myList;
 

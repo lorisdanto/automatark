@@ -48,7 +48,7 @@ simpleRegex ::=	simpleRegex basicRegex
             | basicRegex
             
 
-basicRegex	::= LPAREN regexNode RPAREN 
+basicRegex	::= "(" regexNode ")" 
                
                 | basicRegex "*" 
                 
@@ -56,11 +56,17 @@ basicRegex	::= LPAREN regexNode RPAREN
                 
                 | basicRegex "?" 
                 
-                | basicRegex "{" integer "}"
+                | outsideChar "{" integer "}"
                                      
-                | basicRegex "{" integer ","  "}"
+                | outsideChar "{" integer ","  "}"
                 
-                | basicRegex  "{" integer "," integer "}"
+                | outsideChar  "{" integer "," integer "}"
+                
+                | "(" regexNode ")" "{" integer "}"
+                
+                | "(" regexNode ")" "{" integer ","  "}"
+                
+                | "(" regexNode ")"  "{" integer "," integer "}"
                 
                 | "."           // meta character, all characters except line breaker
                 
@@ -73,6 +79,10 @@ basicRegex	::= LPAREN regexNode RPAREN
                 | "[" intervals "]"  //chacterClass
                  
                 | "[" "^" intervals "]" //notCharacterClass
+                
+                | "[" intervals insideChar "-" "]"  //chacterClass special case, end with minus
+                 
+                | "[" "^" intervals insideChar "-" "]" //notCharacterClass special case, end with minus
                 
                 
 integer ::= integer DIGIT // compute min and max of repetition

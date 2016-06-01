@@ -57,6 +57,7 @@ terminal  TokenVal COMMA;
 /* Nonterminals */
 non terminal RegexListNode program;
 non terminal LinkedList regexList;
+non terminal LinkedList concateList;
 non terminal RegexNode regexNode;
 non terminal RegexNode simpleRegex;
 non terminal RegexNode basicRegex;
@@ -101,13 +102,19 @@ regexNode	::=	regexNode:r1 UNION simpleRegex:r2
             :}
             ;
             
-simpleRegex	::=	simpleRegex:r1 basicRegex:r2
-            {:  RESULT = new ConcatenationNode(r1,r2);  
-            :} 
-            | basicRegex:r
-            {: RESULT = r; 
+simpleRegex ::= concateList:l  
+            {: RESULT = new ConcatenationNode(l);
             :}
-            ;   
+            ;
+            
+concateList	::=	concateList:rlist basicRegex:r
+            {: rlist.addLast(r);
+               RESULT = rlist;
+            :}
+            | /* epsilon */
+            {: RESULT = new LinkedList<RegexNode>(); 
+            :}
+            ; 
 
 basicRegex	    ::=	 LPAREN regexNode:r RPAREN 
                 {: RESULT = r; 
@@ -121,13 +128,22 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
                 | basicRegex:r OPTIONAL 
                 {: RESULT = new OptionalNode(r); 
                 :}
-                | basicRegex:r LCURLY integer:i RCURLY
+                | outsideChar:r LCURLY integer:i RCURLY
                 {: RESULT = new RepetitionNode(1,r,i); 
                 :}                      
-                | basicRegex:r LCURLY integer:i COMMA  RCURLY
+                | outsideChar:r LCURLY integer:i COMMA  RCURLY
                 {: RESULT = new RepetitionNode(2,r,i); 
                 :}
-                | basicRegex:r LCURLY integer:i1 COMMA integer:i2 RCURLY
+                | outsideChar:r LCURLY integer:i1 COMMA integer:i2 RCURLY
+                {: RESULT = new RepetitionNode(3,r, i1, i2); 
+                :}
+                | LPAREN regexNode:r RPAREN LCURLY integer:i RCURLY
+                {: RESULT = new RepetitionNode(1,r,i); 
+                :}                      
+                | LPAREN regexNode:r RPAREN LCURLY integer:i COMMA  RCURLY
+                {: RESULT = new RepetitionNode(2,r,i); 
+                :}
+                | LPAREN regexNode:r RPAREN LCURLY integer:i1 COMMA integer:i2 RCURLY
                 {: RESULT = new RepetitionNode(3,r, i1, i2); 
                 :}
                 | DOT
@@ -148,6 +164,17 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
                 | LBRACKET CARET intervals:i RBRACKET
                 {: RESULT = new NotCharacterClassNode(i); 
                 :}
+                | LBRACKET intervals:i insideChar:c1 MINUS RBRACKET  
+                {: 
+                    CharacterClassNode node = new CharacterClassNode(i);
+                    node.addInterval(new IntervalNode(1, c1, new NormalCharNode('-')));
+                    RESULT = node;
+                :}    
+                | LBRACKET CARET intervals:i insideChar:c1 MINUS RBRACKET
+                {: NotCharacterClassNode node = new NotCharacterClassNode(i);
+                    node.addInterval(new IntervalNode(1, c1, new NormalCharNode('-')));
+                    RESULT = node; 
+                :}
                 ;
                 
 integer ::= integer:i DIGIT:d 
@@ -167,12 +194,12 @@ intervals	::=	 intervals:ilist interval:i
             :}
             ;
 
-interval	::=	insideChar:c
-            {: RESULT = new IntervalNode(c); 
-            :} 
-            | insideChar:c1 MINUS insideChar:c2
+interval	::=	insideChar:c1 MINUS insideChar:c2
             {: RESULT = new IntervalNode(c1, c2); 
             :}
+            | insideChar:c
+            {: RESULT = new IntervalNode(c); 
+            :} 
             ;
         
 insideChar ::=  DIGIT:c

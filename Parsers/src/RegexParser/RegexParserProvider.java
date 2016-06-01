@@ -13,6 +13,13 @@ import java.util.Set;
 import LTLparser.LTLNode;
 import java_cup.runtime.Symbol;
 
+/**
+ * 
+ * @author Fang Wang May/30/2016
+ *
+ * Parser for regular expressions, unit test file is in testRegex/testRegex
+ * Detailed structure of the nodes is in FormulaNode.java 
+ */
 public class RegexParserProvider {
 
 	FileReader inFile;
@@ -138,12 +145,20 @@ public class RegexParserProvider {
 	public static void main(String[] args) {
 		List<RegexNode> nodes = parse(args);
 		
-		//This is for verification
-		StringBuilder s = new StringBuilder();
-		for(RegexNode node: nodes){
-			node.toString(s);
-		}
-		System.out.println(s.toString());
+		//next two lines direct output to file
+		RegexListNode a = new RegexListNode(nodes);
+		printAllNodes(a);
+		
+		
+		//These lines print output
+		//StringBuilder s = new StringBuilder();
+		//for(RegexNode node: nodes){
+		//	node.toString(s);
+		//}
+		//System.out.println(s.toString());
+		
+		
+		
 	}
 
 }
