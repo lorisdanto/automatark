@@ -38,6 +38,7 @@ public class sym {
   public static final int DOT = 19;
   public static final int error = 1;
   public static final int METASPACE = 10;
+  public static final int LINEBREAK = 33;
   public static final int METAFEED = 5;
   public static final int OPTIONAL = 22;
   public static final int ESCAPEDCHAR = 15;
@@ -74,7 +75,8 @@ public class sym {
   "LCURLY",
   "RCURLY",
   "UNION",
-  "COMMA"
+  "COMMA",
+  "LINEBREAK"
   };
 }
 

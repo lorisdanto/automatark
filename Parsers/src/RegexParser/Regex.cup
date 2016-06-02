@@ -52,6 +52,7 @@ terminal  TokenVal LCURLY;
 terminal  TokenVal RCURLY;
 terminal  TokenVal UNION;
 terminal  TokenVal COMMA;
+terminal  TokenVal LINEBREAK;
 
 
 /* Nonterminals */
@@ -67,11 +68,16 @@ non terminal IntervalNode interval;
 non terminal CharNode insideChar;
 non terminal CharNode outsideChar;
 non terminal CharNode metaChar;
+non terminal CharacterClassNode characterClass;
+non terminal NotCharacterClassNode notcharacterClass;
 
 /* precedence and associativity declarations */
+precedence left LINEBREAK;
 precedence left UNION;
 precedence left MINUS;
-precedence left STAR, PLUS, OPTIONAL, CARET, RCURLY, DIGIT;
+precedence left STAR, PLUS, OPTIONAL, CARET, LPAREN, RPAREN,DIGIT;
+precedence right LCURLY, RBRACKET;
+precedence left RCURLY, LBRACKET;
 
 
 
@@ -86,6 +92,10 @@ program ::= regexList: l
         ;
         
 regexList ::= regexList:rlist regexNode:r 
+            {: rlist.addLast(r);
+               RESULT = rlist;
+            :}
+            | regexList:rlist LINEBREAK regexNode:r 
             {: rlist.addLast(r);
                RESULT = rlist;
             :}
@@ -128,24 +138,6 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
                 | basicRegex:r OPTIONAL 
                 {: RESULT = new OptionalNode(r); 
                 :}
-                | outsideChar:r LCURLY integer:i RCURLY
-                {: RESULT = new RepetitionNode(1,r,i); 
-                :}                      
-                | outsideChar:r LCURLY integer:i COMMA  RCURLY
-                {: RESULT = new RepetitionNode(2,r,i); 
-                :}
-                | outsideChar:r LCURLY integer:i1 COMMA integer:i2 RCURLY
-                {: RESULT = new RepetitionNode(3,r, i1, i2); 
-                :}
-                | LPAREN regexNode:r RPAREN LCURLY integer:i RCURLY
-                {: RESULT = new RepetitionNode(1,r,i); 
-                :}                      
-                | LPAREN regexNode:r RPAREN LCURLY integer:i COMMA  RCURLY
-                {: RESULT = new RepetitionNode(2,r,i); 
-                :}
-                | LPAREN regexNode:r RPAREN LCURLY integer:i1 COMMA integer:i2 RCURLY
-                {: RESULT = new RepetitionNode(3,r, i1, i2); 
-                :}
                 | DOT
                 {: RESULT = new DotNode('.'); 
                 :}    
@@ -157,25 +149,71 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
                 :}    
                 | outsideChar: c 
                 {: RESULT = c; 
-                :}    
-                | LBRACKET intervals:i RBRACKET  
-                {: RESULT = new CharacterClassNode(i); 
-                :}    
-                | LBRACKET CARET intervals:i RBRACKET
-                {: RESULT = new NotCharacterClassNode(i); 
                 :}
-                | LBRACKET intervals:i insideChar:c1 MINUS RBRACKET  
-                {: 
+                | characterClass:c
+                {: RESULT = c; 
+                :}
+                | notcharacterClass:c
+                {: RESULT = c; 
+                :}
+                | LPAREN regexNode:r RPAREN LCURLY integer:i RCURLY
+                {: RESULT = new RepetitionNode(1,r,i); 
+                :}                      
+                | LPAREN regexNode:r RPAREN LCURLY integer:i COMMA  RCURLY
+                {: RESULT = new RepetitionNode(2,r,i); 
+                :}
+                | LPAREN regexNode:r RPAREN LCURLY integer:i1 COMMA integer:i2 RCURLY
+                {: RESULT = new RepetitionNode(3,r, i1, i2); 
+                :}
+                | outsideChar:r LCURLY integer:i RCURLY
+                {: RESULT = new RepetitionNode(1,r,i); 
+                :}                      
+                | outsideChar:r LCURLY integer:i COMMA  RCURLY
+                {: RESULT = new RepetitionNode(2,r,i); 
+                :}
+                | outsideChar:r LCURLY integer:i1 COMMA integer:i2 RCURLY
+                {: RESULT = new RepetitionNode(3,r, i1, i2); 
+                :}
+                | characterClass:r LCURLY integer:i RCURLY
+                {: RESULT = new RepetitionNode(1,r,i); 
+                :}                      
+                | characterClass:r LCURLY integer:i COMMA  RCURLY
+                {: RESULT = new RepetitionNode(2,r,i); 
+                :}
+                | characterClass:r LCURLY integer:i1 COMMA integer:i2 RCURLY
+                {: RESULT = new RepetitionNode(3,r, i1, i2); 
+                :}
+                | notcharacterClass:r LCURLY integer:i RCURLY
+                {: RESULT = new RepetitionNode(1,r,i); 
+                :}                      
+                | notcharacterClass:r LCURLY integer:i COMMA  RCURLY
+                {: RESULT = new RepetitionNode(2,r,i); 
+                :}
+                | notcharacterClass:r LCURLY integer:i1 COMMA integer:i2 RCURLY
+                {: RESULT = new RepetitionNode(3,r, i1, i2); 
+                :}
+                ;
+                
+characterClass ::= LBRACKET intervals:i RBRACKET  
+                   {: RESULT = new CharacterClassNode(i); 
+                   :}    
+                   | LBRACKET intervals:i insideChar:c1 MINUS RBRACKET  
+                   {: 
                     CharacterClassNode node = new CharacterClassNode(i);
                     node.addInterval(new IntervalNode(1, c1, new NormalCharNode('-')));
                     RESULT = node;
-                :}    
-                | LBRACKET CARET intervals:i insideChar:c1 MINUS RBRACKET
-                {: NotCharacterClassNode node = new NotCharacterClassNode(i);
+                    :}  
+                   ;
+                    
+notcharacterClass ::=  LBRACKET CARET intervals:i insideChar:c1 MINUS RBRACKET
+                    {: NotCharacterClassNode node = new NotCharacterClassNode(i);
                     node.addInterval(new IntervalNode(1, c1, new NormalCharNode('-')));
                     RESULT = node; 
-                :}
-                ;
+                    :}
+                    | LBRACKET CARET intervals:i RBRACKET
+                    {: RESULT = new NotCharacterClassNode(i); 
+                    :}
+                    ;
                 
 integer ::= integer:i DIGIT:d 
           {: RESULT = Integer.parseInt(String.valueOf(d.charVal))+ i*10;

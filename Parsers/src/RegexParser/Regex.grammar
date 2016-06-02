@@ -1,5 +1,5 @@
 /**
-* @author Fang Wang, UW-Madison student, 05/29/2016
+* @author Fang Wang, UW-Madison student, updated 06/02/2016
 * the rule of the grammar is derived from http://web.archive.org/web/20090129224504/http://faqts.com/knowledge_base/view.phtml/aid/25718/fid/200
 * and http://regexr.com/
 **/
@@ -24,9 +24,12 @@ non terminal RegexNode outsideChar;
 non terminal RegexNode metachar;
 
 /* precedence and associativity declarations */
+precedence left LINEBREAK;
 precedence left UNION;
 precedence left MINUS;
-precedence left STAR, PLUS, OPTIONAL;
+precedence left STAR, PLUS, OPTIONAL, CARET, LPAREN, RPAREN,DIGIT;
+precedence right LCURLY, RBRACKET;
+precedence left RCURLY, LBRACKET;
 
 /* Grammar with comments */
 start with program;
@@ -34,7 +37,7 @@ start with program;
 program ::= regexList
        
 regexList ::= regexList regexNode 
-            
+            | regexList:rlist LINEBREAK regexNode:r 
             | /* epsilon */
             
                        
@@ -42,10 +45,11 @@ regexNode   ::=regexNode UNION simpleRegex
             
             | simpleRegex    
             
+simpleRegex ::= concateList
             
-simpleRegex ::=	simpleRegex basicRegex
+concateList	::=	concateList basicRegex
             
-            | basicRegex
+            | /* epsilon */
             
 
 basicRegex	::= "(" regexNode ")" 
@@ -56,6 +60,18 @@ basicRegex	::= "(" regexNode ")"
                 
                 | basicRegex "?" 
                 
+                | "."           // meta character, all characters except line breaker
+                
+                | "^"           // meta character, start of string
+                   
+                | "$"           // meta character, end of string
+                   
+                | outsideChar   //chacters that can be outside of characterClass
+                
+                | characterClass
+                
+                | notcharacterClass
+
                 | outsideChar "{" integer "}"
                                      
                 | outsideChar "{" integer ","  "}"
@@ -68,22 +84,25 @@ basicRegex	::= "(" regexNode ")"
                 
                 | "(" regexNode ")"  "{" integer "," integer "}"
                 
-                | "."           // meta character, all characters except line breaker
+                | characterClass "{" integer "}"
                 
-                | "^"           // meta character, start of string
-                   
-                | "$"           // meta character, end of string
-                   
-                | outsideChar   //chacters that can be outside of characterClass
-                   
-                | "[" intervals "]"  //chacterClass
-                 
-                | "[" "^" intervals "]" //notCharacterClass
+                | characterClass "{" integer ","  "}"
                 
+                | characterClass  "{" integer "," integer "}"
+                
+                | notcharacterClass "{" integer "}"
+                
+                | notcharacterClass "{" integer ","  "}"
+                
+                | notcharacterClass  "{" integer "," integer "}"
+ 
+characterClass ::= "[" intervals "]"  //chacterClass     
+
                 | "[" intervals insideChar "-" "]"  //chacterClass special case, end with minus
-                 
-                | "[" "^" intervals insideChar "-" "]" //notCharacterClass special case, end with minus
-                
+
+notcharacterClass ::= | "[" "^" intervals "]" //notCharacterClass
+                      
+                      | "[" "^" intervals insideChar "-" "]" //notCharacterClass special case, end with minus       
                 
 integer ::= integer DIGIT // compute min and max of repetition
           

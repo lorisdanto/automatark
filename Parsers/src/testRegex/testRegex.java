@@ -207,25 +207,47 @@ public class testRegex {
 
 	@Test
 	public void testRepetition() {
+		//String rightOutput = "";
 		//test three different modes
 		String[][] input1 = { { "a{2}" } };
-		String[][] input2 = { { "a{2,}" } };
-		String[][] input3 = { { "a{2,4}" } };
+		String[][] input2 = { { "a{23,}" } };
+		String[][] input3 = { { "a{23,24}" } };
 		// this should be treated as a(b{2})
 		String[][] input4 = { { "ab{2}" } };
 		// include parenthesis
 		String[][] input5 = { { "(ab){2}" } };
+		String[][] input6 = { { "(ab){2,}" } };
+		String[][] input7 = { { "(ab){23,}" } };
+		String[][] input8 = { { "(ab){23,25}" } };
+		//include character class
+		String[][] input9 = { { "[ab]{2}" } };
+		String[][] input10 = { { "[ab]{23,}" } };
+		String[][] input11 = { { "[ab]{23,24}" } };
 		
 		String rightOutput1 = "(( (Char:a) {2}))";
-		String rightOutput2 = "(( (Char:a) {2,}))";
-		String rightOutput3 = "(( (Char:a) {2,4}))";
+		String rightOutput2 = "(( (Char:a) {23,}))";
+		String rightOutput3 = "(( (Char:a) {23,24}))";
 		String rightOutput4 = "(Char:a)(( (Char:b) {2}))";
 		String rightOutput5 = "(( ((Char:a)(Char:b)) {2}))";
+		String rightOutput6 = "(( ((Char:a)(Char:b)) {2,}))";
+		String rightOutput7 = "(( ((Char:a)(Char:b)) {23,}))";
+		String rightOutput8 = "(( ((Char:a)(Char:b)) {23,25}))";
+		String rightOutput9 = "(( ([Char:a Char:b ]) {2}))";
+		String rightOutput10 = "(( ([Char:a Char:b ]) {23,}))";
+		String rightOutput11 = "(( ([Char:a Char:b ]) {23,24}))";
+		
+		
 		run(input1, rightOutput1);
 		run(input2, rightOutput2);
 		run(input3, rightOutput3);
 		run(input4, rightOutput4);
 		run(input5, rightOutput5);
+		run(input6, rightOutput6);
+		run(input7, rightOutput7);
+		run(input8, rightOutput8);
+		run(input9, rightOutput9);
+		run(input10, rightOutput10);
+		run(input11, rightOutput11);
 	}
 
 }

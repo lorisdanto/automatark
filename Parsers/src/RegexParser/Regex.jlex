@@ -30,12 +30,9 @@ class CharNum {
 }
 %%
 
-DIGIT=           [0-9]
+DIGIT=     [0-9]
 NOTDIGIT = [^0-9]
-LOWERCASELETTER= [a-z]
-LETTER=          [a-zA-Z]
 ESCAPEDCHAR = [\\][^tnrfbBdDsSvwW]
-BACKSLASH = [\\]
 
 
 
@@ -51,7 +48,10 @@ return new Symbol(sym.EOF);
 
 %%
 
-\n        { CharNum.num = 1; }  
+\n        { Symbol S = new Symbol(sym.LINEBREAK, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num = 1; 
+            return S;
+          }  
 
 "\\t"      { Symbol S = new Symbol(sym.METATAB, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;

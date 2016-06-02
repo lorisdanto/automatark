@@ -63,12 +63,12 @@ class Yylex implements java_cup.runtime.Scanner {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\12\0\1\5\1\0\1\0\1\0\26\0\1\27\3\0\1\32\1\33"+
-    "\1\24\1\23\1\37\1\21\1\22\1\0\12\1\5\0\1\25\1\0"+
-    "\1\0\1\13\1\0\1\15\16\0\1\17\3\0\1\4\3\0\1\30"+
-    "\1\2\1\31\1\26\2\0\1\0\1\12\1\0\1\14\1\0\1\11"+
-    "\7\0\1\7\3\0\1\10\1\16\1\6\1\0\1\20\1\3\3\0"+
-    "\1\34\1\36\1\35\7\0\1\0\u1fa2\0\1\0\1\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
+    "\12\0\1\4\1\0\1\0\1\0\26\0\1\27\3\0\1\32\1\33"+
+    "\1\24\1\23\1\37\1\21\1\22\1\0\12\1\5\0\1\25\2\0"+
+    "\1\12\1\0\1\14\16\0\1\16\3\0\1\3\3\0\1\30\1\2"+
+    "\1\31\1\26\3\0\1\11\1\0\1\13\1\0\1\10\7\0\1\6"+
+    "\3\0\1\7\1\15\1\5\1\0\1\17\1\20\3\0\1\34\1\36"+
+    "\1\35\7\0\1\0\u1fa2\0\1\0\1\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
 
   /** 
    * Translates characters to character classes
@@ -143,10 +143,10 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\2\2\1\5\13\2\1\6\1\7"+
+    "\1\2\1\3\1\4\1\2\1\5\14\2\1\6\1\7"+
     "\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17"+
     "\1\20\1\21\1\22\1\23\1\24\40\0\3\25\1\26"+
-    "\1\27\1\25\1\30\1\31\1\32\1\33\1\34\1\35"+
+    "\1\25\1\27\1\30\1\31\1\32\1\33\1\34\1\35"+
     "\1\36\1\37\1\40\1\41\1\42\17\25";
 
   private static int [] zzUnpackTrans() {
@@ -287,7 +287,7 @@ class Yylex implements java_cup.runtime.Scanner {
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 150) {
+    while (i < 146) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -653,7 +653,9 @@ class Yylex implements java_cup.runtime.Scanner {
             }
           case 34: break;
           case 3: 
-            { CharNum.num = 1;
+            { Symbol S = new Symbol(sym.LINEBREAK, new TokenVal(yyline+1, CharNum.num));
+            CharNum.num = 1; 
+            return S;
             }
           case 35: break;
           case 4: 
@@ -756,79 +758,79 @@ class Yylex implements java_cup.runtime.Scanner {
             }
           case 51: break;
           case 20: 
-            { Symbol S = new Symbol(sym.METAWORD, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METANOTWORD, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 52: break;
           case 21: 
-            { Symbol S = new Symbol(sym.METANOTWORD, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METATAB, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 53: break;
           case 22: 
-            { Symbol S = new Symbol(sym.METATAB, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METANEWLINE, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 54: break;
           case 23: 
-            { Symbol S = new Symbol(sym.METANEWLINE, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METARETURN, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 55: break;
           case 24: 
-            { Symbol S = new Symbol(sym.METARETURN, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METAFEED, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 56: break;
           case 25: 
-            { Symbol S = new Symbol(sym.METAFEED, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METABOUNDARY, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 57: break;
           case 26: 
-            { Symbol S = new Symbol(sym.METABOUNDARY, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METANOTBOUNDARY, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 58: break;
           case 27: 
-            { Symbol S = new Symbol(sym.METANOTBOUNDARY, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METADIGIT, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 59: break;
           case 28: 
-            { Symbol S = new Symbol(sym.METADIGIT, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METANOTDIGIT, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 60: break;
           case 29: 
-            { Symbol S = new Symbol(sym.METANOTDIGIT, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METASPACE, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 61: break;
           case 30: 
-            { Symbol S = new Symbol(sym.METASPACE, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METANOTSPACE, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 62: break;
           case 31: 
-            { Symbol S = new Symbol(sym.METANOTSPACE, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METAVERTICALTAB, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
           case 63: break;
           case 32: 
-            { Symbol S = new Symbol(sym.METAVERTICALTAB, new TokenVal(yyline+1, CharNum.num));
+            { Symbol S = new Symbol(sym.METAWORD, new TokenVal(yyline+1, CharNum.num));
             CharNum.num+=2;
             return S;
             }
