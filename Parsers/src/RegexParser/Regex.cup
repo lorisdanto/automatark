@@ -197,17 +197,19 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
 characterClass ::= LBRACKET intervals:i RBRACKET  
                    {: RESULT = new CharacterClassNode(i); 
                    :}    
-                   | LBRACKET intervals:i insideChar:c1 MINUS RBRACKET  
+                   | LBRACKET intervals:i insideChar:c MINUS RBRACKET  
                    {: 
                     CharacterClassNode node = new CharacterClassNode(i);
-                    node.addInterval(new IntervalNode(1, c1, new NormalCharNode('-')));
+                    node.addInterval(new IntervalNode(c));
+                    node.addInterval(new IntervalNode(new NormalCharNode('-')));
                     RESULT = node;
                     :}  
                    ;
                     
-notcharacterClass ::=  LBRACKET CARET intervals:i insideChar:c1 MINUS RBRACKET
+notcharacterClass ::=  LBRACKET CARET intervals:i insideChar:c MINUS RBRACKET
                     {: NotCharacterClassNode node = new NotCharacterClassNode(i);
-                    node.addInterval(new IntervalNode(1, c1, new NormalCharNode('-')));
+                    node.addInterval(new IntervalNode(c));
+                    node.addInterval(new IntervalNode(new NormalCharNode('-')));
                     RESULT = node; 
                     :}
                     | LBRACKET CARET intervals:i RBRACKET
