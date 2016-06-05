@@ -31,7 +31,7 @@ public class RepetitionNode extends RegexNode {
 		}
 	}
 	
-	public RegexNode getRegexNode1(){
+	public RegexNode getMyRegex1(){
 		return myRegex1;
 	}
 
@@ -87,6 +87,14 @@ public class RepetitionNode extends RegexNode {
 
 	public String getMode() {
 		return mode;
+	}
+	
+	public int getMin(){
+		return min;
+	}
+	
+	public int getMax(){
+		return max;
 	}
 
 	protected int min;
