@@ -1,0 +1,2 @@
+ws1s;
+ex2 X1: all1 x1, x2: ((x1 in X1 & x2 in X1) => x1 = x2);

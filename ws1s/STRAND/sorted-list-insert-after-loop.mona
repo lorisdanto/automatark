@@ -1,0 +1,31 @@
+
+ws1s;
+
+pred close(var1 x, var1 y, var2 M) =
+	x<y & (~ex1 z: (z in M & x<z & z<y)) ;
+
+pred before(var1 nil, var1 x, var1 y) =
+	x<y & y<nil ;
+
+pred before1(var1 nil, var1 inserted, var1 prev, var1 curr, var1 x, var1 y) =
+	(x<=prev & curr<=y & y<nil) | (x<=prev & y=inserted) | (x=inserted & curr<=y & y<nil) | (x<y & y<=prev) | (curr<=x & x<y & y<nil) ;
+
+pred validmodel(var1 nil, var1 curr, var1 prev, var1 inserted, var1 exdv1, var1 exdv2) =
+	0<nil & nil+1=inserted &
+	curr<=inserted & prev<=inserted & exdv1<=inserted & exdv2<=inserted ;
+
+pred validmodel'(var1 nil, var1 inserted, var2 M) = 
+	nil in M & inserted in M & (ex1 s where s in M : s < nil) ;
+
+pred minimalmodel(var1 nil, var1 curr, var1 prev, var1 inserted, var1 exdv1, var1 exdv2) =
+	~ex2 M :(
+		(all1 s where s in M : s <= inserted) & 
+		(ex1 s : s <= inserted & s notin M) &
+		nil in M & curr in M & prev in M & inserted in M & exdv1 in M & exdv2 in M &
+		validmodel'(nil,inserted,M) &
+		(prev+1=curr => close(prev,curr,M))
+	 );
+
+all1 nil: ex1 curr,prev,inserted,exdv1,exdv2 : (
+	validmodel(nil,curr,prev,inserted,exdv1,exdv2) & minimalmodel(nil,curr,prev,inserted,exdv1,exdv2) ) ;
+

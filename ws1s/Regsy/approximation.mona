@@ -1,0 +1,47 @@
+# MONA Presburger predicates
+
+# auxiliary predicates
+pred xor(var0 x,y) = x&~y | ~x&y;
+pred at_least_two(var0 x,y,z) = x&y | x&z | y&z;
+
+# addition relation (p "+" q = r)
+pred plus(var2 p,q,r) =
+ ex2 c:                                                  # carry track
+   0 notin c                                             # no carry-in
+ & all1 t:
+     (t+1 in c <=> at_least_two(t in p, t in q, t in c)) # propagate carry
+   & (t in r <=> xor(xor(t in p, t in q), t in c));      # calculate result
+
+# less-than relation (p "<" q)
+pred less(var2 p,q) =
+  ex2 t: t ~= empty & plus(p,t,q);
+pred leq(var2 p,q) =
+  ex2 t: plus(p,t,q);
+
+# multiplication with constants
+pred times1(var2 p,q) = (p=q);
+pred times2(var2 p,q) = plus(p,p,q);
+pred times3(var2 p,q) = ex2 t: times2(p,t) & plus(p,t,q);
+pred times4(var2 p,q) = ex2 t: times3(p,t) & plus(p,t,q);
+pred times5(var2 p,q) = ex2 t: times4(p,t) & plus(p,t,q);
+pred times6(var2 p,q) = ex2 t: times5(p,t) & plus(p,t,q);
+pred times7(var2 p,q) = ex2 t: times6(p,t) & plus(p,t,q);
+pred times8(var2 p,q) = ex2 t: times7(p,t) & plus(p,t,q);
+pred times9(var2 p,q) = ex2 t: times8(p,t) & plus(p,t,q);
+
+pred plusar3(var2 x1,x2,x3,x4) = ex2 c: plus(x1,x2,c) & plus(c,x3,x4);
+pred plusar4(var2 x1,x2,x3,x4,x5) = ex2 c: plusar3(x1,x2,x3,c) & plus(c,x4,x5);
+
+macro approxEq(var2 x,y,err) = plus(x,err,y) | plus(y,err,x);
+
+macro spec(var2 x,y,z,err)=
+  ex2 xtimes6,ytimes9:
+    times6(x,xtimes6) &
+    times9(y,ytimes9) &
+    ex2 s: plus(xtimes6,ytimes9,s) & approxEq(s,z,err);
+
+macro minispecZ(var2 x,y,z,err) =
+  spec(x,y,z,err) &
+  all2 err',x',y':  ~spec(x',y',z,err') | leq(err,err');
+
+ex2 x, y, z, err: minispecZ(x,y,z,err);

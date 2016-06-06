@@ -1,0 +1,134 @@
+# MONA Presburger predicates
+
+# auxiliary predicates
+pred xor(var0 x,y) = x&~y | ~x&y;
+pred at_least_two(var0 x,y,z) = x&y | x&z | y&z;
+
+# addition relation (p "+" q = r)
+pred plus(var2 p,q,r) =
+ ex2 c:                                                  # carry track
+   0 notin c                                             # no carry-in
+ & all1 t:
+     (t+1 in c <=> at_least_two(t in p, t in q, t in c)) # propagate carry
+   & (t in r <=> xor(xor(t in p, t in q), t in c));      # calculate result
+
+# less-than relation (p "<" q)
+pred less(var2 p,q) =  ex2 t: t ~= empty & plus(p,t,q);
+pred leq(var2 p,q)  =  ex2 t: plus(p,t,q);
+
+macro shift(var2 p,q) = plus(p,p,q);
+macro shift2(var2 p,q) = ex2 t: shift(p,t) & shift(t,q);
+macro shift3(var2 p,q) = ex2 t: shift2(p,t) & shift(t,q);
+
+pred plusleq(var2 p,q,r) = ex2 t: plus(p,q,t) & leq(t,r);
+
+pred times1(var2 p,q) = (p=q);
+pred times2(var2 p,q) = shift(p,q);
+pred times3(var2 p,q) = ex2 t: times2(p,t) & plus(p,t,q);
+pred times4(var2 p,q) = ex2 t: times3(p,t) & plus(p,t,q);
+pred times5(var2 p,q) = ex2 t: times4(p,t) & plus(p,t,q);
+pred times6(var2 p,q) = ex2 t: times5(p,t) & plus(p,t,q);
+pred times7(var2 p,q) = ex2 t: times6(p,t) & plus(p,t,q);
+pred times8(var2 p,q) = ex2 t: times7(p,t) & plus(p,t,q);
+pred times9(var2 p,q) = ex2 t: times8(p,t) & plus(p,t,q);
+pred times10(var2 p,q) = ex2 t: times9(p,t) & plus(p,t,q);
+
+#-------------------------------------------
+# 5*x1 + 3*x2 <= food1
+# 2*x1 + 3*x2 <= food2
+# price x1 = 8
+# price x2 = 4
+#-------------------------------------------
+macro constraints(var2 x1,x2,food1,food2) =
+  ex2 x1times2, x1times5, x2times3:
+    times2(x1,x1times2) & times3(x2,x2times3) & times5(x1, x1times5) &
+    plusleq(x1times5, x2times3, food1) &
+    plusleq(x1times2, x2times3, food2);
+
+macro cost(var2 x1, x2, c) =
+  ex2 x1times8, x2times4:
+    times8(x1,x1times8) & times4(x2,x2times4) & plus(x1times8,x2times4,c);
+
+macro maximize(var2 x1,x2,food1,food2) =
+  all2 y1, y2:
+    ~constraints(y1,y2,food1,food2) |
+    (ex2 cx,cy: cost(x1,x2,cx) & cost(y1,y2,cy) & leq(cy,cx));
+
+#var2 food1,food2,x1,x2;
+#constraints(x1,x2,food1,food2) & maximize(x1,x2,food1,food2);
+
+#-------------------------------------------
+# 2*x1 + x2 <= food1
+#   x1 + x2 <= food2
+# price x1 = 4
+# price x2 = 3
+#-------------------------------------------
+macro constraints2(var2 x1,x2,food1,food2) =
+  ex2 x1times2:
+    times2(x1,x1times2) &
+    plusleq(x1times2,x2,food1) &
+    plusleq(x1,x2,food2);
+
+macro cost2(var2 x1,x2,c) =
+  ex2 x1times4,x2times3:
+    times4(x1,x1times4) &
+    times3(x2,x2times3) &
+    plus(x1times4,x2times3,c);
+
+macro maximize2(var2 x1,x2,food1,food2) =
+  all2 y1, y2: ~constraints2(y1,y2,food1,food2) |
+    (ex2 cx,cy: cost2(x1,x2,cx) & cost2(y1,y2,cy) & leq(cy,cx));
+
+#var2 food1,food2,x1,x2;
+#constraints2(x1,x2,food1,food2) & maximize2(x1,x2,food1,food2);
+
+#-------------------------------------------
+# 4*x1 + 1*x2 <= food1
+# 2*x1 + 3*x2 <= food2 3*x1 + 3*x2 <= food2
+# price x1 = 8 or 6 or 9
+# price x2 = 6 or 4 or 6
+# out of memory on prime numbers, e.g, (5,3)
+# (1000,9000,0,1000)
+# (2000,8000,0,2000)
+# (3000,7000,200,2200)
+# (4000,6000,600,1600)
+# (5000,5000,1000,1000)
+# (6000,4000,1400,400)
+# (7000,3000,1500,0)
+# (8000,2000,1000,0)
+# (9000,1000,500,0)
+#-------------------------------------------
+#-------------------------------------------
+# 4*x1 + 1*x2 <= food1
+# 3*x1 + 3*x2 <= food2
+# price x1 = 9
+# price x2 = 6
+# (1000,9000,0,1000)
+# (2000,8000,0,2000)
+# (3000,7000,222,2111)
+# (4000,6000,666,1334)
+# (5000,5000,1111,555)
+# (6000,4000,1333,0)
+# (7000,3000,1000,0)
+# (8000,2000,666,0)
+# (9000,1000,333,0)
+#-------------------------------------------
+pred constraints3(var2 x1,x2,food1,food2) =
+  ex2 x1food1, x1food2, x2food2:
+    times4(x1,x1food1) &
+    times2(x1,x1food2) &
+    times3(x2,x2food2) &
+    plusleq(x1food1, x2, food1) &
+    plusleq(x1food2, x2food2, food2);
+
+pred cost3(var2 x1, x2, c) =
+  ex2 x1price, x2price:
+    times9(x1,x1price) &
+    times6(x2,x2price) & plus(x1price,x2price,c);
+
+macro maximize3(var2 x1,x2,food1,food2) =
+  all2 y1, y2:
+    ~constraints3(y1,y2,food1,food2) |
+    (ex2 cx,cy: cost3(x1,x2,cx) & cost3(y1,y2,cy) & leq(cy,cx));
+
+ex2 food1, food2, x1, x2: constraints3(x1,x2,food1,food2) & maximize3(x1,x2,food1,food2);

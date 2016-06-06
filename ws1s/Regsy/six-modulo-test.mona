@@ -1,0 +1,30 @@
+# auxiliary predicates
+pred xor(var0 x,y) = x&~y | ~x&y;
+pred at_least_two(var0 x,y,z) = x&y | x&z | y&z;
+
+# addition relation (p "+" q = r)
+pred plus(var2 p,q,r) =
+ ex2 c:                                                  # carry track
+   0 notin c                                             # no carry-in
+ & all1 t:
+     (t+1 in c <=> at_least_two(t in p, t in q, t in c)) # propagate carry
+   & (t in r <=> xor(xor(t in p, t in q), t in c));      # calculate result
+
+# less-than relation (p "<" q)
+pred less(var2 p,q) =
+  ex2 t: t ~= empty & plus(p,t,q);
+pred leq(var2 p,q) =
+  ex2 t: plus(p,t,q);
+
+
+pred plusar3(var2 x1,x2,x3,x4) = ex2 c: plus(x1,x2,c) & plus(c,x3,x4);
+
+macro shift(var2 p,q) = plus(p,p,q);
+macro time6(var2 p,q) =
+  ex2 t1,t2: shift(p,t1) & shift(t1,t2) & plus(t1,t2,q);
+
+macro decomp(var2 n,k) =
+  plus(k,k,n) | plusar3(k,k,k,n) | ex2 t: time6(k,t) &
+(plus(t,pconst(1),n) | plus(t,pconst(5),n));
+
+ex2 n,k: decomp(n,k);

@@ -1,0 +1,2 @@
+ws1s;
+ex2 X1, X2, X3: all2 X: (((X sub X1 & X ~= X1) => ~X1 sub X1) & ((X sub X2 & X ~= X2) => ~X2 sub X2) & ((X sub X3 & X ~= X3) => ~X3 sub X3));

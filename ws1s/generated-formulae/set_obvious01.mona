@@ -1,0 +1,2 @@
+ws1s;
+ex2 X1: all2 X: (((X sub X1 & X ~= X1) => ~X1 sub X1));

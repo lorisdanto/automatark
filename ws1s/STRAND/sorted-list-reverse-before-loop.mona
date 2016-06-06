@@ -1,0 +1,43 @@
+
+ws1s;
+
+pred next(var1 x, var1 y, var1 nil, var1 end) =
+	(x+1=y & y<=nil) |
+	(nil<=y & y+1=x & x<=end) ;
+
+pred close(var1 x, var1 y, var2 M) =
+	x<y & (~ex1 z: (z in M & x<z & z<y)) ;
+
+pred next'(var1 x, var1 y, var1 nil, var1 end, var2 M) =
+	(close(x, y, M) & y<=nil) |
+	(close(y, x, M) & nil<=y & x<=end) ;
+
+pred before(var1 end, var1 nil, var1 x, var1 y) =
+	(x<y & y<nil) | (nil<y & y<x & x<=end) ;
+
+pred before1(var1 end, var1 nil, var1 x, var1 y) =
+	(1<=x & x<y & y<nil) | (nil<y & y<x) | (nil<y & x=0) ;
+
+pred before1'(var1 end, var1 nil, var1 x, var1 y, var2 M) =
+	((ex1 s where s in M : s < x) & x<y & y<nil) | (nil<y & y<x) | (nil<y & (~ex1 s where s in M : s < x)) ;
+
+pred validmodel(var1 end, var1 nil, var1 head, var1 newhead, var1 exdv1, var1 exdv2) =
+	end~=0 &
+	nil<=end & head<=end & newhead<=end & exdv1<=end & exdv2<=end ;
+
+pred validcomputation(var1 end, var1 nil, var1 head, var1 newhead) = newhead=nil ;
+
+pred validmodel'(var1 end, var1 nil, var2 M) = 
+	0 in M & end in M & nil in M & (ex1 s where s in M : s ~= nil) ;
+
+pred minimalmodel(var1 end, var1 nil, var1 head, var1 newhead, var1 exdv1, var1 exdv2) =
+	~ex2 M :(
+		(all1 s where s in M : s <= end) & 
+		(ex1 s : s <= end & s notin M) &
+		end in M & head in M & newhead in M & exdv1 in M & exdv2 in M &
+		validmodel'(end,nil,M)
+	 );
+
+all1 end: ex1 nil,head,newhead,exdv1,exdv2 : (
+	validmodel(end,nil,head,newhead,exdv1,exdv2) & minimalmodel(end,nil,head,newhead,exdv1,exdv2) ) ;
+

@@ -1,0 +1,2 @@
+ws1s;
+ex2 X1, X2: all1 x: ex1 y, z: ~(( (x in X1 & x <= y & y <= z & z in X1) => y in X1 ) & ( (x in X2 & x <= y & y <= z & z in X2) => y in X2 ));

@@ -1,0 +1,72 @@
+# auxiliary predicates
+pred xor(var0 x,y) = x&~y | ~x&y;
+pred at_least_two(var0 x,y,z) = x&y | x&z | y&z;
+
+# addition relation (p "+" q = r)
+pred plus(var2 p,q,r) =
+ ex2 c:                                                  # carry track
+   0 notin c                                             # no carry-in
+ & all1 t:
+     (t+1 in c <=> at_least_two(t in p, t in q, t in c)) # propagate carry
+   & (t in r <=> xor(xor(t in p, t in q), t in c));      # calculate result
+
+# less-than relation (p "<" q)
+pred less(var2 p,q) =
+  ex2 t: t ~= empty & plus(p,t,q);
+pred leq(var2 p,q) =
+  ex2 t: plus(p,t,q);
+
+
+pred plusar3(var2 x1,x2,x3,x4) = ex2 c: plus(x1,x2,c) & plus(c,x3,x4);
+pred plusar4(var2 x1,x2,x3,x4,x5) = ex2 c: plusar3(x1,x2,x3,c) & plus(c,x4,x5);
+pred plusar5(var2 x1,x2,x3,x4,x5,x6) = ex2 c: plusar4(x1,x2,x3,x4,c) &
+plus(c,x5,x6);
+pred plusar6(var2 x1,x2,x3,x4,x5,x6,x7) = ex2 c:
+plusar5(x1,x2,x3,x4,x5,c) & plus(c,x6,x7);
+
+macro shift(var2 p,q) = plus(p,p,q);
+macro shift2(var2 p,q) = ex2 t: shift(p,t) & shift(t,q);
+macro shift3(var2 p,q) = ex2 t: shift2(p,t) & shift(t,q);
+
+macro time3(var2 p,q) =
+  ex2 t: shift(p,t) & plus(p,t,q);
+
+macro time9(var2 p,q) =
+  ex2 t: shift3(p,t) & plus(p,t,q);
+
+macro time27(var2 p,q) =
+  ex2 t1,t2,t3: shift(p,t1) & shift2(t1,t2) & shift(t2,t3) &
+plusar4(p,t1,t2,t3,q);
+
+macro sumleq1(var2 wl, wr) =
+  ex2 s: plus(wl,wr,s) & leq(s,pconst(1));
+
+
+macro weight(var2 w, w1l, w2l, w3l, w1r, w2r, w3r) =
+  ex2 l2,l3,r2,r3,s:
+  time3(w2l,l2)   & time3(w2r,r2) &
+  time9(w3l,l3)   & time9(w3r,r3) &
+  plusar3(w1l,l2,l3,s) & plusar4(w1r,r2,r3,w,s);
+
+macro mutualExclusion(var2 w1l, w2l, w3l, w1r, w2r, w3r) =
+  (w1l = pconst(0) | w1r = pconst(0)) &
+  (w2l = pconst(0) | w2r = pconst(0)) &
+  (w3l = pconst(0) | w3r = pconst(0));
+
+macro bounded(var2 w1l, w2l, w3l, w1r, w2r, w3r) =
+  sumleq1(w1l,w1r) &
+  sumleq1(w2l,w2r) &
+  sumleq1(w3l,w3r);
+
+macro minimize(var2 w, w1l, w2l, w3l, w1r, w2r, w3r) =
+  all2 v1l, v2l, v3l, v1r, v2r, v3r:
+   ~weight(w,v1l, v2l, v3l, v1r, v2r, v3r) |
+~(ex2 sv,sw: plusar6(v1l, v2l, v3l, v1r, v2r, v3r, sv) &
+            plusar6(w1l, w2l, w3l, w1r, w2r, w3r, sw) &
+                     less(sv,sw));
+
+ex2 w, w1l, w2l, w3l, w1r, w2r, w3r: true
+ & bounded(w1l, w2l, w3l, w1r, w2r, w3r)
+ & mutualExclusion(w1l, w2l, w3l, w1r, w2r, w3r)
+ & minimize(w, w1l, w2l, w3l, w1r, w2r, w3r)
+ & weight(w, w1l, w2l, w3l, w1r, w2r, w3r);

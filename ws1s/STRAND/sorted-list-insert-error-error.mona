@@ -1,0 +1,31 @@
+
+ws1s;
+
+pred close(var1 x, var1 y, var2 M) =
+	x<y & (~ex1 z: (z in M & x<z & z<y)) ;
+
+pred before(var1 end, var1 x, var1 y) =
+	x<y & y<end ;
+
+pred validmodel(var1 end, var1 curr, var1 prev, var1 exdv1, var1 exdv2) =
+	end~=0 &
+	curr<=end & prev<=end & exdv1<=end & exdv2<=end ;
+
+pred validcomputation(var1 end, var1 curr, var1 prev) = prev=0 & prev+1=curr ;
+
+pred validmodel'(var1 end, var2 M) = 
+	end in M & (ex1 s where s in M : s < end) ;
+
+pred minimalmodel(var1 end, var1 curr, var1 prev, var1 exdv1, var1 exdv2) =
+	~ex2 M :(
+		(all1 s where s in M : s <= end) & 
+		(ex1 s : s <= end & s notin M) &
+		curr in M & prev in M & exdv1 in M & exdv2 in M &
+		validmodel'(end,M) &
+		(prev=0 => (~ex1 s where s in M : s < prev)) &
+		(close(prev,curr,M) <=> prev+1=curr)
+	 );
+
+all1 end: ex1 curr,prev,exdv1,exdv2 : (
+	validmodel(end,curr,prev,exdv1,exdv2) & minimalmodel(end,curr,prev,exdv1,exdv2) ) ;
+

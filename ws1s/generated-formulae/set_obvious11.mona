@@ -1,0 +1,2 @@
+ws1s;
+ex2 X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11: all2 X: (((X sub X1 & X ~= X1) => ~X1 sub X1) & ((X sub X2 & X ~= X2) => ~X2 sub X2) & ((X sub X3 & X ~= X3) => ~X3 sub X3) & ((X sub X4 & X ~= X4) => ~X4 sub X4) & ((X sub X5 & X ~= X5) => ~X5 sub X5) & ((X sub X6 & X ~= X6) => ~X6 sub X6) & ((X sub X7 & X ~= X7) => ~X7 sub X7) & ((X sub X8 & X ~= X8) => ~X8 sub X8) & ((X sub X9 & X ~= X9) => ~X9 sub X9) & ((X sub X10 & X ~= X10) => ~X10 sub X10) & ((X sub X11 & X ~= X11) => ~X11 sub X11));

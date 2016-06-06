@@ -1,0 +1,43 @@
+# auxiliary predicates
+pred xor(var0 x,y) = x&~y | ~x&y;
+pred at_least_two(var0 x,y,z) = x&y | x&z | y&z;
+
+pred even(var2 x) = (0 notin x);
+
+# addition relation (p "+" q = r)
+pred plus(var2 p,q,r) =
+ ex2 c:                                                  # carry track
+   0 notin c                                             # no carry-in
+ & all1 t:
+     (t+1 in c <=> at_least_two(t in p, t in q, t in c)) # propagate carry
+   & (t in r <=> xor(xor(t in p, t in q), t in c));      # calculate result
+
+# less-than relation (p "<" q)
+pred less(var2 p,q) =  ex2 t: t ~= empty & plus(p,t,q);
+pred leq(var2 p,q)  =  ex2 t: plus(p,t,q);
+
+pred shiftl(var2 p,q) =
+  all1 t: ((t+1 in p) <=> (t in q));
+
+macro shift(var2 p,q) = plus(p,p,q);
+macro shift2(var2 p,q) = ex2 t: shift(p,t) & shift(t,q);
+macro shift3(var2 p,q) = ex2 t: shift2(p,t) & shift(t,q);
+
+pred times1(var2 p,q) = (p=q);
+pred times2(var2 p,q) = shift(p,q);
+pred times3(var2 p,q) = ex2 t: times2(p,t) & plus(p,t,q);
+
+macro step(var2 x,y) =
+  (even(x) & shiftl(x,y)) |
+  (~even(x) & (ex2 x3: times3(x,x3) & plus(x3,pconst(1),y)));
+
+macro step2(var2 x,y) =
+  ex2 z: step(x,z) & step(z,y);
+
+macro step3(var2 x,y) =
+  ex2 z: step2(x,z) & step(z,y);
+
+macro step6(var2 x,y) =
+  ex2 z: step3(x,z) & step3(z,y);
+
+ex2 x,y: step6(x,y);
