@@ -1,3 +1,5 @@
+package RegexParser;
+
 import java_cup.runtime.*;
 
 class TokenVal {
@@ -41,6 +43,7 @@ ESCAPEDCHAR = [\\][^tnrfbBdDsSvwW]
 %type java_cup.runtime.Symbol
 
 %eofval{
+CharNum.num =1;
 return new Symbol(sym.EOF);
 %eofval}
 
@@ -48,9 +51,8 @@ return new Symbol(sym.EOF);
 
 %%
 
-\n        { Symbol S = new Symbol(sym.LINEBREAK, new TokenVal(yyline+1, CharNum.num));
+\n        { 
             CharNum.num = 1; 
-            return S;
           }  
 
 "\\t"      { Symbol S = new Symbol(sym.METATAB, new TokenVal(yyline+1, CharNum.num));
@@ -225,13 +227,3 @@ return new Symbol(sym.EOF);
             return S;
           } 
           
-
-
-
-
-        
-
-.         { ErrMsg.fatal(yyline+1, CharNum.num,
-                         "illegal character ignored: " + yytext());
-            CharNum.num++;
-          }

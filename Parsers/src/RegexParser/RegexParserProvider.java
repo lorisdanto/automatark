@@ -2,11 +2,13 @@ package RegexParser;
 
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -19,6 +21,7 @@ import java_cup.runtime.Symbol;
  *
  * Parser for regular expressions, unit test file is in testRegex/testRegex
  * Detailed structure of the nodes is in FormulaNode.java 
+ * No longer needs to use ExtractUsableLines.java, the provider filters parse-able input lines for you. 
  */
 public class RegexParserProvider {
 
@@ -67,10 +70,10 @@ public class RegexParserProvider {
 		inFile = reader;
 	}
 	
-	private Symbol parseRegex() {
+	private Symbol parseRegex(String fileLine) {
 		try {
 			if (isFile) {
-				parser P = new parser(new Yylex(inFile));
+				parser P = new parser(new Yylex(new StringReader(fileLine)));
 				return P.parse();
 			}
 			parser P = new parser(new Yylex(new StringReader(inputAsString)));
@@ -82,9 +85,32 @@ public class RegexParserProvider {
 	}
 
 	public RegexListNode process() {
-		Symbol formula = parseRegex();
-		RegexListNode root = (RegexListNode) formula.value;
-		return root;
+		List<RegexNode> list = new LinkedList<RegexNode>();
+		if(isFile){
+			try (BufferedReader br = new BufferedReader(inFile)) {
+				String fileLine;
+				while ((fileLine = br.readLine()) != null) {
+					// process the line.
+					System.out.println("Line to be parsed is: "+ fileLine);
+					try{
+						Symbol formula = parseRegex(fileLine);
+						RegexNode node = (RegexNode) formula.value;
+						list.add(node);
+						//outFile.println(fileLine);
+					}catch(NullPointerException e){
+						System.out.println("Cannot be parsed: "+fileLine);
+						continue;
+					}
+				}
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+		}else{
+			list.add((RegexNode)parseRegex(null).value);
+		}
+		
+		RegexListNode rlist = new RegexListNode(list);
+		return rlist;
 	}
 	
 	

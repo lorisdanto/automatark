@@ -14,6 +14,10 @@ public class RegexListNode extends FormulaNode{
 	public RegexListNode(List<RegexNode> S) {
 		myRegexList = S;
 	}
+	
+	public void addRegex(RegexNode r){
+		myRegexList.add(r);
+	}
 
 	public List<RegexNode> getList() {
 		return myRegexList;

@@ -1,3 +1,5 @@
+package RegexParser;
+
 import java_cup.runtime.*;
 import java.util.*;
 
@@ -15,7 +17,7 @@ public void syntax_error(Symbol currToken) {
                      ((TokenVal)currToken.value).charnum,
                      "Syntax error");
     }
-    System.exit(-1);
+    //System.exit(-1);
 }
 :};
 
@@ -52,13 +54,12 @@ terminal  TokenVal LCURLY;
 terminal  TokenVal RCURLY;
 terminal  TokenVal UNION;
 terminal  TokenVal COMMA;
-terminal  TokenVal LINEBREAK;
 
 
 /* Nonterminals */
-non terminal RegexListNode program;
-non terminal LinkedList regexList;
+non terminal RegexNode program;
 non terminal LinkedList concateList;
+non terminal RegexNode unionRegex;
 non terminal RegexNode regexNode;
 non terminal RegexNode simpleRegex;
 non terminal RegexNode basicRegex;
@@ -72,46 +73,49 @@ non terminal CharacterClassNode characterClass;
 non terminal NotCharacterClassNode notcharacterClass;
 
 /* precedence and associativity declarations */
-precedence left LINEBREAK;
 precedence left UNION;
 precedence left MINUS;
 precedence left STAR, PLUS, OPTIONAL, CARET, LPAREN, RPAREN,DIGIT;
 precedence right LCURLY, RBRACKET;
 precedence left RCURLY, LBRACKET;
+precedence left DOLLAR, CARET;
 
 
-
-start with program;
 
 /* Grammar with actions */
 
+start with program;
 
-program ::= regexList: l
-        {: RESULT = new RegexListNode(l);
+
+
+program ::= regexNode: r
+        {: RESULT = r;
         :}
         ;
-        
-regexList ::= regexList:rlist regexNode:r 
-            {: rlist.addLast(r);
-               RESULT = rlist;
+
+regexNode	::= CARET unionRegex:r 
+            {: RESULT = new AnchorNode(r,true,false); 
             :}
-            | regexList:rlist LINEBREAK regexNode:r 
-            {: rlist.addLast(r);
-               RESULT = rlist;
+            | CARET unionRegex:r DOLLAR
+            {: RESULT = new AnchorNode(r,true,true); 
             :}
-            | /* epsilon */
-            {: RESULT = new LinkedList<RegexNode>(); 
+            | unionRegex:r DOLLAR
+            {: RESULT = new AnchorNode(r,false,true); 
+            :}
+            | unionRegex:r
+            {: RESULT = r;
             :}
             ;
-                       
-regexNode	::=	regexNode:r1 UNION simpleRegex:r2 
+
+unionRegex ::=	unionRegex:r1 UNION simpleRegex:r2 
             {: RESULT = new UnionNode(r1,r2); 
             :}
             | simpleRegex:r    
             {: RESULT = r; 
             :}
             ;
-            
+
+
 simpleRegex ::= concateList:l  
             {: RESULT = new ConcatenationNode(l);
             :}
@@ -140,13 +144,7 @@ basicRegex	    ::=	 LPAREN regexNode:r RPAREN
                 :}
                 | DOT
                 {: RESULT = new DotNode('.'); 
-                :}    
-                | CARET 
-                {: RESULT = new StartAnchorNode('^'); 
-                :}    
-                | DOLLAR 
-                {: RESULT = new EndAnchorNode('$'); 
-                :}    
+                :}  
                 | outsideChar: c 
                 {: RESULT = c; 
                 :}
@@ -300,7 +298,8 @@ insideChar ::=  DIGIT:c
                 {: RESULT = new NormalCharNode(','); 
                 :}
                 ;
-                
+
+
 outsideChar ::= DIGIT:c
                 {: RESULT = new NormalCharNode(c.charVal); 
                 :}

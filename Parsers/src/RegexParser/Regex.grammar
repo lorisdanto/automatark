@@ -11,41 +11,53 @@
 //because I have to use the conventional way to add precedence to concatenation
 
 /* Nonterminals */
-non terminal RegexListNode program;
+non terminal RegexNode program;
 non terminal LinkedList regexList;
+non terminal RegexNode unionRegex;
 non terminal RegexNode regexNode;
 non terminal RegexNode simpleRegex;
 non terminal RegexNode basicRegex;
-non terminal int integer;
+non terminal Integer integer;
 non terminal LinkedList intervals;
 non terminal IntervalNode interval;
-non terminal RegexNode insideChar;
-non terminal RegexNode outsideChar;
-non terminal RegexNode metachar;
+non terminal CharNode insideChar;
+non terminal CharNode outsideChar;
+non terminal CharNode metaChar;
+non terminal CharacterClassNode characterClass;
+non terminal NotCharacterClassNode notcharacterClass;
+
 
 /* precedence and associativity declarations */
-precedence left LINEBREAK;
 precedence left UNION;
 precedence left MINUS;
 precedence left STAR, PLUS, OPTIONAL, CARET, LPAREN, RPAREN,DIGIT;
 precedence right LCURLY, RBRACKET;
 precedence left RCURLY, LBRACKET;
+precedence left DOLLAR, CARET;
+
 
 /* Grammar with comments */
 start with program;
 
-program ::= regexList
+program ::= regexNode
        
-regexList ::= regexList regexNode 
-            | regexList:rlist LINEBREAK regexNode:r 
-            | /* epsilon */
+regexNode	::= "^" unionRegex 
             
-                       
-regexNode   ::=regexNode UNION simpleRegex
+            | "^" unionRegex "$"
             
-            | simpleRegex    
+            | unionRegex "$"
             
-simpleRegex ::= concateList
+            | unionRegex
+           
+
+unionRegex ::=	unionRegex "|" simpleRegex
+            
+            | simpleRegex  
+            
+
+
+simpleRegex ::= concateList:l  
+            
             
 concateList	::=	concateList basicRegex
             
@@ -61,10 +73,6 @@ basicRegex	::= "(" regexNode ")"
                 | basicRegex "?" 
                 
                 | "."           // meta character, all characters except line breaker
-                
-                | "^"           // meta character, start of string
-                   
-                | "$"           // meta character, end of string
                    
                 | outsideChar   //chacters that can be outside of characterClass
                 
@@ -72,29 +80,30 @@ basicRegex	::= "(" regexNode ")"
                 
                 | notcharacterClass
 
-                | outsideChar "{" integer "}"
-                                     
-                | outsideChar "{" integer ","  "}"
-                
-                | outsideChar  "{" integer "," integer "}"
-                
                 | "(" regexNode ")" "{" integer "}"
-                
+                                     
                 | "(" regexNode ")" "{" integer ","  "}"
                 
-                | "(" regexNode ")"  "{" integer "," integer "}"
+                | "(" regexNode ")" "{" integer "," integer "}"
+                
+                | outsideChar "{" integer "}"
+                                    
+                | outsideChar "{" integer ","  "}"
+               
+                | outsideChar "{" integer "," integer "}"
                 
                 | characterClass "{" integer "}"
-                
+                                     
                 | characterClass "{" integer ","  "}"
                 
-                | characterClass  "{" integer "," integer "}"
+                | characterClass "{" integer "," integer "}"
                 
                 | notcharacterClass "{" integer "}"
-                
+                                     
                 | notcharacterClass "{" integer ","  "}"
                 
-                | notcharacterClass  "{" integer "," integer "}"
+                | notcharacterClass "{" integer "," integer "}"
+                
  
 characterClass ::= "[" intervals "]"  //chacterClass     
 
