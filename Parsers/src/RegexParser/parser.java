@@ -44,7 +44,7 @@ public class parser extends java_cup.runtime.lr_parser {
     "\006\000\002\007\007\000\002\007\010\000\002\016\005" +
     "\000\002\016\007\000\002\017\010\000\002\017\006\000" +
     "\002\010\004\000\002\010\003\000\002\011\004\000\002" +
-    "\011\002\000\002\012\005\000\002\012\003\000\002\013" +
+    "\011\002\000\002\012\005\000\002\012\003\000\002\012" +
     "\003\000\002\013\003\000\002\013\003\000\002\013\003" +
     "\000\002\013\003\000\002\013\003\000\002\013\003\000" +
     "\002\013\003\000\002\013\003\000\002\013\003\000\002" +
@@ -352,11 +352,11 @@ public class parser extends java_cup.runtime.lr_parser {
     "\021\uffca\022\uffca\023\uffca\024\uffca\025\uffca\026\uffca\027" +
     "\uffca\030\uffca\031\uffca\032\uffca\033\uffca\034\uffca\035\uffca" +
     "\036\uffca\037\uffca\040\uffca\041\uffca\042\uffca\001\002\000" +
-    "\100\004\uffd8\005\uffd8\006\uffd8\007\uffd8\010\uffd8\011\uffd8" +
-    "\012\uffd8\013\uffd8\014\uffd8\015\uffd8\016\uffd8\017\uffd8\020" +
-    "\uffd8\021\uffd8\022\uffd8\023\uffd8\024\uffd8\025\uffd8\026\uffd8" +
-    "\027\uffd8\030\uffd8\031\uffd8\032\uffd8\033\uffd8\034\uffd8\035" +
-    "\uffd8\036\uffd8\037\uffd8\040\uffd8\041\uffd8\042\uffd8\001\002" +
+    "\100\004\uffd7\005\uffd7\006\uffd7\007\uffd7\010\uffd7\011\uffd7" +
+    "\012\uffd7\013\uffd7\014\uffd7\015\uffd7\016\uffd7\017\uffd7\020" +
+    "\uffd7\021\uffd7\022\uffd7\023\uffd7\024\uffd7\025\uffd7\026\uffd7" +
+    "\027\uffd7\030\uffd7\031\uffd7\032\uffd7\033\uffd7\034\uffd7\035" +
+    "\uffd7\036\uffd7\037\uffd7\040\uffd7\041\uffd7\042\uffd7\001\002" +
     "\000\100\004\uffce\005\uffce\006\uffce\007\uffce\010\uffce\011" +
     "\uffce\012\uffce\013\uffce\014\uffce\015\uffce\016\uffce\017\uffce" +
     "\020\uffce\021\uffce\022\uffce\023\uffce\024\uffce\025\uffce\026" +
@@ -403,11 +403,11 @@ public class parser extends java_cup.runtime.lr_parser {
     "\uffc6\022\uffc6\023\uffc6\024\uffc6\025\uffc6\026\uffc6\027\uffc6" +
     "\030\uffc6\031\uffc6\032\uffc6\033\uffc6\034\uffc6\035\uffc6\036" +
     "\uffc6\037\uffc6\040\uffc6\041\uffc6\042\uffc6\001\002\000\100" +
-    "\004\uffd6\005\uffd6\006\uffd6\007\uffd6\010\uffd6\011\uffd6\012" +
-    "\uffd6\013\uffd6\014\uffd6\015\uffd6\016\uffd6\017\uffd6\020\uffd6" +
-    "\021\uffd6\022\uffd6\023\uffd6\024\uffd6\025\uffd6\026\uffd6\027" +
-    "\uffd6\030\uffd6\031\uffd6\032\uffd6\033\uffd6\034\uffd6\035\uffd6" +
-    "\036\uffd6\037\uffd6\040\uffd6\041\uffd6\042\uffd6\001\002\000" +
+    "\004\uffd8\005\uffd8\006\uffd8\007\uffd8\010\uffd8\011\uffd8\012" +
+    "\uffd8\013\uffd8\014\uffd8\015\uffd8\016\uffd8\017\uffd8\020\uffd8" +
+    "\021\uffd8\022\uffd8\023\uffd8\024\uffd8\025\uffd8\026\uffd8\027" +
+    "\uffd8\030\uffd8\031\uffd8\032\uffd8\033\uffd8\034\uffd8\035\uffd8" +
+    "\036\uffd8\037\uffd8\040\uffd8\041\uffd8\042\uffd8\001\002\000" +
     "\100\004\uffc7\005\uffc7\006\uffc7\007\uffc7\010\uffc7\011\uffc7" +
     "\012\uffc7\013\uffc7\014\uffc7\015\uffc7\016\uffc7\017\uffc7\020" +
     "\uffc7\021\uffc7\022\uffc7\023\uffc7\024\uffc7\025\uffc7\026\uffc7" +
@@ -438,14 +438,12 @@ public class parser extends java_cup.runtime.lr_parser {
     "\016\uffd0\017\uffd0\020\uffd0\021\uffd0\022\uffd0\023\uffd0\024" +
     "\uffd0\025\uffd0\026\uffd0\027\uffd0\030\uffd0\031\uffd0\032\uffd0" +
     "\033\uffd0\034\uffd0\035\uffd0\036\uffd0\037\uffd0\040\uffd0\041" +
-    "\uffd0\042\uffd0\001\002\000\100\004\uffd7\005\uffd7\006\uffd7" +
-    "\007\uffd7\010\uffd7\011\uffd7\012\uffd7\013\uffd7\014\uffd7\015" +
-    "\uffd7\016\uffd7\017\uffd7\020\uffd7\021\uffd7\022\uffd7\023\uffd7" +
-    "\024\uffd7\025\uffd7\026\uffd7\027\uffd7\030\uffd7\031\uffd7\032" +
-    "\uffd7\033\uffd7\034\uffd7\035\uffd7\036\uffd7\037\uffd7\040\uffd7" +
-    "\041\uffd7\042\uffd7\001\002\000\100\004\040\005\032\006" +
-    "\024\007\051\010\035\011\026\012\037\013\027\014\047" +
-    "\015\041\016\021\017\033\020\020\021\146\022\125\023" +
+    "\uffd0\042\uffd0\001\002\000\100\004\uffd6\005\uffd6\006\uffd6" +
+    "\007\uffd6\010\uffd6\011\uffd6\012\uffd6\013\uffd6\014\uffd6\015" +
+    "\uffd6\016\uffd6\017\uffd6\020\uffd6\021\uffd6\022\uffd6\023\uffd6" +
+    "\024\uffd6\025\uffd6\026\uffd6\027\uffd6\030\uffd6\031\uffd6\032" +
+    "\uffd6\033\uffd6\034\uffd6\035\uffd6\036\uffd6\037\uffd6\040\uffd6" +
+    "\041\uffd6\042\uffd6\001\002\000\046\021\146\022\125\023" +
     "\127\024\142\025\143\026\123\027\130\030\145\031\122" +
     "\032\126\033\133\034\150\035\132\036\124\037\135\040" +
     "\131\041\140\042\136\001\002\000\102\002\uffe0\004\uffe0" +
@@ -469,9 +467,7 @@ public class parser extends java_cup.runtime.lr_parser {
     "\uffd9\020\uffd9\021\uffd9\022\uffd9\023\uffd9\024\154\025\uffd9" +
     "\026\uffd9\027\uffd9\030\uffd9\031\uffd9\032\uffd9\033\uffd9\034" +
     "\uffd9\035\uffd9\036\uffd9\037\uffd9\040\uffd9\041\uffd9\042\uffd9" +
-    "\001\002\000\100\004\040\005\032\006\024\007\051\010" +
-    "\035\011\026\012\037\013\027\014\047\015\041\016\021" +
-    "\017\033\020\020\021\146\022\125\023\127\024\142\025" +
+    "\001\002\000\046\021\146\022\125\023\127\024\142\025" +
     "\143\026\123\027\130\030\145\031\122\032\126\033\133" +
     "\034\155\035\132\036\124\037\135\040\131\041\140\042" +
     "\136\001\002\000\102\002\uffe1\004\uffe1\005\uffe1\006\uffe1" +
@@ -523,10 +519,9 @@ public class parser extends java_cup.runtime.lr_parser {
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\006\013\150\015\136\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\006\013\150\015\136\001\001\000\002\001" +
-    "\001" });
+    "\000\002\001\001\000\004\013\150\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\004\013\150\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -1207,7 +1202,20 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 41: // insideChar ::= DIGIT 
+          case 41: // interval ::= metaChar 
+            {
+              IntervalNode RESULT =null;
+		int mleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
+		int mright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
+		CharNode m = (CharNode)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
+		 RESULT = new IntervalNode(m); 
+            
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("interval",8, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 42: // insideChar ::= DIGIT 
             {
               CharNode RESULT =null;
 		int cleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
@@ -1220,26 +1228,13 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 42: // insideChar ::= ESCAPEDCHAR 
+          case 43: // insideChar ::= ESCAPEDCHAR 
             {
               CharNode RESULT =null;
 		int cleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int cright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		CharTokenVal c = (CharTokenVal)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = new EscapedCharNode(c.charVal); 
-                
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("insideChar",9, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
-            }
-          return CUP$parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 43: // insideChar ::= metaChar 
-            {
-              CharNode RESULT =null;
-		int cleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int cright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
-		CharNode c = (CharNode)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-		 RESULT = c; 
                 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("insideChar",9, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }

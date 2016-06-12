@@ -20,9 +20,9 @@ public class AnchorNode extends RegexNode{
 		if(this.start){
 			p.print("SOS");
 		}
-		//p.print("(");
+		p.print("(");
 		myRegex1.unparse(p);
-		//p.print(")");
+		p.print(")");
 		if(this.end){
 			p.print("EOS");
 		}
@@ -34,9 +34,9 @@ public class AnchorNode extends RegexNode{
 		if(this.start){
 			s.append("SOS");
 		}
-		//s.append("(");
+		s.append("(");
 		myRegex1.toString(s);
-		//s.append(")");
+		s.append(")");
 		if(this.end){
 			s.append("EOS");
 		}

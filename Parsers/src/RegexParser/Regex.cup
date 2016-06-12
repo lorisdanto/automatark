@@ -237,6 +237,9 @@ interval	::=	insideChar:c1 MINUS insideChar:c2
             :}
             | insideChar:c
             {: RESULT = new IntervalNode(c); 
+            :}
+            | metaChar:m 
+            {: RESULT = new IntervalNode(m); 
             :} 
             ;
         
@@ -245,9 +248,6 @@ insideChar ::=  DIGIT:c
                 :}
                 | ESCAPEDCHAR:c 
                 {: RESULT = new EscapedCharNode(c.charVal); 
-                :}
-                | metaChar:c 
-                {: RESULT = c; 
                 :}
                 | NOTDIGIT:c 
                 {: RESULT = new NormalCharNode(c.charVal); 

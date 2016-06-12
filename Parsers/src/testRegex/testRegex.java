@@ -83,9 +83,9 @@ public class testRegex {
 		// mix
 		String[][] input4 = { { "^.a$" } };
 		String rightOutput1 = "(Dot)";
-		String rightOutput2 = "SOS(Char:a)";
-		String rightOutput3 = "(Char:a)EOS";
-		String rightOutput4 = "SOS(Dot)(Char:a)EOS";
+		String rightOutput2 = "SOS((Char:a))";
+		String rightOutput3 = "((Char:a))EOS";
+		String rightOutput4 = "SOS((Dot)(Char:a))EOS";
 		run(input1, rightOutput1);
 		run(input2, rightOutput2);
 		run(input3, rightOutput3);
