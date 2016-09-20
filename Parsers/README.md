@@ -1,42 +1,18 @@
-LTLparser: 
+Welcome to the Github page of AutomatArk!
 
-Main Class: LTLparser/LTLParserProvider.java
-Unit Test:  testLTL/testLTL.java
+Here we provide serveral open-sourced parsers writen in Java for our benchmarks. 
+Parsers are generated using JFlex 1.6.1 as lexer/scanner generator, and Java CUP 11b as parser generator.
 
-Grammar, precedence and associativity of LTL can be found in src/LTLparser/LTLparser.grammar
-How to use the program (command-line arguments and methods) can be found in the comment section of LTLParserProvider.java
+Right now we have:
 
-Structure:
-/*
- * 	Subclass              Kids
- * 	------------------------------
- *
- * 	LTLListNode		 	 LTLNode
- * 
- * 	LTLNode:
- * 	BinaryLTLNode         LTLNode LTLNode
- * 		AndNode
- * 		OrNode
- * 		XorNode
- * 		ImplicationNode
- * 		EquivalenceNode
- * 		UntilNode
- * 		WeakUntilNode
- * 		ReleaseNode
- * 		StrongReleaseNode
- * 
- * 	UnaryLTLNode     	 LTLNode
- * 		NextNode
- * 		AlwaysNode
- * 		EventuallyNode
- * 		NegationNode
- * 		
- * 	TypeNode (these are leaf nodes):
- * 		TrueNode		--none--
- * 		FalseNode		--none--
- * 		IdNode			--none--
- * 		ExpNode         --none--
- * 
- */
+- Linear Temporal Logic parser (supports most logical operators of LTL)
+	check src/LTLparser for details.
 
+- Regular Expression parser (supports basic operators, character classes and commonly used meta characters)
+	check src/RegexParser for details 
 
+- Tree Automata parser
+	check src/TreeAutomataParser for details
+
+Detailed grammar files for each parser can be found in the corresponding folder (file which ends with .grammar).
+If you have found any bugs or you are willing to add more features to our basic parsers, feel free to issue a pull requests or by e-mail loris@cs.wisc.edu or fwang64@wisc.edu
