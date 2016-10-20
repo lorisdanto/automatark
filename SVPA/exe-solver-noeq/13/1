@@ -1,0 +1,22 @@
+Automaton: 15 transitions, 6 states
+Transitions 
+I: 0 -[\u0125-\u0125]-> 2
+I: 0 -[\u0000-\uffff]-> 0
+C: 0 -[\u0000-\uffff], 0-> 1
+I: 1 -[\u0000-\uffff]-> 1
+C: 1 -[\u0000-\uffff], 1-> 1
+R: 1 -neq [([\u0000-\uffff], [\u0000-\uffff])], eq [\u0000-\uffff], 1-> 1
+R: 1 -neq [([\u0000-\uffff], [\u0000-\uffff])], eq [\u0000-\uffff], 0-> 0
+C: 2 -[\u0127-\u0127], 2-> 3
+I: 3 -[\u0000-\uffff]-> 3
+I: 3 -[\u013d-\u013d]-> 5
+C: 3 -[\u0000-\uffff], 3-> 4
+I: 4 -[\u0000-\uffff]-> 4
+C: 4 -[\u0000-\uffff], 4-> 4
+R: 4 -neq [([\u0000-\uffff], [\u0000-\uffff])], eq [\u0000-\uffff], 4-> 4
+R: 4 -neq [([\u0000-\uffff], [\u0000-\uffff])], eq [\u0000-\uffff], 3-> 3
+Initial States 
+0
+Final States 
+5
+
