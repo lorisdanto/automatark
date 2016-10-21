@@ -19,6 +19,11 @@ import java_cup.runtime.*;
 
 public class TreeParserProvider {
 
+	public TreeParserProvider(FileReader reader) {
+		
+	}
+	
+	
 	public static void main(String[] args)
 	        throws IOException // may be thrown by the scanner
 	    {

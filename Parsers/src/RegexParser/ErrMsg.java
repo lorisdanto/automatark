@@ -13,7 +13,7 @@ class ErrMsg {
      * @param msg associated message for error
      */
     static void fatal(int lineNum, int charNum, String msg) {
-        System.err.println(lineNum + ":" + charNum + " ***ERROR*** " + msg);
+        System.err.println(lineNum + ":" + charNum + " ***ERROR*** " + msg + ", may contain non regular operators");
     }
 
     /**

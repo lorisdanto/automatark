@@ -131,7 +131,7 @@ public class RegexParserProvider {
 
 						// outFile.println(fileLine);
 					} catch (NullPointerException e) {
-						System.out.println("Cannot be parsed: " + fileLine);
+						System.err.println("Cannot be parsed: " + fileLine);
 						continue;
 					}
 				}
