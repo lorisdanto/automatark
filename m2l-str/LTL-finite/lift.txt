@@ -1,0 +1,16 @@
+lift_2.ltl0.mona          10                        false                    
+lift_3.ltl0.mona          20                        false                    
+lift_4.ltl0.mona          2990                      false                    
+lift_5.ltl0.mona          60000                                              
+lift_6.ltl0.mona          60000                                              
+lift_7.ltl0.mona          60000                                              
+lift_8.ltl0.mona          60000                                              
+lift_9.ltl0.mona          60000                                              
+lift_b_2.ltl0.mona        10                        false                    
+lift_b_3.ltl0.mona        20                        false                    
+lift_b_4.ltl0.mona        40                        false                    
+lift_b_5.ltl0.mona        60000                                              
+lift_b_6.ltl0.mona        60000                                              
+lift_b_7.ltl0.mona        60000                                              
+lift_b_8.ltl0.mona        60000                                              
+lift_b_9.ltl0.mona        60000                                              

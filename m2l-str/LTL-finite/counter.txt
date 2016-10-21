@@ -1,0 +1,30 @@
+counter_10.ltl0.mona      2790                      false                    
+counter_11.ltl0.mona      8380                      false                    
+counter_12.ltl0.mona      60000                                              
+counter_13.ltl0.mona      60000                                              
+counter_14.ltl0.mona      60000                                              
+counter_15.ltl0.mona      60000                                              
+counter_16.ltl0.mona      60000                                              
+counter_2.ltl0.mona       10                        false                    
+counter_3.ltl0.mona       10                        false                    
+counter_4.ltl0.mona       10                        false                    
+counter_5.ltl0.mona       20                        false                    
+counter_6.ltl0.mona       30                        false                    
+counter_7.ltl0.mona       70                        false                    
+counter_8.ltl0.mona       220                       false                    
+counter_9.ltl0.mona       700                       false                    
+counter_l_10.ltl0.mona    2820                      false                    
+counter_l_11.ltl0.mona    8410                      false                    
+counter_l_12.ltl0.mona    60000                                              
+counter_l_13.ltl0.mona    60000                                              
+counter_l_14.ltl0.mona    60000                                              
+counter_l_15.ltl0.mona    60000                                              
+counter_l_16.ltl0.mona    60000                                              
+counter_l_2.ltl0.mona     0                         false                    
+counter_l_3.ltl0.mona     10                        false                    
+counter_l_4.ltl0.mona     10                        false                    
+counter_l_5.ltl0.mona     10                        false                    
+counter_l_6.ltl0.mona     30                        false                    
+counter_l_7.ltl0.mona     60                        false                    
+counter_l_8.ltl0.mona     210                       false                    
+counter_l_9.ltl0.mona     730                       false                    

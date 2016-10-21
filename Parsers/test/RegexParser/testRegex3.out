@@ -1,0 +1,9 @@
+SOS(([Char:a-Char:z Char:A-Char:Z Char:0-Char:9 Char:_ Char:. Char:+ Char:- ])+)(Char:@)(([Char:a-Char:z Char:A-Char:Z Char:0-Char:9 Char:- ])+)(Escaped:.)(([Char:a-Char:z Char:A-Char:Z Char:0-Char:9 Char:- Char:. ])+)EOS
+(Char:a)EOS
+SOS(Char:a)EOS
+SOS(Char:a)
+(Char:a)(Char:a)(Char:a)(Char:a)
+(Char:b)(Char:o)(Char:b)
+((Char:a) | (Char:b))
+(Char:a)(Char:b)(Char:c)
+([Char:a Char:b Char:c ])

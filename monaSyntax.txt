@@ -1,0 +1,45 @@
+Input Format
+
+dWiNA takes as an input formulae in .mona files corresponding to the MONA syntax (for full description of syntax consult MONA manual). We present the basic syntax as follows:
+
+program ::= (header;)? (declaration;)+
+header  ::= ws1s | ws2s
+
+declaration ::= formula
+             |  var0 (varname)+
+	     |  var1 (varname)+
+	     |  var2 (varname)+
+	     |  'pred' varname (params)? = formula
+	     |  'macro' varname (params)? = formula
+
+formula ::= 'true' | 'false' | (formula)
+         |  '~' formula
+	 |  formula '|' formula
+	 |  formula '&' formula
+	 |  formula '=>' formula
+	 |  formula '<=>' formula
+	 |  first-order-term '=' first-order-term
+	 |  first-order-term '~=' first-order-term
+	 |  first-order-term '<' first-order-term
+	 |  first-order-term '>' first-order-term
+	 |  first-order-term '<=' first-order-term
+	 |  first-order-term '>=' first-order-term
+	 |  second-order-term '=' second-order-term
+	 |  second-order-term '=' '{' (int)+ '}'
+	 |  second-order-term '~=' second-order-term
+	 |  second-order-term 'sub' second-order-term
+	 |  first-order-term 'in' second-order-term
+	 |  first-order-term 'notin' second-order-term
+	 |  'ex1' (varname)+ ':' formula
+	 |  'all1' (varname)+ ':' formula
+	 |  'ex2' (varname)+ ':' formula
+	 |  'all2' (varname)+ ':' formula
+
+first-order-term ::= varname
+                  |  (first-order-term)
+		  |  int
+		  |  first-order-term '+' int
+
+second-order-term ::= varname
+                   |  (second-order-term)
+		   |  second-order-term + int
