@@ -1,3 +1,5 @@
+package TreeAutomataParser;
+
 import java_cup.runtime.*;
 import java.util.*;
 
@@ -83,6 +85,9 @@ stateList ::= stateList:sList state:s
 state ::= ID:id COLON INT
         {: RESULT = id.getId();
         :}
+        | ID:id
+        {: RESULT = id.getId();
+        :}
         ;
                             
 finalStateList ::= finalStateList:fList ID:id
@@ -119,6 +124,9 @@ idList ::= ID:i
         | idList:iList COMMA ID:i
         {: iList.add(i.getId());
            RESULT = iList;
+        :}
+        | /* epsilon */
+        {: RESULT = new ArrayList<String>();
         :}
         ;
               

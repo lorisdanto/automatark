@@ -18,6 +18,7 @@ stateList ::= stateList state
             ;
                    
 state ::= ID COLON INT
+        | ID
         ;
                             
 finalStateList ::= finalStateList ID
@@ -33,4 +34,5 @@ transition ::= ID LPAREN idList RPAREN ARROW ID
            
 idList ::= ID
         | idList COMMA ID
+        /* epsilon */
         ;                                                       

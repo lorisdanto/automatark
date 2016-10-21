@@ -58,6 +58,55 @@ public class TreeNode {
 		p.print(System.getProperty("line.separator"));
     }
     
+    public String toString(){
+    	//print Ops first
+    	StringBuilder s = new StringBuilder();
+    	s.append("Ops ");
+        for(SymbolWithArityNode node: arityList){
+        	s.append(node.getSymbol());
+        	s.append(":");
+        	s.append(node.getArity());
+        	s.append(" ");
+        }
+        s.append(System.getProperty("line.separator"));
+        s.append(System.getProperty("line.separator"));
+        
+        //then print ID
+        s.append("Automation ");
+        s.append(myID);
+        s.append(System.getProperty("line.separator"));
+        s.append(System.getProperty("line.separator"));
+		
+		//then print states
+        s.append("States ");
+		for(String str: stateList){
+			s.append(str);
+			s.append(" ");
+		}
+		s.append(System.getProperty("line.separator"));
+		s.append(System.getProperty("line.separator"));
+		
+		//then print final states
+		s.append("Final States ");
+		for(String str: finalStateList){
+			s.append(str);
+			s.append(" ");
+		}
+		s.append(System.getProperty("line.separator"));
+		s.append(System.getProperty("line.separator"));
+		
+		//then print transitions
+		s.append("Transitions");
+		s.append(System.getProperty("line.separator"));
+		for (TransitionNode node: transitionList){
+			node.toString(s);
+		}
+		s.append(System.getProperty("line.separator"));
+		s.append(System.getProperty("line.separator"));
+		
+		return s.toString();
+    }
+    
     public ArrayList<SymbolWithArityNode> getArity(){
     	return arityList;
     }
