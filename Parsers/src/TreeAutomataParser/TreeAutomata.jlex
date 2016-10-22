@@ -1,3 +1,4 @@
+package TreeAutomataParser;
 import java_cup.runtime.*;
 
 class TokenVal {
@@ -121,6 +122,9 @@ return new Symbol(sym.EOF);
           
           
 \n        { CharNum.num = 1; }
+\r\n      { CharNum.num = 1; }
+\r        { CharNum.num = 1; }
+
 
 {WHITESPACE}+  { CharNum.num += yytext().length(); }    
 
