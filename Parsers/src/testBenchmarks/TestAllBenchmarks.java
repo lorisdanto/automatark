@@ -27,7 +27,7 @@ import TreeAutomataParser.TreeParserProvider;
 import MonaParser.MonaParserProvider;
 
 public class TestAllBenchmarks {
-	
+	@Test
 	public void testLTL() {
 		//redirect and gather error message to String for easier debugging
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
@@ -77,7 +77,7 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 
-	
+	@Test
 	public void testRegex() {
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
 		System.setErr(new PrintStream(errMsgs));
@@ -127,7 +127,7 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 
-	
+	@Test
 	public void testNFA() {
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
 		System.setErr(new PrintStream(errMsgs));
@@ -187,7 +187,7 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 	
-	
+	@Test
 	public void testTreeAutomata() {
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
 		System.setErr(new PrintStream(errMsgs));
@@ -248,7 +248,7 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 	
-	
+	@Test
 	public void testM2L() {
 		//redirect and gather error message to String for easier debugging
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
@@ -286,7 +286,7 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 	
-	@Test
+	
 	public void testWS1S() {
 		//redirect and gather error message to String for easier debugging
 //		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
