@@ -1,0 +1,34 @@
+//fot means first-order term
+//sot means second-order term
+
+program ::= header ; declaration
+        | declaration
+        ;
+
+header ::= WS1S | WS2S | M2LSTR | M2LTREE
+        ;
+
+declaration ::= formula ; | VAR0 varNames ; declaration 
+            | VAR1 varNames ; declaration | VAR2 varNames ; declaration
+            ;
+
+varNames ::= var , varNames | var
+            ;
+
+formula ::= TRUE | FALSE | ( formula ) | NEGATION formula | formula OR formula 
+        | formula AND formula | formula IMPLICATION formula | formula EQUIVALENCE formula
+        | fot EQUALS fot | fot NOTEQUALS fot | fot LESS fot | fot GREATER fot 
+        | fot LESSEQ fot | fot GREATEREQ fot | sot EQUALS sot | sot NOTEQUALS sot 
+        | sot SUB sot | fot IN sot | fot NOTIN sot
+        | EX1 varNames : formula
+        | EX2 varNames : formula
+        | ALL1 varNames : formula
+        | ALL2 varNames : formula 
+        ;
+
+fot ::= var | ( fot ) | INTLITERAL | fot PLUS INTLITERAL
+        ;
+
+sot ::= var | ( sot ) | INTLITERAL
+
+var ::= ID

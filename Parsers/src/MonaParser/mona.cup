@@ -1,0 +1,140 @@
+/**********************************************************************
+ Java CUP specification for a parser for cats programs
+ **********************************************************************/
+
+package MonaParser;
+
+
+import java_cup.runtime.*;
+import java.util.*;
+
+/* The code below redefines method syntax_error to give better error messages
+ * than just "Syntax error"
+ */
+parser code {:
+
+public void syntax_error(Symbol currToken) {
+    if (currToken.value == null) {
+        ErrMsg.fatal(0,0, "Syntax error at end of file");
+    }
+    else {
+        ErrMsg.fatal(((TokenVal)currToken.value).linenum,
+                     ((TokenVal)currToken.value).charnum,
+                     "Syntax error");
+    }
+    System.exit(-1);
+}
+:};
+
+
+/* Terminals (tokens returned by the scanner) */
+
+terminal TokenVal       TRUE;
+terminal TokenVal       FALSE;
+terminal IdTokenVal     ID;
+terminal IntTokenVal    INTLITERAL;
+terminal                WS1S;
+terminal                WS2S;
+terminal                M2LSTR;
+terminal                M2LTREE;
+terminal                SEMICOLON;
+terminal                VAR0;
+terminal                VAR1;
+terminal                VAR2;
+terminal                LPAREN;
+terminal                RPAREN;
+terminal                NEGATION;
+terminal                OR;
+terminal                AND;
+terminal                IMPLICATION;
+terminal                EQUIVALENCE;
+terminal                EQUALS;
+terminal                NOTEQUALS;
+terminal                GREATER;
+terminal                LESS;
+terminal                LESSEQ;
+terminal                GREATEREQ;
+terminal                SUB;
+terminal                IN;
+terminal                NOTIN;
+terminal                EX1;
+terminal                EX2;
+terminal                ALL1;
+terminal                ALL2;
+terminal                COLON;
+terminal                PLUS;
+terminal                COMMA;
+
+
+
+/* Nonterminals
+ *
+ * NOTE: You will need to add more nonterminals to this list as you
+ *       add productions to the grammar below.
+ */
+non terminal       program;
+non terminal       header;
+non terminal       declaration;
+non terminal       formula;
+non terminal       varNames;
+non terminal       var;
+non terminal       fot;
+non terminal       sot;
+ 
+ 
+
+/* precedence and associativity declarations */
+
+precedence right EQUIVALENCE;
+precedence right IMPLICATION;
+precedence left OR;
+precedence left AND;
+precedence nonassoc NEGATION;
+precedence nonassoc IN, NOTIN, SUB;
+precedence nonassoc EQUALS, NOTEQUALS, GREATER, GREATEREQ, LESS, LESSEQ;
+precedence left PLUS;
+precedence nonassoc COLON;
+
+start with program;
+
+
+/* Grammar with actions
+ *
+ * NOTE: add more grammar rules below
+ */
+
+
+program ::= header SEMICOLON declaration
+        | declaration
+        ;
+
+
+header ::= WS1S | WS2S | M2LSTR | M2LTREE
+        ;
+
+declaration ::= formula SEMICOLON | VAR0 varNames SEMICOLON declaration 
+            | VAR1 varNames SEMICOLON declaration | VAR2 varNames SEMICOLON declaration
+            ;
+
+varNames ::= var COMMA varNames | var
+            ;
+
+formula ::= TRUE | FALSE | LPAREN formula RPAREN | NEGATION formula | formula OR formula 
+        | formula AND formula | formula IMPLICATION formula | formula EQUIVALENCE formula
+        | fot EQUALS fot | fot NOTEQUALS fot | fot LESS fot | fot GREATER fot 
+        | fot LESSEQ fot | fot GREATEREQ fot | sot EQUALS sot | sot NOTEQUALS sot 
+        | sot SUB sot | fot IN sot | fot NOTIN sot
+        | EX1 varNames COLON formula
+        | EX2 varNames COLON formula
+        | ALL1 varNames COLON formula
+        | ALL2 varNames COLON formula 
+        ;
+
+fot ::= var | LPAREN fot RPAREN | INTLITERAL | fot PLUS INTLITERAL
+        ;
+
+sot ::= var | LPAREN sot RPAREN | INTLITERAL
+        ;
+
+var ::= ID;
+

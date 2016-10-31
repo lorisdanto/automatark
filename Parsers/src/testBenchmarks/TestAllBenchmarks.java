@@ -24,8 +24,10 @@ import RegexParser.RegexNode;
 import TreeAutomataParser.TreeNode;
 import TreeAutomataParser.TreeParserProvider;
 
+import MonaParser.MonaParserProvider;
+
 public class TestAllBenchmarks {
-	@Test
+	
 	public void testLTL() {
 		//redirect and gather error message to String for easier debugging
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
@@ -75,7 +77,7 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 
-	@Test
+	
 	public void testRegex() {
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
 		System.setErr(new PrintStream(errMsgs));
@@ -125,7 +127,7 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 
-	@Test
+	
 	public void testNFA() {
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
 		System.setErr(new PrintStream(errMsgs));
@@ -185,7 +187,7 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 	
-	@Test
+	
 	public void testTreeAutomata() {
 		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
 		System.setErr(new PrintStream(errMsgs));
@@ -246,5 +248,81 @@ public class TestAllBenchmarks {
 		assertTrue(noFail);
 	}
 	
+	
+	public void testM2L() {
+		//redirect and gather error message to String for easier debugging
+		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
+		System.setErr(new PrintStream(errMsgs));
+
+		boolean noFail = true;
+		
+		try {
+			Files.walk(Paths.get("../m2l-str/")).forEach(filePath -> {
+				if (Files.isRegularFile(filePath) && (filePath.toString().endsWith(".mona"))) {
+					try {
+						FileReader file = new FileReader(filePath.toFile());
+						MonaParserProvider monaProvider= new MonaParserProvider(file);
+						System.out.println("parsing "+ filePath);
+						monaProvider.parseFormula();
+						System.out.println("successfully parsed "+ filePath);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				}
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+			noFail = false;
+		}finally {
+			//redirect system.err back
+			System.setErr(new PrintStream(new FileOutputStream(FileDescriptor.err)));
+		}
+		
+		String errors = errMsgs.toString();
+		if(errors.length()>0){
+			System.err.println("Found errors!");
+			System.err.println(errors);
+		}
+		assertTrue(noFail);
+	}
+	
+	@Test
+	public void testWS1S() {
+		//redirect and gather error message to String for easier debugging
+//		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
+//		System.setErr(new PrintStream(errMsgs));
+
+		boolean noFail = true;
+		
+		try {
+			Files.walk(Paths.get("../ws1s/")).forEach(filePath -> {
+				if (Files.isRegularFile(filePath) && (filePath.toString().endsWith(".mona"))) {
+					try {
+						FileReader file = new FileReader(filePath.toFile());
+						MonaParserProvider monaProvider= new MonaParserProvider(file);
+						System.out.println("parsing "+ filePath);
+						monaProvider.parseFormula();
+						System.out.println("successfully parsed "+ filePath);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				}
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+			noFail = false;
+		}
+//		finally {
+//			//redirect system.err back
+//			System.setErr(new PrintStream(new FileOutputStream(FileDescriptor.err)));
+//		}
+//		
+//		String errors = errMsgs.toString();
+//		if(errors.length()>0){
+//			System.err.println("Found errors!");
+//			System.err.println(errors);
+//		}
+		assertTrue(noFail);
+	}
 
 }
