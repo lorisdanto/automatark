@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -185,6 +186,23 @@ public class LTLParserProvider {
 		 *printLeaf(hset);
 		 * */
 		
+	}
+	
+	public static int countStates(LTLNode node){
+		int state = 0;
+		Deque<LTLNode> deque = new ArrayDeque<>();
+		deque.offerFirst(node);
+		while(!deque.isEmpty()){
+			LTLNode cur = deque.pollFirst();
+			state++;
+			if(cur instanceof UnaryLTLNode){
+				deque.offerFirst(((UnaryLTLNode) cur).getMyLTL1());
+			}else if(cur instanceof BinaryLTLNode){
+				deque.offerFirst(((BinaryLTLNode) cur).getMyLTL1());
+				deque.offerLast(((BinaryLTLNode) cur).getMyLTL2());
+			}
+		}
+		return state;
 	}
 
 	
