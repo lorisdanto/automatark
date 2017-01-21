@@ -18,7 +18,7 @@ AutomataArk contains benchmark from the following sources.
 * Snort [https://www.snort.org/]
 * Becchi et al. 
 "A workload for evaluating deep packet inspection architectures" [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4636093&tag=1]
-* Strand [http://web.engr.illinois.edu/~qiu2/strand/]
+* Strand [http://www.fit.vutbr.cz/research/groups/verifit/tools/dWiNA/eval/strand.html]
 * Regsy [http://lara.epfl.ch/w/regsy]
 * DWina [http://www.fit.vutbr.cz/research/groups/verifit/tools/dWiNA/index.html]
 
