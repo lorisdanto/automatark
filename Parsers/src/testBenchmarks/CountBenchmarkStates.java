@@ -164,6 +164,7 @@ public class CountBenchmarkStates {
 	}
 	
 	public static void printStatesInfo(){
+		System.out.println();
 		System.out.println("number of LTLs: "+ LTLNodeCount);
 		System.out.println("total number of LTL states: "+ LTLStateSum);
 		System.out.println("average state of LTLs: "+ LTLAverage);
