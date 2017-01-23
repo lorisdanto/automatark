@@ -142,14 +142,13 @@ public class TestAllBenchmarks {
 						FileReader file = new FileReader(filePath.toFile());
 						System.out.println(filePath);
 						TreeNode node = TreeParserProvider.parse(file);
-						System.out.println(filePath + "parsed correctly");
+						System.out.println(filePath + " parsed correctly");
 						String cur = node.toString();
 						if (set.contains(cur)) {
 							dupFilePath.add(filePath.toString());
 						} else {
 							set.add(cur);
 						}
-						System.out.println(filePath);
 					} catch (Exception e1) {
 						System.err.println(filePath);
 						e1.printStackTrace();
@@ -209,7 +208,6 @@ public class TestAllBenchmarks {
 						} else {
 							set.add(cur);
 						}
-						System.out.println(filePath);
 					} catch (Exception e1) {
 						System.err.println(filePath);
 						e1.printStackTrace();
@@ -287,42 +285,4 @@ public class TestAllBenchmarks {
 	}
 	
 	
-	public void testWS1S() {
-		//redirect and gather error message to String for easier debugging
-//		ByteArrayOutputStream errMsgs = new ByteArrayOutputStream();
-//		System.setErr(new PrintStream(errMsgs));
-
-		boolean noFail = true;
-		
-		try {
-			Files.walk(Paths.get("../ws1s/")).forEach(filePath -> {
-				if (Files.isRegularFile(filePath) && (filePath.toString().endsWith(".mona"))) {
-					try {
-						FileReader file = new FileReader(filePath.toFile());
-						MonaParserProvider monaProvider= new MonaParserProvider(file);
-						System.out.println("parsing "+ filePath);
-						monaProvider.parseFormula();
-						System.out.println("successfully parsed "+ filePath);
-					} catch (Exception e1) {
-						e1.printStackTrace();
-					}
-				}
-			});
-		} catch (Exception e) {
-			e.printStackTrace();
-			noFail = false;
-		}
-//		finally {
-//			//redirect system.err back
-//			System.setErr(new PrintStream(new FileOutputStream(FileDescriptor.err)));
-//		}
-//		
-//		String errors = errMsgs.toString();
-//		if(errors.length()>0){
-//			System.err.println("Found errors!");
-//			System.err.println(errors);
-//		}
-		assertTrue(noFail);
-	}
-
 }
