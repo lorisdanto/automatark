@@ -26,6 +26,12 @@ import TreeAutomataParser.TreeParserProvider;
 
 import MonaParser.MonaParserProvider;
 
+/*
+ * This class parses and removes duplicate benchmarks,
+ * The parser for regular expression currently does not support non regular operators
+ * The MONA predicate features is not supported by the mona parser, thus the Regsy and STRAND set in WS1S are not tested here.
+ * The above features will be implemented in the near future.   
+ * */
 public class TestAllBenchmarks {
 	@Test
 	public void testLTL() {
