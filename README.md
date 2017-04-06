@@ -3,7 +3,7 @@ The goal of this project is to collect benchmark problems for different models o
 This will allow to have standardized sets of benchmarks for research in these topics.
 
 
-##Input Format
+## Input Format
 The file formats of each model are described in the readme file of the corresponding folder.
 We also provide parsers for LTL and tree automata. We are working on building more.
 
