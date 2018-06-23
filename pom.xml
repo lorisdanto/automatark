@@ -15,18 +15,5 @@
   <modules>
       <module>Parsers</module>
   </modules>
-  
-  <dependencies>
-      <dependency>
-          <groupId>javacup</groupId>
-          <artifactId>javacup</artifactId>
-          <version>11.0</version>
-      </dependency>
-      <dependency>
-          <groupId>jflex</groupId>
-          <artifactId>jflex</artifactId>
-          <version>1.6.1</version>
-      </dependency>
-  </dependencies>
 
 </project>
