@@ -529,7 +529,7 @@ regexlib-clean_1235.txt,"\d+([\.|\,][0]+?[1-9]+)?
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_1236.txt,"\d+,?\d+\$?
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_1237.txt,"\d+\s*[.'-]\s*\d+\s*[\d+.m\""]*
+regexlib-clean_1237.txt,"\d+\s*[.\'-]\s*\d+\s*[\d+.m\""]*
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_1238.txt,"\d[\d,]*(?:\.\d+)?
 ",TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
@@ -1333,7 +1333,7 @@ regexlib-clean_1598.txt,"^((\+){0,1}91(\s){0,1}(\-){0,1}(\s){0,1}){0,1}98(\s){0,
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_1599.txt,"^((\+){0,1}91(\s){0,1}(\-){0,1}(\s){0,1}){0,1}9[0-9](\s){0,1}(\-){0,1}(\s){0,1}[1-9]{1}[0-9]{7}$
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_16.txt,""".*?""|"".*$|'.*?'|'.*$
+regexlib-clean_16.txt,""".*?""|"".*$|\'.*?\'|\'.*$
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_160.txt,"(([\w|\.]*)\s*={1}\s*(.*?))$
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -1999,7 +1999,7 @@ regexlib-clean_1898.txt,"^(BG){0,1}([0-9]{9}|[0-9]{10})$
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_1899.txt,"^(F-)?((2[A|B])|[0-9]{2})[0-9]{3}$
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_19.txt,"<[ \t]*[iI][mM][gG][ \t]*[sS][rR][cC][ \t]*=[ \t]*['\""]([^'\""]+)
+regexlib-clean_19.txt,"<[ \t]*[iI][mM][gG][ \t]*[sS][rR][cC][ \t]*=[ \t]*['\"\"]([^'\"\"]+)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_190.txt,"((http|ftp|https):\/\/w{3}[\d]*.|(http|ftp|https):\/\/|w{3}[\d]*.)([\w\d\._\-#\(\)\[\]\\,;:]+@[\w\d\._\-#\(\)\[\]\\,;:])?([a-z0-9]+.)*[a-z\-0-9]+.([a-z]{2,3})?[a-z]{2,6}(:[0-9]+)?(\/[\/a-z0-9\._\-,]+)*[a-z0-9\-_\.\s\%]+(\?[a-z0-9=%&\.\-,#]+)?
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -4509,9 +4509,9 @@ regexlib-clean_3026.txt,"href(\s*)=(\s*)('|"")http:\/\/(.*)((""|'))
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_3027.txt,"href=[\""\'](http:\/\/|\.\/|\/)?\w+(\.\w+)*(\/\w+(\.\w+)?)*(\/|\?\w*=\w*(&\w*=\w*)*)?[\""\']
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_3028.txt,"href=[\""\']?((?:[^>]|[^\s]|[^""]|[^'])+)[\""\']?
+regexlib-clean_3028.txt,"href=[\""\']?((?:[^>]|[^\s]|[^""]|[^\'])+)[\""\']?
 ",TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
-regexlib-clean_3029.txt,"href[ ]*=[ ]*('|\"")([^\""'])*('|\"")
+regexlib-clean_3029.txt,"href[ ]*=[ ]*(\'|\"")([^\""\'])*(\'|\"")
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_303.txt,"(?:\b\w*(\w\w?)\1{2,}\w*\b)
 ",TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE
@@ -4679,7 +4679,7 @@ regexlib-clean_338.txt,"(?<=[\?|\&])(?<key>[^\?=\&\#]+)=?(?<value>[^\?=\&\#]*)
 ",TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE
 regexlib-clean_339.txt,"(?<=[\s=&\+\-,\(\)])(True|False|Nothing|Empty|Null)(?=[\s=&\+\-,\(\)])
 ",TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE
-regexlib-clean_34.txt,"""{0,2}(?:(?:\\\\(?:\w+)\\(?:\w+\$?)|(?:[A-Z]):)(?:\\(?:[^\\:*?""'<>|\r\n]+))+|(?:[^\\:*?""'<>|\r\n]+))\.exe""?\ (?<commandstring>(?:[^\r\n]*(?="")|[^\r\n]*))
+regexlib-clean_34.txt,"""{0,2}(?:(?:\\\\(?:\w+)\\(?:\w+\$?)|(?:[A-Z]):)(?:\\(?:[^\\:*?""\'<>|\r\n]+))+|(?:[^\\:*?""\'<>|\r\n]+))\.exe""?\ (?<commandstring>(?:[^\r\n]*(?="")|[^\r\n]*))
 ",TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE
 regexlib-clean_340.txt,"(?<=\d{7}_).+((?=\x5B\d\x5D)|.{3})
 ",TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE
@@ -4709,7 +4709,7 @@ regexlib-clean_351.txt,"(?<FirstName>[A-Z]\.?\w*\-?[A-Z]?\w*)\s?(?<MiddleName>[A
 ",TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
 regexlib-clean_352.txt,"(?<FirstName>[A-Z]\.?\w*\-?[A-Z]?\w*)\s?(?<MiddleName>[A-Z]\w+|[A-Z]?\.?)\s(?<LastName>[A-Z]?\w{0,3}[A-Z]\w+\-?[A-Z]?\w*)(?:,\s|)(?<Suffix>Jr\.|Sr\.|IV|III|II|)
 ",TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
-regexlib-clean_353.txt,"(?<HTML><a[^>]*href\s*=\s*[\""\']?(?<HRef>[^""'>\s]*)[\""\']?[^>]*>(?<Title>[^<]+|.*?)?</a\s*>)
+regexlib-clean_353.txt,"(?<HTML><a[^>]*href\s*=\s*[\""\']?(?<HRef>[^""\'>\s]*)[\""\']?[^>]*>(?<Title>[^<]+|.*?)?</a\s*>)
 ",TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
 regexlib-clean_354.txt,"(?<LastName>[A-Z]\w+\-?[A-Z]?\w*),\s(?<Suffix>Jr\.|Sr\.|IV|III|II)?,?\s?(?<FirstName>[A-Z]\w*\-?[A-Z]?\w*\.?)\s?(?<MiddleName>[A-Z]?\w*\.?)
 ",TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
@@ -4819,7 +4819,7 @@ regexlib-clean_400.txt,"(?=^.{7,51}$)([A-Za-z]{1})([A-Za-z0-9!@#$%_\^\&\*\-\.\?]
 ",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_401.txt,"(?=^.{8,15}$)((?!.*\s)(?=.*[A-Z])(?=.*[a-z])(?=(.*\d){1,}))((?!.*["",;&|'])|(?=(.*\W){1,}))(?!.*["",;&|'])^.*$
 ",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_402.txt,"(?=^.{8,30}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"""":;'?/>.<,]).*$
+regexlib-clean_402.txt,"(?=^.{8,30}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"""":;\'?/>.<,]).*$
 ",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_403.txt,"(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&*()]*$
 ",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -5025,7 +5025,7 @@ regexlib-clean_494.txt,"([AEHKLTY][ABEHKLMPRSTWXYZ]|B[ABEHKLMT]|C[ABEHKLR]|GY|[J
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_495.txt,"([Cc][Hh][Aa][Nn][Dd][Aa][Nn].*?)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_496.txt,"([\""']).*?[^\\]\1
+regexlib-clean_496.txt,"([\"\"']).*?[^\\]\1
 ",TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
 regexlib-clean_497.txt,"([\(]?(?<AreaCode>[0-9]{3})[\)]?)?[ \.\-]?(?<Exchange>[0-9]{3})[ \.\-](?<Number>[0-9]{4})
 ",TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
@@ -5059,7 +5059,7 @@ regexlib-clean_509.txt,"([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_51.txt,"('{2})*([^'\r\n]*)('{2})*([^'\r\n]*)('{2})*
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_510.txt,"([a-zA-Z0-9\\-\\$\\s\\.#@%^*(){}|:;,?+=/]*[<>'\""!&\\[\\]]+((\\s|)CDATA(\\s|))*[a-zA-Z0-9<>'\""!&\\[\\]\\-\\$\\s\\.#@%^*(){}|:;,?+=/]*)+
+regexlib-clean_510.txt,"([a-zA-Z0-9\\-\\$\\s\\.#@%^*(){}|:;,?+=/]*[<>\'\""!&\\[\\]]+((\\s|)CDATA(\\s|))*[a-zA-Z0-9<>\'\""!&\\[\\]\\-\\$\\s\\.#@%^*(){}|:;,?+=/]*)+
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_511.txt,"([a-zA-Z0-9\_\-\.]+[a-zA-Z0-9\_\-\.]+[a-zA-Z0-9\_\-\.]+)+@([a-zA-z0-9][a-zA-z0-9][a-zA-z0-9]*)+(\.[a-zA-z0-9][a-zA-z0-9][a-zA-z0-9]*)(\.[a-zA-z0-9]+)*
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -5119,7 +5119,7 @@ regexlib-clean_536.txt,"(\/\*(\s*|.*?)*\*\/)|(--.*)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_537.txt,"(\/\*(\s*|.*?)*\*\/)|(\/\/.*)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_538.txt,"(\/\*[\s\S.]+?\*\/|[/]{2,}.*|\/((\\\/)|.??)*\/[gim]{0,3}|'((\\\')|.??)*'|""((\\\"")|.??)*""|-?\d+\.\d+e?-?e?\d*|-?\.\d+e-?\d+|\w+|[\[\]\(\)\{\}:=;""'\-&!|+,.\/*])
+regexlib-clean_538.txt,"(\/\*[\s\S.]+?\*\/|[/]{2,}.*|\/((\\\/)|.??)*\/[gim]{0,3}|\'((\\\')|.??)*\'|""((\\\"")|.??)*""|-?\d+\.\d+e?-?e?\d*|-?\.\d+e-?\d+|\w+|[\[\]\(\)\{\}:=;""\'\-&!|+,.\/*])
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_539.txt,"(\/\/)(.+)(\/\/)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -5455,7 +5455,7 @@ regexlib-clean_688.txt,"(^\d{20}$)|(^((:[a-fA-F0-9]{1,4}){6}|::)ffff:(25[0-5]|2[
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_689.txt,"(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_69.txt,"('.*$|Rem((\t| ).*$|$)|""(.|"""")*?"")
+regexlib-clean_69.txt,"(\'.*$|Rem((\t| ).*$|$)|""(.|"""")*?"")
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_690.txt,"(^\d{3,4}\-\d{4}$)|(^\d{7,8}$)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -5665,7 +5665,7 @@ regexlib-clean_782.txt,"/\/\*[\d\D]*?\*\//
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_783.txt,"/^""|'+(.*)+""$|'$/
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_784.txt,"/^(""(\\""|[^""])*""|'(\\'|[^'])*'|[^\n])*(\n|$)/gm
+regexlib-clean_784.txt,"/^(\"\"(\\\"\"|[^\"\"])*\"\"|\'(\\\'|[^\'])*\'|[^\n])*(\n|$)/gm
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_785.txt,"/^(""(\\[""\\]|[^""])*""|[^\n])*$/gm
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -5863,7 +5863,7 @@ regexlib-clean_871.txt,"</?(a|abbr|acronym|address|applet|area|b|base|basefont|b
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
 regexlib-clean_872.txt,"</?[a-z][a-z0-9]*[^<>]*>
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_873.txt,"<[\w\""\ '\#\* \=\',\.\\\(\)\/\-\$\{\}\[\]\|\*\?\+\^\&\:\%\;\!]+>
+regexlib-clean_873.txt,"<[\w\""\ \'\#\* \=\',\.\\\(\)\/\-\$\{\}\[\]\|\*\?\+\^\&\:\%\;\!]+>
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_874.txt,"<[^/bp][^><]*>|<p[a-z][^><]*>|<b[^r][^><]*>|<br[a-z][^><]*>|</[^bp]+>|</p[a-z]+>|</b[^r]+>|</br[a-z]+>
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -5931,7 +5931,7 @@ regexlib-clean_901.txt,"<a[\s]+[^>]*?href[\s]?=[\s\""\']*(.*?)[\""\']*.*?>([^<]+
 ",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_902.txt,"<a[\s]+[^>]*?href[\s]?=[\s\""\']+(.*?)[\""\']+.*?>([^<]+|.*?)?<\/a>
 ",TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_903.txt,"<a[a-zA-Z0-9 =""'.:;?]*(href=[\""\'](http:\/\/|\.\/|\/)?\w+(\.\w+)*(\/\w+(\.\w+)?)*(\/|\?\w*=\w*(&\w*=\w*)*)?[\""\'])*(>[a-zA-Z0-9 =""'<>.:;?]*</a>)
+regexlib-clean_903.txt,"<a[a-zA-Z0-9 =""\'.:;?]*(href=[\""\'](http:\/\/|\.\/|\/)?\w+(\.\w+)*(\/\w+(\.\w+)?)*(\/|\?\w*=\w*(&\w*=\w*)*)?[\""\'])*(>[a-zA-Z0-9 =""\'<>.:;?]*</a>)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_904.txt,"<a[a-zA-Z0-9 =""'.:;?]*(name=){1}[a-zA-Z0-9 =""'.:;?]*\s*((/>)|(>[a-zA-Z0-9 =""'<>.:;?]*</a>))
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
@@ -6107,7 +6107,7 @@ regexlib-clean_981.txt,"[ ]*=[ ]*[\""]*cid[ ]*:[ ]*([^\""<> ]+)
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_982.txt,"[$][0 -9]+
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
-regexlib-clean_983.txt,"['`~!@#&$%^&*()-_=+{}|?><,.:;{}\""\\/\\[\\]]
+regexlib-clean_983.txt,"[\'`~!@#&$%^&*()-_=+{}|?><,.:;{}\""\\/\\[\\]]
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
 regexlib-clean_984.txt,"[( ]?\d{1,3}[ )]?[ -]?\d{3}[ -]?\d{4}
 ",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
