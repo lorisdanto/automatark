@@ -29,7 +29,7 @@ The format is specified by the following grammar with the start symbol <file>.
 ```
 An example could look like this:
 ```
-Ops a:0 b:1 c:2
+Ops a:0 b:1 c:1
 
 Automaton A
 States q0 q1
