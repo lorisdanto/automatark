@@ -23,8 +23,7 @@ AutomataArk contains benchmark from the following sources.
 * dWiNA [http://www.fit.vutbr.cz/research/groups/verifit/tools/dWiNA/index.html]
 
 ## Contact
-You are encouraged to contribute more benchmark problems, parsers, or help in any way you want. Please contact me at
-loris@cs.wisc.edu or issue a pull request. If you are the owner of some of these benchmarks and don't want me to share them please contact me.
+You are encouraged to contribute more benchmark problems, parsers, or help in any way you want. Please issue a pull request. If you are the owner of some of these benchmarks and don't want me to share them please contact me.
 
 ## Related project
 Many DFAs, NFAs, regular expressions of smaller size can be found at [https://github.com/AutomataTutor/automatatutor-data].
